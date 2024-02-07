@@ -1,0 +1,15 @@
+wechat:
+  platform:
+    applications:
+      - id: 1
+        name: 1
+        subjectId: 1
+        appid: 1
+        secret: 1
+        token: 1
+        aesKey: 1
+        encType: 1
+        appType: official
+        url: https://www.baidu.com
+        manager: 1
+        description: 1

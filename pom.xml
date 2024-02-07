@@ -74,12 +74,34 @@
     </scm>
 
     <modules>
+        <module>wechat-official-remoting</module>
+        <module>wechat-common-remoting</module>
+        <module>wechat-applet-remoting</module>
+        <module>wechat-applet-module</module>
+        <module>wechat-common-module</module>
+        <module>wechat-official-module</module>
+        <module>wechat-official-service</module>
+        <module>wechat-official-starter</module>
+        <module>wechat-applet-service</module>
+        <module>wechat-applet-starter</module>
+        <module>wechat-common-service</module>
+        <module>wechat-pay-remoting</module>
+        <module>wechat-pay-module</module>
+        <module>wechat-pay-service</module>
+        <module>wechat-pay-starter</module>
+        <module>wechat-pay-repository</module>
+        <module>wechat-official-repository</module>
+        <module>wechat-common-repository</module>
+        <module>wechat-applet-repository</module>
+        <module>wechat-zen-pom</module>
     </modules>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <spring-boot.version>3.2.1</spring-boot.version>
+        <mybatis-plus.version>3.5.5</mybatis-plus.version>
+        <remote.version>1.0.0</remote.version>
     </properties>
 
     <dependencyManagement>
@@ -90,6 +112,31 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.microapplet</groupId>
+                <artifactId>remote-zen-pom</artifactId>
+                <version>${remote.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-bom</artifactId>
+                <version>${mybatis-plus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>3.26.0</version>
             </dependency>
 
         </dependencies>
