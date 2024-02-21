@@ -16,6 +16,7 @@
 
 package io.github.microapplet.wechat.official.remoting.subscribenotify;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.microapplet.remote.http.annotation.HttpMapping;
 import io.github.microapplet.remote.http.annotation.HttpMethod;
 import io.github.microapplet.remote.http.annotation.HttpQuery;
@@ -29,6 +30,7 @@ import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 微信公众号订阅通知API客户端
@@ -100,6 +102,80 @@ public interface WeChatPaSubscribeNotifyRemoting {
      */
     @HttpMapping(method = HttpMethod.GET, uri = "/wxaapi/newtmpl/getpubtemplatetitles")
     GetPubTemplateTitleListRes getPubTemplateTitleList(@WeChatAccessTokenParam String weChatIndex, @HttpQuery(name = "ids") String ids, @HttpQuery(name = "start") Long start, @HttpQuery(name = "limit") Long number);
+
+    /**
+     * getTemplateList获取私有模板列表
+     * 获取私有的模板列表*
+     *
+     * @param weChatIndex {@link String weChatIndex}
+     * @return {@link GetTemplateListRes }
+     * @since 2024/2/21
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/wxaapi/newtmpl/gettemplate")
+    GetTemplateListRes getTemplateList(@WeChatAccessTokenParam String weChatIndex);
+
+    /**
+     * Send 发送订阅通知
+     *
+     * @param weChatIndex {@link String weChatIndex}
+     * @param req         {@link BizSendReq req}
+     * @return {@link BaseWeChatApiRes}
+     * @since 2024/2/21
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/message/subscribe/bizsend")
+    BaseWeChatApiRes bizSend(@WeChatAccessTokenParam String weChatIndex, @JsonBody BizSendReq req);
+
+    @Data
+    class BizSendReq implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 3253570433403046867L;
+
+        @JsonProperty("touser")
+        private String toUser;
+        @JsonProperty("template_id")
+        private String templateId;
+        private String page;
+        @JsonProperty("miniprogram")
+        private List<MiniProgramItem> miniProgram;
+        private Map<String, BizSendDataItem> data;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class BizSendDataItem implements Serializable {
+        private String value;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class MiniProgramItem implements Serializable {
+        private String appid;
+        @JsonProperty("pagepath")
+        private String pagePath;
+    }
+
+    @Data
+    @ToString(callSuper = true)
+    @EqualsAndHashCode(callSuper = true)
+    class GetTemplateListRes extends BaseWeChatApiRes {
+        private List<GetTemplateListData> data;
+    }
+
+    @Data
+    class GetTemplateListData implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 6440665114179559456L;
+
+        private String priTmplId;
+        private String title;
+        private String content;
+        private String example;
+        private Integer type;
+    }
 
 
     @Data
