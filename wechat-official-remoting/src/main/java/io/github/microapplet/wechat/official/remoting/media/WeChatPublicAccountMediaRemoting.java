@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *  微信公众号素材相关 API 客户端
+ * 微信公众号素材相关 API 客户端
  *
  * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
  * @version 1.0
@@ -51,16 +51,110 @@ import java.util.Objects;
 )
 public interface WeChatPublicAccountMediaRemoting {
 
+    /**
+     * 临时素材文件下载
+     *
+     * @param subjectId {@link String subjectId}
+     * @param mediaId   {@link String mediaId}
+     * @return {@link TemporaryMediaFileRes }
+     * @since 2024/2/22
+     */
     @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/media/get")
-    BaseWeChatApiRes downloadMedia(@WeChatAccessTokenParam String subjectId, @HttpQuery(name = "media_id") String mediaId);
+    TemporaryMediaFileRes downloadMedia(@WeChatAccessTokenParam String subjectId, @HttpQuery(name = "media_id") String mediaId);
 
+    /**
+     * 高清语音素材文件下载
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param mediaId                  {@link String mediaId}
+     * @return {@link TemporaryMediaFileRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/media/get/jssdk")
+    TemporaryMediaFileRes downloadHighDefinitionVoice(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @HttpQuery(name = "media_id") String mediaId);
+
+
+    /**
+     * <pre>
+     * 在新增了永久素材后，开发者可以分类型获取永久素材的列表。
+     * 请注意：
+     * 1、获取永久素材的列表，也包含公众号在公众平台官网素材管理模块中新建的图文消息、语音、视频等素材 2、临时素材无法通过本接口获取 3、调用该接口需https协议
+     * </pre>
+     *
+     * @param subjectId {@link String subjectId}
+     * @param body      {@link BatchGetMaterialReq body}
+     * @return {@link BatchGetMaterialRes }
+     * @since 2024/2/22
+     */
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/batchget_material")
     BatchGetMaterialRes batchGetMaterial(@WeChatAccessTokenParam String subjectId, @JsonBody BatchGetMaterialReq body);
 
     /**
+     * 获取永久素材
      * <pre>
-     * 上传图文消息内的图片获取URL【订阅号与服务号认证后均可用】
-     * 请注意，本接口所上传的图片不占用公众号的素材库中图片数量的5000个的限制。图片仅支持jpg/png格式，大小必须在1MB以下。*
+     *     在新增了永久素材后，开发者可以根据media_id通过本接口下载永久素材。公众号在公众平台官网素材管理模块中新建的永久素材，可通过"获取素材列表"获知素材的media_id。
+     * </pre>
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link PermanentMaterialOperateReq body}
+     * @return {@link GetPermanentMaterialRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/get_material")
+    GetPermanentMaterialRes getMaterial(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody PermanentMaterialOperateReq body);
+
+    /**
+     * 删除永久素材
+     * <pre>
+     * 在新增了永久素材后，开发者可以根据本接口来删除不再需要的永久素材，节省空间。
+     * 请注意：
+     * 1、请谨慎操作本接口，因为它可以删除公众号在公众平台官网素材管理模块中新建的图文消息、语音、视频等素材（但需要先通过获取素材列表来获知素材的media_id） 2、临时素材无法通过本接口删除 3、调用该接口需https协议
+     * </pre>
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link PermanentMaterialOperateReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/del_material")
+    BaseWeChatApiRes delMaterial(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody PermanentMaterialOperateReq body);
+
+    /**
+     * <h1>新增其他类型永久素材</h1>
+     * <pre>
+     * 接口调用请求说明
+     * 通过POST表单来调用接口，表单id为media，包含需要上传的素材内容，有filename、filelength、content-type等信息。请注意：图片素材将进入公众平台官网素材管理模块中的默认分组。
+     * <a href="https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Adding_Permanent_Assets.html">官方文档</a>
+     * </pre>
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param file                     {@link File file}
+     * @param description              {@link AddMaterialDescription description}
+     * @return {@link AddMaterialRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/add_material")
+    AddMaterialRes addMaterial(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @FormData(name = "media") File file, @FormData(name = "description", attr = true) AddMaterialDescription description);
+
+    /**
+     * 获取素材总数
+     * <pre>
+     *     开发者可以根据本接口来获取永久素材的列表，需要时也可保存到本地。
+     * 请注意：
+     * 1.永久素材的总数，也会计算公众平台官网素材管理中的素材 2.图片和图文消息素材（包括单图文和多图文）的总数上限为100000，其他素材的总数上限为1000 3.调用该接口需https协议
+     * </pre>
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @return {@link GetMaterialCountRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/material/get_materialcount")
+    GetMaterialCountRes getMaterialCount(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
+
+    /**
+     * <pre>
+     * 上传图文消息内的图片获取URL
+     * 本接口所上传的图片不占用公众号的素材库中图片数量的100000个的限制。图片仅支持jpg/png格式，大小必须在1MB以下。
      * </pre>
      *
      * @param weChatIndex {@link String weChatIndex}
@@ -68,7 +162,7 @@ public interface WeChatPublicAccountMediaRemoting {
      * @return {@link UploadMediaRes}
      * @since 2023/12/26
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/media/uploading")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/media/uploadimg")
     UploadMediaRes upload(@WeChatAccessTokenParam String weChatIndex, @FormData(name = "media") MultipartFile file);
 
     /**
@@ -82,7 +176,7 @@ public interface WeChatPublicAccountMediaRemoting {
      * @return {@link UploadMediaRes}
      * @since 2023/12/26
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/media/uploading")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/media/uploadimg")
     UploadMediaRes upload(@WeChatAccessTokenParam String weChatIndex, @FormData(name = "media") File file);
 
     /**
@@ -93,8 +187,101 @@ public interface WeChatPublicAccountMediaRemoting {
      * @return {@link UploadNewsRes }
      * @since 2023/12/26
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/media/uploadnews")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/media/uploadnews")
     UploadNewsRes uploadNews(@WeChatAccessTokenParam String weChatIndex, @JsonBody UploadNewsReq req);
+
+
+    /**
+     * 上传媒体文件
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param type                     {@link String type}
+     * @param file                     {@link File file}
+     * @return {@link UploadNewsRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/media/upload")
+    UploadNewsRes upload(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @HttpQuery(name = "type") String type, @FormData(name = "media") File file);
+
+
+    /**
+     * 上传媒体文件
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param type                     {@link String type}
+     * @param file                     {@link MultipartFile file}
+     * @return {@link UploadNewsRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/media/upload")
+    UploadNewsRes upload(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @HttpQuery(name = "type") String type, @FormData(name = "media") MultipartFile file);
+
+    @Data
+    @ToString(callSuper = true)
+    @EqualsAndHashCode(callSuper = true)
+    class GetMaterialCountRes extends BaseWeChatApiRes {
+        @Serial
+        private static final long serialVersionUID = 7550804730471254114L;
+
+        private Long voice_count;
+        private Long video_count;
+        private Long image_count;
+        private Long news_count;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class PermanentMaterialOperateReq implements Serializable {
+        private String media_id;
+    }
+
+    @Data
+    @ToString(callSuper = true)
+    @EqualsAndHashCode(callSuper = true)
+    class GetPermanentMaterialRes extends BaseWeChatApiRes {
+        @Serial
+        private static final long serialVersionUID = 9100971308259284755L;
+
+        private String title;
+        private String description;
+        private String down_url;
+        private List<NewsItem> news_item;
+    }
+
+    @Data
+    class NewsItem {
+        private String title;
+        private String thumb_media_id;
+        private String show_cover_pic;
+        private String author;
+        private String digest;
+        private String content;
+        private String url;
+        private String content_source_url;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class AddMaterialDescription implements Serializable {
+        @Serial
+        private static final long serialVersionUID = -4709329218582836162L;
+        private String title;
+        private String introduction;
+    }
+
+    @Data
+    @ToString(callSuper = true)
+    @EqualsAndHashCode(callSuper = true)
+    class AddMaterialRes extends BaseWeChatApiRes {
+        @Serial
+        private static final long serialVersionUID = -5187374753924993502L;
+        private String media_id;
+        private String url;
+    }
 
     @Data
     @ToString(callSuper = true)

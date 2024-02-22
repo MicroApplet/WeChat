@@ -42,7 +42,7 @@ public class WeChatPublicAccountUserAccessTokenRes extends BaseWeChatApiRes {
     private String accessToken;
 
     @JsonProperty("expires_in")
-    private Integer expiresIn;
+    private Long expiresIn;
 
     @JsonProperty("refresh_token")
     private String refreshToken;
@@ -50,4 +50,7 @@ public class WeChatPublicAccountUserAccessTokenRes extends BaseWeChatApiRes {
     private String openid;
 
     private String scope;
+    @JsonProperty("is_snapshotuser")
+    private Integer isSnapshotUser;
+    private String unionid;
 }

@@ -64,6 +64,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @param refreshToken {@link String refreshToken}
      * @return {@link WeChatPublicAccountUserAccessTokenRes}
      * @since 2021/12/28 9:04
+     * @since 2021/12/28 9:04
      */
     @HttpMapping(method = HttpMethod.GET, uri = "/sns/oauth2/refresh_token", queries = @HttpQuery(name = "grant_type", value = "refresh_token"))
     WeChatPublicAccountUserAccessTokenRes refreshAccessToken(@HttpQuery(name = "appid") String appid,
