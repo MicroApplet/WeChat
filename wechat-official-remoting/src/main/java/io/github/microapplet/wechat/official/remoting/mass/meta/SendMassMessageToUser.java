@@ -31,10 +31,12 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface SendMassMessageToUser extends MassMessageType {
     List<String> getTouser();
+   /*
     SendNewsMassMessage2UserReq.SendNewsMassMessage2UserReqBuilder newsBuilder = SendNewsMassMessage2UserReq.builder();
     SendTextMassMessage2UserReq.SendTextMassMessage2UserReqBuilder textBuilder = SendTextMassMessage2UserReq.builder();
     SendImageMassMessage2UserReq.SendImageMassMessage2UserReqBuilder imageBuilder = SendImageMassMessage2UserReq.builder();
     SendVideoMassMessage2UserReq.SendVideoMassMessage2UserReqBuilder videoBuilder = SendVideoMassMessage2UserReq.builder();
     SendVoiceMassMessage2UserReq.SendVoiceMassMessage2UserReqBuilder voiceBuilder = SendVoiceMassMessage2UserReq.builder();
     SendWxCardMassMessage2UserReq.SendWxCardMassMessage2UserReqBuilder wxCardBuilder = SendWxCardMassMessage2UserReq.builder();
+    */
 }

@@ -29,11 +29,12 @@ import io.github.microapplet.wechat.official.remoting.mass.meta.type.MassMessage
 public interface SendMassMessageToPreview extends MassMessageType {
     String getTouser();
     String getTowxname();
-
+   /*
     SendNewsMassMessage2PreviewReq.SendNewsMassMessage2PreviewReqBuilder newsBuilder = SendNewsMassMessage2PreviewReq.builder();
     SendTextMassMessage2PreviewReq.SendTextMassMessage2PreviewReqBuilder textBuilder = SendTextMassMessage2PreviewReq.builder();
     SendImageMassMessage2PreviewReq.SendImageMassMessage2PreviewReqBuilder imageBuilder = SendImageMassMessage2PreviewReq.builder();
     SendVideoMassMessage2PreviewReq.SendVideoMassMessage2PreviewReqBuilder videoBuilder = SendVideoMassMessage2PreviewReq.builder();
     SendVoiceMassMessage2PreviewReq.SendVoiceMassMessage2PreviewReqBuilder voiceBuilder = SendVoiceMassMessage2PreviewReq.builder();
     SendWxCardMassMessage2PreviewReq.SendWxCardMassMessage2PreviewReqBuilder wxCardBuilder = SendWxCardMassMessage2PreviewReq.builder();
+    */
 }

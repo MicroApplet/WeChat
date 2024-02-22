@@ -31,10 +31,12 @@ public interface SendMassMessageToAll extends MassMessageType {
     Filter getFilter();
     String getClientmsgid();
 
+    /*
     SendNewsMassMessage2AllReq.SendNewsMassMessage2AllReqBuilder newsBuilder = SendNewsMassMessage2AllReq.builder();
     SendTextMassMessage2AllReq.SendTextMassMessage2AllReqBuilder textBuilder = SendTextMassMessage2AllReq.builder();
     SendImageMassMessage2AllReq.SendImageMassMessage2AllReqBuilder imageBuilder = SendImageMassMessage2AllReq.builder();
     SendVideoMassMessage2AllReq.SendVideoMassMessage2AllReqBuilder videoBuilder = SendVideoMassMessage2AllReq.builder();
     SendVoiceMassMessage2AllReq.SendVoiceMassMessage2AllReqBuilder voiceBuilder = SendVoiceMassMessage2AllReq.builder();
     SendWxCardMassMessage2AllReq.SendWxCardMassMessage2AllReqBuilder wxCardBuilder = SendWxCardMassMessage2AllReq.builder();
+    */
 }
