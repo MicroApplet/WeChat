@@ -247,19 +247,7 @@ public interface WeChatPublicAccountMediaRemoting {
         private String title;
         private String description;
         private String down_url;
-        private List<NewsItem> news_item;
-    }
-
-    @Data
-    class NewsItem {
-        private String title;
-        private String thumb_media_id;
-        private String show_cover_pic;
-        private String author;
-        private String digest;
-        private String content;
-        private String url;
-        private String content_source_url;
+        private List<Article> news_item;
     }
 
     @Data
