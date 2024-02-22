@@ -155,8 +155,74 @@ public interface WeChatPaCustomerMessageRemoting {
      * @return {@link BaseWeChatApiRes}
      * @since 2024/2/22
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "cgi-bin/message/custom/typing")
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/message/custom/typing")
     BaseWeChatApiRes typing(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody SendTypingReq body);
+
+
+    /**
+     * 创建客服会话
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link CustomerServiceSessionReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/customservice/kfsession/create")
+    BaseWeChatApiRes createSession(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody CustomerServiceSessionReq body);
+
+    /**
+     * 关闭会话
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link CustomerServiceSessionReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/customservice/kfsession/close")
+    BaseWeChatApiRes closeSession(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody CustomerServiceSessionReq body);
+
+    /**
+     * 获取客户会话状态
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param openid                   {@link String openid}
+     * @return {@link CustomerServiceSessionStatus }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/customservice/kfsession/getsession")
+    CustomerServiceSessionStatus sessionStatus(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @HttpQuery(name = "openid") String openid);
+
+    /**
+     * 获取客服会话列表
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param kfAccount                {@link String kfAccount}
+     * @return {@link CustomerServiceSessionListRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/customservice/kfsession/getsessionlist")
+    CustomerServiceSessionListRes sessionList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @HttpQuery(name = "kf_account") String kfAccount);
+
+    /**
+     * 获取未接入的会话列表
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @return {@link CustomerServiceWaitCaseRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/customservice/kfsession/getwaitcase")
+    CustomerServiceWaitCaseRes waitCase(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
+
+    /**
+     * 获取客服聊天记录
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param req                      {@link GetMsgListReq req}
+     * @return {@link GetMsgListRes }
+     * @since 2024/2/22
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/customservice/msgrecord/getmsglist")
+    GetMsgListRes msgList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetMsgListReq req);
 
     /**
      * 发送客服消息

@@ -16,16 +16,16 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 import java.io.Serial;
 import java.util.List;
 
 /**
- * Customer Service Account List
+ * 获取聊天记录结果
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0.0
@@ -34,10 +34,20 @@ import java.util.List;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class CustomerServiceAccountList extends BaseWeChatApiRes {
-    @Serial
-    private static final long serialVersionUID = -260453331327613275L;
+public class GetMsgListRes extends BaseWeChatApiRes {
 
-    @JsonProperty("kf_list")
-    private List<CustomerServiceAccountInfo> kfList;
+    @Serial
+    private static final long serialVersionUID = 175969025907335426L;
+
+    private List<Record> recordlist;
+    private Long number;
+    private Long msgid;
+
+    public static class Record{
+        private String openid;
+        private Integer opercode;
+        private String text;
+        private Long time;
+        private String worker;
+    }
 }

@@ -16,12 +16,32 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serial;
+import java.io.Serializable;
+
 /**
- * Create Customer Service Session
+ * 获取聊天记录请求
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0.0
  * @since 2024/2/22, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
-public class CreateCustomerServiceSessionReq {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class GetMsgListReq implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 6866476867961726599L;
+
+    private Long starttime;
+    private Long endtime;
+    private Long msgid;
+    private Long number;
 }

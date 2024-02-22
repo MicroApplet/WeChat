@@ -16,28 +16,29 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
+
 import java.io.Serial;
-import java.util.List;
+import java.io.Serializable;
 
 /**
- * Customer Service Account List
+ * 创建客服会话
+ * Create Customer Service Session
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0.0
  * @since 2024/2/22, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
 @Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class CustomerServiceAccountList extends BaseWeChatApiRes {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class CustomerServiceSessionReq implements Serializable {
     @Serial
-    private static final long serialVersionUID = -260453331327613275L;
-
-    @JsonProperty("kf_list")
-    private List<CustomerServiceAccountInfo> kfList;
+    private static final long serialVersionUID = 8420969739253702098L;
+    private String kfAccount;
+    private String openid;
 }
