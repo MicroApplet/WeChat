@@ -35,7 +35,7 @@ import java.io.Serial;
 @SuppressWarnings("unused")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class WeChatCustomerMusicMessage extends WeChatCustomerMessage {
+public final class WeChatCustomerMusicMessage extends WeChatCustomerMessage<WeChatCustomerMusicMessage> {
 
     @Serial
     private static final long serialVersionUID = -3771429540698421446L;

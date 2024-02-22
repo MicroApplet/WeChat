@@ -16,7 +16,11 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -29,12 +33,23 @@ import java.io.Serializable;
  * @since 2021/3/8   &nbsp;&nbsp; JDK 8
  */
 @Data
-public abstract class WeChatCustomerMessage implements Serializable {
+public abstract sealed class WeChatCustomerMessage<T extends WeChatCustomerMessage<?>>
+        implements Serializable
+        permits WeChatCustomerImageMessage,
+        WeChatCustomerMiniProMessage,
+        WeChatCustomerMpMessage,
+        WeChatCustomerMsgMenuMessage,
+        WeChatCustomerMusicMessage,
+        WeChatCustomerNewsMessage,
+        WeChatCustomerTextMessage,
+        WeChatCustomerVideoMessage,
+        WeChatCustomerVoiceMessage,
+        WeChatCustomerWxCardMessage {
 
     @Serial
     private static final long serialVersionUID = 6476058797183234088L;
 
-	/**
+    /**
      * open id for we-chat customer message receiver
      */
     protected String touser;
@@ -44,8 +59,36 @@ public abstract class WeChatCustomerMessage implements Serializable {
      */
     protected String msgtype;
 
+    @JsonProperty("customerservice")
+    protected CustomerService customerService;
+
+    @SuppressWarnings("unused")
+    public T withToUser(String touser) {
+        setTouser(touser);
+        //noinspection unchecked
+        return (T) this;
+    }
+
+    @SuppressWarnings("unused")
+    public T withKfAccount(String kfAccount) {
+        setCustomerService(CustomerService.builder().kfAccount(kfAccount).build());
+        //noinspection unchecked
+        return (T) this;
+    }
+
     /**
      * set message type
      */
-    protected void setMsgtype(String msgtype){this.msgtype = msgtype;}
+    protected void setMsgtype(String msgtype) {
+        this.msgtype = msgtype;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CustomerService {
+        @JsonProperty("kf_account")
+        private String kfAccount;
+    }
 }

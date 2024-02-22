@@ -16,37 +16,41 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
-import io.github.microapplet.wechat.official.remoting.customer.meta.item.Media;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.io.Serial;
-
+import java.util.List;
 
 /**
- *  we-chat customer image message
+ * 获取在线的客服列表
  *
- * @author Asial Jim &nbsp;&nbsp; <span>Email:<a href="mailto:asialjim@hotmail.com">asialjim@hotmail.com</a> &nbsp;&nbsp; <a href="asialjim@qq.com">asialjim@qq.com</a></span>
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0.0
- * @since 2021/3/8   &nbsp;&nbsp; JDK 8
+ * @since 2024/2/22, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
 @Data
-@SuppressWarnings("unused")
 @ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = false)
-public final class WeChatCustomerImageMessage extends WeChatCustomerMessage<WeChatCustomerImageMessage> {
+@EqualsAndHashCode(callSuper = true)
+public class CustomerServiceOnLineAccountRes extends BaseWeChatApiRes {
 
     @Serial
-    private static final long serialVersionUID = -1396999539127277751L;
-	private Media image;
+    private static final long serialVersionUID = -7425790042448896670L;
 
-    public WeChatCustomerImageMessage() {
-        super.msgtype = "image";
-    }
+    @JsonProperty("kf_online_list")
+    private List<OnLineAccount> kfOnLineList;
 
-    public WeChatCustomerImageMessage(Media image) {
-        super.msgtype = "image";
-        this.image = image;
+    @Data
+    public static class OnLineAccount{
+        @JsonProperty("kf_account")
+        private String kfAccount;
+        private Integer status;
+        @JsonProperty("kf_id")
+        private String kfId;
+        @JsonProperty("accepted_case")
+        private Integer acceptedCase;
     }
 }

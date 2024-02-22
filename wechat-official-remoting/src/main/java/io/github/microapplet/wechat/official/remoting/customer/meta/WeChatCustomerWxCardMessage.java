@@ -35,7 +35,7 @@ import java.io.Serial;
 @SuppressWarnings("unused")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class WeChatCustomerWxCardMessage extends WeChatCustomerMessage {
+public final class WeChatCustomerWxCardMessage extends WeChatCustomerMessage<WeChatCustomerWxCardMessage> {
     @Serial
     private static final long serialVersionUID = 6998041527781272485L;
 

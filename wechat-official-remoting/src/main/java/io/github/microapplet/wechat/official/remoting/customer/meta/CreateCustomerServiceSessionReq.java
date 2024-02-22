@@ -14,24 +14,14 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.official.remoting.customer.meta.item;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package io.github.microapplet.wechat.official.remoting.customer.meta;
 
 /**
- * customer service
- * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
- * @since 2021/3/8   &nbsp;&nbsp; JDK 8
+ * Create Customer Service Session
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0.0
+ * @since 2024/2/22, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class CustomerService {
-
-    private String kf_account;
+public class CreateCustomerServiceSessionReq {
 }

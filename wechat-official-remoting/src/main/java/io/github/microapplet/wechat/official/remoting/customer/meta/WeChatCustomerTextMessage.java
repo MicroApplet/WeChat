@@ -16,7 +16,6 @@
 
 package io.github.microapplet.wechat.official.remoting.customer.meta;
 
-import io.github.microapplet.wechat.official.remoting.customer.meta.item.CustomerService;
 import io.github.microapplet.wechat.official.remoting.customer.meta.item.Text;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,7 +35,7 @@ import java.io.Serial;
 @SuppressWarnings("unused")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class WeChatCustomerTextMessage extends WeChatCustomerMessage {
+public final class WeChatCustomerTextMessage extends WeChatCustomerMessage<WeChatCustomerTextMessage> {
 
     @Serial
     private static final long serialVersionUID = -7415665351819058394L;
@@ -46,13 +45,11 @@ public class WeChatCustomerTextMessage extends WeChatCustomerMessage {
         setMsgtype("text");
     }
 
-    public WeChatCustomerTextMessage(Text text, CustomerService customservice) {
+    public WeChatCustomerTextMessage(Text text) {
         super();
         setMsgtype("text");
         this.text = text;
-        this.customservice = customservice;
     }
 
     private Text text;
-    private CustomerService customservice;
 }
