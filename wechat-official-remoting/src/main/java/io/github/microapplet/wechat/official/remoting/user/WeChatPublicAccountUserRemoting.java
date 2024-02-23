@@ -29,6 +29,7 @@ import io.github.microapplet.wechat.official.remoting.user.meta.*;
  * <h1><em>ASIAL JIM JAVA DOC</em></h1><hr/>
  * <h2>CLASS DESCRIPTION <i>[ NAME: WeChatPublicAccountUserRemoting ]</i> </h2><strong>
  * <p> 微信公众号应用服务
+ *
  * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
  * @version 1.0.0
  * @since 2021/12/25 20:52   &nbsp;&nbsp; JDK 8
@@ -129,4 +130,117 @@ public interface WeChatPublicAccountUserRemoting {
     @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/user/get")
     WeChatPublicAccountBatchGetOpenIdsRes weChatUserOpenIds(@WeChatAccessTokenParam String subjectId,
                                                             @HttpQuery(name = "next_openid") String nextUser);
+
+
+    /**
+     * 创建标签， 一个公众号，最多可以创建100个标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link CreateUserTagReq body}
+     * @return {@link CreateUserTagRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/create")
+    CreateUserTagRes tag(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody CreateUserTagReq body);
+
+    /**
+     * 获取公众号已经创建所有的标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @return {@link CreateUserTagRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/tags/get")
+    CreateUserTagRes tags(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
+
+    /**
+     * 编辑公众号用户标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link OperateTagReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/tags/update")
+    BaseWeChatApiRes update(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody OperateTagReq body);
+
+    /**
+     * 删除公众号用户标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link OperateTagReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/tags/delete")
+    BaseWeChatApiRes delete(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody OperateTagReq body);
+
+    /**
+     * 获取标签下粉丝
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link GetUsersByTagReq body}
+     * @return {@link GetUsersByTagRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/user/tag/get")
+    GetUsersByTagRes get(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetUsersByTagReq body);
+
+    /**
+     * 批量为用户打标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link BatchTaggingReq body}
+     * @return {@link BatchTaggingRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/batchtagging")
+    BatchTaggingRes batchTagging(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody BatchTaggingReq body);
+
+    /**
+     * 批量取消用户打标签
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link BatchTaggingReq body}
+     * @return {@link BatchTaggingRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/batchuntagging")
+    BatchTaggingRes unBatchTagging(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody BatchTaggingReq body);
+
+    /**
+     * 获取用户身上的标签列表
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link GetUserTagListReq body}
+     * @return {@link GetUserTagListRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/getidlist")
+    GetUserTagListRes list(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetUserTagListReq body);
+
+    /**
+     * 设置用户备注名
+     * <pre>
+     *     开发者可以通过该接口对指定用户设置备注名，该接口暂时开放给微信认证的服务号。
+     * </pre>
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link UpdateRemarkReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/user/info/updateremark")
+    BaseWeChatApiRes updateRemark(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody UpdateRemarkReq body);
+
+    /**
+     * 获取公众号黑名单列表
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link GetBlackListReq body}
+     * @return {@link GetBlackListRes }
+     * @since 2024/2/23
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/getblacklist")
+    GetBlackListRes blackList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetBlackListReq body);
 }
