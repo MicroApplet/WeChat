@@ -26,9 +26,7 @@ import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import io.github.microapplet.wechat.official.remoting.user.meta.*;
 
 /**
- * <h1><em>ASIAL JIM JAVA DOC</em></h1><hr/>
- * <h2>CLASS DESCRIPTION <i>[ NAME: WeChatPublicAccountUserRemoting ]</i> </h2><strong>
- * <p> 微信公众号应用服务
+ * 微信公众号应用服务
  *
  * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
  * @version 1.0.0
