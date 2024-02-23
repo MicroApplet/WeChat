@@ -151,6 +151,8 @@ public interface WeChatPublicAccountMediaRemoting {
     @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/material/get_materialcount")
     GetMaterialCountRes getMaterialCount(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
 
+
+
     /**
      * <pre>
      * 上传图文消息内的图片获取URL

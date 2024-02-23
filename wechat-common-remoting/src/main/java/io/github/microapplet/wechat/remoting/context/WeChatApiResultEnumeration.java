@@ -183,6 +183,9 @@ public enum WeChatApiResultEnumeration {
     CODE_53500(53500, "Publishing function is banned.", "发布功能被封禁"),
     CODE_53501(53501, "Frequent requests to publish.", "频繁请求发布"),
     CODE_53502(53502, "Invalid Publish ID.", "Publish ID 无效"),
+    CODE_53503(53503, "The draft did not pass the publishing check","该草稿未通过发布检查"),
+    CODE_53504(53504, "Need to go to the official website of the public platform to use the draft","需要前往公众平台官网使用草稿"),
+    CODE_53505(53505, "Please manually save successfully before publishing","请手动保存成功后再发表"),
     CODE_53600(53600, "Invalid Article ID.", "Article ID 无效"),
 
     CODE_61450(61450, "System error.", "系统错误"),
