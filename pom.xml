@@ -101,7 +101,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <spring-boot.version>3.2.1</spring-boot.version>
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
-        <remote.version>1.0.0</remote.version>
+        <remote.version>1.0.1</remote.version>
     </properties>
 
     <dependencyManagement>
