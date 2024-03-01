@@ -45,7 +45,6 @@ import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
  * @version 1.0.0
  * @since 2024/3/1, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
-@SuppressWarnings("unused")
 @Server(
         supplier = WeChatCons.Supplier.WECHAT,
         namespace = WeChatCons.Namespace.COMMON,
@@ -53,6 +52,7 @@ import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
         host = WeChatCons.Api.DEFAULT_HOST,
         port = WeChatCons.Api.DEFAULT_PORT
 )
+@SuppressWarnings({"unused", "SpellCheckingInspection"})
 public interface WeChatPublicUserAnalysisRemoting {
 
     /**
@@ -63,7 +63,6 @@ public interface WeChatPublicUserAnalysisRemoting {
      * @return {@link GetUserSummaryRes }
      * @since 2024/3/1
      */
-    @SuppressWarnings("SpellCheckingInspection")
     @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getusersummary")
     GetUserSummaryRes userSummary(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonProperty GetUserSummaryReq body);
 
@@ -75,7 +74,6 @@ public interface WeChatPublicUserAnalysisRemoting {
      * @return {@link GetUserCumulateRes }
      * @since 2024/3/1
      */
-    @SuppressWarnings("SpellCheckingInspection")
     @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getusercumulate")
     GetUserCumulateRes userCumulate(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonProperty GetUserCumulateRes body);
 }
