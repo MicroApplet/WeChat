@@ -17,7 +17,6 @@ package io.github.microapplet.wechat.official.remoting.qrcode;
 
 import io.github.microapplet.remote.http.annotation.HttpMapping;
 import io.github.microapplet.remote.http.annotation.HttpMethod;
-import io.github.microapplet.remote.http.annotation.HttpQuery;
 import io.github.microapplet.remote.http.annotation.body.JsonBody;
 import io.github.microapplet.remote.net.annotation.Server;
 import io.github.microapplet.wechat.constant.WeChatCons;
@@ -45,22 +44,11 @@ public interface WeChatPublicQrCodeRemoting {
     /**
      * 创建微信公众号二维码
      *
-     * @param subjectId {@link String 公众号索引}
-     * @param body      {@link CreateQrCodeRequest body}
+     * @param weChatIndexOrAccessToken {@link String 公众号索引}
+     * @param body                     {@link CreateQrCodeRequest body}
      * @return {@link CreateQrCodeResponse }
      * @since 2024/2/7
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/qrcode/create")
-    CreateQrCodeResponse createQrCode(@WeChatAccessTokenParam String subjectId, @JsonBody CreateQrCodeRequest body);
-
-    /**
-     * 创建微信公众号二维码
-     *
-     * @param accessToken {@link String API访问令牌}
-     * @param body        {@link CreateQrCodeRequest body}
-     * @return {@link CreateQrCodeResponse }
-     * @since 2024/2/7
-     */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/qrcode/create")
-    CreateQrCodeResponse createQrCodeWithAccessToken(@HttpQuery(name = "access_token") String accessToken, @JsonBody CreateQrCodeRequest body);
+    CreateQrCodeResponse createQrCode(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody CreateQrCodeRequest body);
 }

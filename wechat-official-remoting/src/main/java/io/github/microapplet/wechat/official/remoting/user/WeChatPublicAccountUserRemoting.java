@@ -241,4 +241,27 @@ public interface WeChatPublicAccountUserRemoting {
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/getblacklist")
     GetBlackListRes blackList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetBlackListReq body);
+
+    /**
+     * 拉黑用户
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link BatchBlackListReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/3/1
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/batchblacklist")
+    BaseWeChatApiRes batchBlackList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody BatchBlackListReq body);
+
+    /**
+     * 取消拉黑用户
+     *
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+     * @param body                     {@link BatchBlackListReq body}
+     * @return {@link BaseWeChatApiRes }
+     * @since 2024/3/1
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/tags/members/batchunblacklist")
+    BaseWeChatApiRes batchUnBlackList(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody BatchBlackListReq body);
+
 }
