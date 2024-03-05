@@ -101,7 +101,7 @@ public interface WeChatPaTemplateMsgRemoting {
      * @return {@link WeChatPaAllPrivateMessageTemplateResponse 响应结果}
      * @since 2022/3/29 16:33
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/template/get_all_private_template")
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/template/get_all_private_template")
     WeChatPaAllPrivateMessageTemplateResponse allPrivateTemplate(@WeChatAccessTokenParam String subjectId);
 
     /**
