@@ -22,7 +22,7 @@
     <parent>
         <groupId>io.github.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>Java8-1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,15 +31,16 @@
     <dependencies>
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
-            <groupId>io.gitee.asialjim.wechat</groupId>
+            <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.gitee.asialjim.wechat</groupId>
+            <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-module</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
@@ -48,6 +49,7 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>2.1.1</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -57,6 +59,7 @@
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>

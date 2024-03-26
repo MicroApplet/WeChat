@@ -16,11 +16,8 @@
 
 package io.github.microapplet.wechat.application;
 
-import io.gitee.asialjim.wechat.application.WeChatApplication;
-import io.gitee.asialjim.wechat.application.WeChatApplicationRepository;
 import io.github.microapplet.wechat.application.db.WeChatApplicationMapperService;
 import io.github.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
-import jakarta.annotation.Resource;
 import org.apache.commons.collections4.CollectionUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.redisson.api.RBucket;
@@ -29,6 +26,7 @@ import org.redisson.codec.JsonJacksonCodec;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.Resource;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;

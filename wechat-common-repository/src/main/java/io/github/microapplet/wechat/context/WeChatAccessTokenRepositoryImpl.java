@@ -16,23 +16,22 @@
 
 package io.github.microapplet.wechat.context;
 
-import io.gitee.asialjim.wechat.application.WeChatApplication;
-import io.gitee.asialjim.wechat.application.WeChatApplicationRepository;
-import io.gitee.asialjim.wechat.exception.WeChatAPIException;
-import io.gitee.asialjim.wechat.remoting.WeChatAccessTokenRemoting;
-import io.gitee.asialjim.wechat.remoting.context.WeChatAccessTokenCache;
-import io.gitee.asialjim.wechat.remoting.context.WeChatAccessTokenRepository;
-import io.gitee.asialjim.wechat.remoting.context.WeChatApiRes;
-import io.gitee.asialjim.wechat.remoting.meta.WeChatAccessTokenRes;
-import jakarta.annotation.Resource;
+import io.github.microapplet.wechat.application.WeChatApplication;
+import io.github.microapplet.wechat.application.WeChatApplicationRepository;
+import io.github.microapplet.wechat.exception.WeChatAPIException;
+import io.github.microapplet.wechat.remoting.WeChatAccessTokenRemoting;
+import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenCache;
+import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenRepository;
+import io.github.microapplet.wechat.remoting.context.WeChatApiRes;
+import io.github.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.Executor;
 import java.util.concurrent.locks.Lock;
 
@@ -119,12 +118,18 @@ public class WeChatAccessTokenRepositoryImpl implements WeChatAccessTokenReposit
         }
 
         accessTokenCache.remove(targetAppid);
-        Executor executor = Optional.ofNullable(this.executors).stream().flatMap(Collection::stream).findAny().orElse(null);
 
+        Executor executor = executor();
         if (Objects.nonNull(executor)) {
             executor.execute(() -> accessToken(targetAppid, targetSecret));
         } else {
             new Thread(() -> accessToken(targetAppid, targetSecret)).start();
         }
+    }
+
+    private Executor executor(){
+        if (CollectionUtils.isEmpty(this.executors))
+            return null;
+        return this.executors.stream().findAny().orElse(null);
     }
 }

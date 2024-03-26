@@ -17,7 +17,7 @@
 package io.github.microapplet.wechat.application.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.gitee.asialjim.wechat.application.WeChatApplication;
+import io.github.microapplet.wechat.application.WeChatApplication;
 import org.springframework.stereotype.Repository;
 
 /**

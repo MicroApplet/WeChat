@@ -19,10 +19,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <groupId>io.github.microapplet</groupId>
     <artifactId>wechat</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>Java8-1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WeChat</name>
     <url>https://github.com/MicroApplet/WeChat</url>
@@ -97,12 +96,11 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <spring-boot.version>3.2.1</spring-boot.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <spring-boot.version>2.7.18</spring-boot.version>
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
-<!--        <remote.version>1.0.1</remote.version>-->
-        <remote.version>1.0.2-SNAPSHOT</remote.version>
+        <remote.version>Java8-1.0.0</remote.version>
     </properties>
 
     <dependencyManagement>

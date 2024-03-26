@@ -22,7 +22,7 @@
     <parent>
         <groupId>io.github.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>Java8-1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>wechat-pay-remoting</artifactId>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>Java8-1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
