@@ -21,7 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -33,7 +32,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetUsersByTagReq implements Serializable {
-    @Serial
     private static final long serialVersionUID = 6689214373463932248L;
 
     private Long tagid;

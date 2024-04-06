@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.util.List;
 
 /**
@@ -33,7 +32,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class GetBlackListRes extends BaseWeChatApiRes {
 
-    @Serial
     private static final long serialVersionUID = -4073365827178563521L;
 
     private Long total;

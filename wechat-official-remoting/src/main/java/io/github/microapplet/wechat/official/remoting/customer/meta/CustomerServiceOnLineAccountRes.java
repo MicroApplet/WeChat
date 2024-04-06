@@ -22,7 +22,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,8 +35,6 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class CustomerServiceOnLineAccountRes extends BaseWeChatApiRes {
-
-    @Serial
     private static final long serialVersionUID = -7425790042448896670L;
 
     @JsonProperty("kf_online_list")

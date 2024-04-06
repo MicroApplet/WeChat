@@ -21,7 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -35,7 +34,6 @@ import java.util.List;
 @AllArgsConstructor
 public class AddNewsReq implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = 3939700156642996665L;
 
     private List<MaterialArticle> articles;

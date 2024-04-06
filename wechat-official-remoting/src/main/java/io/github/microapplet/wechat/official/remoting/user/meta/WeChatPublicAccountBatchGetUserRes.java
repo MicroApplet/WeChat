@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -37,7 +36,6 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountBatchGetUserRes extends BaseWeChatApiRes implements Serializable {
-    @Serial
     private static final long serialVersionUID = 7196039588758933911L;
 
     @JsonProperty("user_info_list")

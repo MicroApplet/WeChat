@@ -21,7 +21,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -33,7 +32,6 @@ import java.io.Serializable;
  */
 @Data
 public class WeChatPaTemplateMsgApiSetIndustryReq implements Serializable {
-    @Serial
     private static final long serialVersionUID = -6500649806758834638L;
 
     @JsonProperty("industry_id1")

@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
@@ -32,7 +31,6 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = true)
 public class AddNewsRes extends BaseWeChatApiRes {
 
-    @Serial
     private static final long serialVersionUID = 1743172809455771597L;
 
     private String media_id;

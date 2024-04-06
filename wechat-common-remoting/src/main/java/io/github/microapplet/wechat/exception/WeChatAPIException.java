@@ -18,6 +18,7 @@ package io.github.microapplet.wechat.exception;
 
 import io.github.microapplet.wechat.remoting.context.WeChatApiRes;
 import io.github.microapplet.wechat.remoting.context.WeChatApiResultEnumeration;
+import lombok.AllArgsConstructor;
 
 /**
  * 微信API异常
@@ -26,16 +27,10 @@ import io.github.microapplet.wechat.remoting.context.WeChatApiResultEnumeration;
  * @version 1.0
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-@SuppressWarnings("unused")
+@AllArgsConstructor
 public final class WeChatAPIException extends RuntimeException {
-    @SuppressWarnings("FieldCanBeLocal")
     private final String code;
     private final String msg;
-
-    public WeChatAPIException(String code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
 
 
     public WeChatAPIException(WeChatApiRes apiRes) {
@@ -44,6 +39,10 @@ public final class WeChatAPIException extends RuntimeException {
 
     public WeChatAPIException(WeChatApiResultEnumeration resultEnumeration) {
         this(String.valueOf(resultEnumeration.getErrcode()), resultEnumeration.getErrmsg());
+    }
+
+    public String code(){
+        return this.code;
     }
 
     @Override

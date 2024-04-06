@@ -25,8 +25,6 @@ import io.github.microapplet.wechat.constant.WeChatCons;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import io.github.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
 import lombok.*;
-
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -36,7 +34,6 @@ import java.io.Serializable;
  * @version 1.0
  * @since 2023/1/28, &nbsp;&nbsp; <em>version:1.0</em>, &nbsp;&nbsp; <em>java version:17</em>
  */
-@SuppressWarnings("unused")
 @Server(
         supplier = WeChatCons.Supplier.WECHAT,
         namespace = WeChatCons.Namespace.COMMON,
@@ -99,7 +96,6 @@ public interface WeChatAccessTokenRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class AuthorizerAccessTokenReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = -7639034745138301631L;
 
         private String component_appid;
@@ -111,7 +107,6 @@ public interface WeChatAccessTokenRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class AuthorizerAccessTokenRes extends BaseWeChatApiRes {
-        @Serial
         private static final long serialVersionUID = -5469586211975433410L;
 
         private String authorizer_access_token;
@@ -124,7 +119,6 @@ public interface WeChatAccessTokenRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class ComponentAccessTokenReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = -7682607854977975316L;
         private String component_appid;
         private String component_appsecret;
@@ -136,7 +130,6 @@ public interface WeChatAccessTokenRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class ComponentAccessTokenRes extends BaseWeChatApiRes {
-        @Serial
         private static final long serialVersionUID = -303390441876000714L;
 
         private String component_access_token;

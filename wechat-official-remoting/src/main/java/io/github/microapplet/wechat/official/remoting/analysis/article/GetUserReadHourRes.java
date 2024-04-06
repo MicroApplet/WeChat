@@ -22,8 +22,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
-
 /**
  * Get User Read Hour Response
  *
@@ -35,8 +33,6 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class GetUserReadHourRes extends BaseWeChatApiRes {
-
-    @Serial
     private static final long serialVersionUID = 5595513668705100736L;
     @Data
     public static class GetUserReadHourData{

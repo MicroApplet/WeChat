@@ -28,7 +28,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -69,7 +68,11 @@ public interface WeChatPaSubscribeMsgRemoting {
      * @since 2023/12/26
      */
     default String buildSubscriptMsgUrl(String appid, int scene, String templateId, String redirectUrl, String resreved) {
-        return String.format(URI_TEMP, appid, scene, templateId, URLEncoder.encode(redirectUrl, StandardCharsets.UTF_8), URLEncoder.encode(resreved, StandardCharsets.UTF_8));
+        try {
+            return String.format(URI_TEMP, appid, scene, templateId, URLEncoder.encode(redirectUrl, StandardCharsets.UTF_8.name()), URLEncoder.encode(resreved, StandardCharsets.UTF_8.name()));
+        } catch (Throwable t) {
+            return String.format(URI_TEMP, appid, scene, templateId, redirectUrl, resreved);
+        }
     }
 
 
@@ -89,7 +92,6 @@ public interface WeChatPaSubscribeMsgRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class SendSubscribeTemplateMsgReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = -2762720653829973705L;
 
         private String touser;

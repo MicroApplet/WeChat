@@ -52,7 +52,6 @@ import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
         host = WeChatCons.Api.DEFAULT_HOST,
         port = WeChatCons.Api.DEFAULT_PORT
 )
-@SuppressWarnings({"unused", "SpellCheckingInspection"})
 public interface WeChatPublicArticlesAnalysisRemoting {
 
     /**

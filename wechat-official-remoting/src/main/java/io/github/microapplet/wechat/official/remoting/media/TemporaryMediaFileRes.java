@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * 临时媒体文件响应结果
@@ -35,7 +34,6 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = true)
 public class TemporaryMediaFileRes extends BaseWeChatDownloadApiRes {
 
-    @Serial
     private static final long serialVersionUID = 632374771981611113L;
     private String video_url;
 }

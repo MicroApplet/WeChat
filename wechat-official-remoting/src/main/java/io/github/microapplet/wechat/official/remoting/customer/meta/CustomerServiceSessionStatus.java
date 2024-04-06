@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * 获取客户会话状态
@@ -35,7 +34,6 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = true)
 public class CustomerServiceSessionStatus extends BaseWeChatApiRes {
 
-    @Serial
     private static final long serialVersionUID = 1730790987414497464L;
     private String kf_account;
     private Long createtime;

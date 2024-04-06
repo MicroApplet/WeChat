@@ -18,7 +18,6 @@ package io.github.microapplet.wechat.official.remoting.user.meta;
 
 import lombok.Data;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -29,7 +28,6 @@ import java.util.List;
 @Data
 public class BatchTaggingReq implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = 4451044684543633251L;
 
     private List<String> openid_list;

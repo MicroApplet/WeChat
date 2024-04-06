@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * 微信公众号 js ticket 相关接口相应结果
@@ -33,7 +32,6 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountTicketInfo extends BaseWeChatApiRes {
-    @Serial
     private static final long serialVersionUID = -4114148149321387155L;
 
     private String ticket;

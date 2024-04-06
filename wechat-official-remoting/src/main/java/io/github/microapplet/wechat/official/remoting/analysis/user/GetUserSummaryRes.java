@@ -22,7 +22,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,8 +36,6 @@ import java.util.Objects;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class GetUserSummaryRes extends BaseWeChatApiRes {
-
-    @Serial
     private static final long serialVersionUID = 1784542836215056652L;
     private List<GetUserSummaryData> list;
 
@@ -57,24 +54,34 @@ public class GetUserSummaryRes extends BaseWeChatApiRes {
         @JsonProperty("cancel_user")
         private Long cancelUser;
 
-        @SuppressWarnings("unused")
         public String userSourceContent() {
             if (Objects.isNull(this.userSource))
                 throw new IllegalStateException("Unexpected value: " + this.userSource);
 
-            return switch (this.userSource) {
-                case 0 -> "代表其他合计";
-                case 1 -> "代表公众号搜索";
-                case 17 -> "代表名片分享";
-                case 30 -> "代表扫描二维码";
-                case 57 -> "代表文章内账号名称";
-                case 100 -> "代表微信广告";
-                case 161 -> "代表他人转载";
-                case 149 -> "代表小程序关注";
-                case 200 -> "代表视频号";
-                case 201 -> "代表直播";
-                default -> throw new IllegalStateException("Unexpected value: " + this.userSource);
-            };
+            switch (this.userSource) {
+                case 0:
+                    return "代表其他合计";
+                case 1:
+                    return "代表公众号搜索";
+                case 17:
+                    return "代表名片分享";
+                case 30:
+                    return "代表扫描二维码";
+                case 57:
+                    return "代表文章内账号名称";
+                case 100:
+                    return "代表微信广告";
+                case 161:
+                    return "代表他人转载";
+                case 149:
+                    return "代表小程序关注";
+                case 200:
+                    return "代表视频号";
+                case 201:
+                    return "代表直播";
+                default:
+                    throw new IllegalStateException("Unexpected value: " + this.userSource);
+            }
         }
     }
 }

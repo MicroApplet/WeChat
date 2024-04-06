@@ -37,7 +37,6 @@ import java.io.File;
  * @version 1.0
  * @since 2023/12/14, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-@SuppressWarnings("unused")
 @Server(
         supplier = WeChatCons.Supplier.WECHAT,
         namespace = WeChatCons.Namespace.COMMON,

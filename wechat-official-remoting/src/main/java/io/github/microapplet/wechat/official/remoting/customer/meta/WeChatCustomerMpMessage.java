@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 
 /**
@@ -37,7 +36,6 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = false)
 public final class WeChatCustomerMpMessage extends WeChatCustomerMessage<WeChatCustomerMpMessage> {
 
-    @Serial
     private static final long serialVersionUID = 5108187487114856073L;
 	private Media mpnews;
 

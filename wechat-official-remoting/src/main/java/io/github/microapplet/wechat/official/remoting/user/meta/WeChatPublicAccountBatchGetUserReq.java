@@ -21,7 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,7 +35,6 @@ import java.util.stream.Collectors;
  */
 @Data
 public class WeChatPublicAccountBatchGetUserReq implements Serializable {
-    @Serial
     private static final long serialVersionUID = 5124556807176809338L;
 
     @JsonProperty("user_list")
@@ -47,7 +45,6 @@ public class WeChatPublicAccountBatchGetUserReq implements Serializable {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class UserReq implements Serializable{
-        @Serial
         private static final long serialVersionUID = -2262126615274366241L;
 
         private String openid;

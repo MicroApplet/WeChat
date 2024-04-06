@@ -21,7 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -37,7 +36,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerServiceSessionReq implements Serializable {
-    @Serial
     private static final long serialVersionUID = 8420969739253702098L;
     private String kfAccount;
     private String openid;

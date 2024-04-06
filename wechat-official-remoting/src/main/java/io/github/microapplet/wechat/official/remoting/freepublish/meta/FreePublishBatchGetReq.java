@@ -21,8 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.management.remote.JMXPrincipal;
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -35,7 +33,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class FreePublishBatchGetReq implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = 6512758747002855584L;
 
     private Long offset;

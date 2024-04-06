@@ -21,14 +21,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.*;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class QueryCurrentAutoReplyInfoRes extends BaseWeChatApiRes implements Serializable {
-    @Serial
     private static final long serialVersionUID = 769016887617555883L;
 
     @JsonProperty("add_friend_autoreply_info")

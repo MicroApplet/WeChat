@@ -22,7 +22,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,7 +35,6 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class GetUserCumulateRes extends BaseWeChatApiRes {
-    @Serial
     private static final long serialVersionUID = -3795320383093026578L;
     private List<GetUserCumulateRes> list;
 

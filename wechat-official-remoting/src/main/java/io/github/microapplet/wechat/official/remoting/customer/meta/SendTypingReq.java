@@ -19,7 +19,6 @@ package io.github.microapplet.wechat.official.remoting.customer.meta;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -32,7 +31,6 @@ import java.io.Serializable;
 @Getter
 @ToString
 public class SendTypingReq implements Serializable {
-    @Serial
     private static final long serialVersionUID = -2233411643779421672L;
     private final String touser;
     private final String command;

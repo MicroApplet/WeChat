@@ -28,7 +28,6 @@ import io.github.microapplet.remote.http.annotation.body.JsonBody;
 import io.github.microapplet.remote.net.annotation.Server;
 import lombok.*;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -39,7 +38,6 @@ import java.util.List;
  * @version 1.0
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-@SuppressWarnings("unused")
 @Server(
         supplier = WeChatCons.Supplier.WECHAT,
         namespace = WeChatCons.Namespace.COMMON,
@@ -202,7 +200,6 @@ public interface WeChatUtilRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class QueryQuotaReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = 6140830683300582536L;
         private String cgi_path;
     }
@@ -212,7 +209,6 @@ public interface WeChatUtilRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class ClearuQotaReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = -5684073411227225834L;
         private String appid;
     }
@@ -221,8 +217,6 @@ public interface WeChatUtilRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class WeChatIPList extends BaseWeChatApiRes {
-
-        @Serial
         private static final long serialVersionUID = 914642389706182234L;
         @JsonProperty("ip_list")
         private List<String> ipList;
@@ -230,7 +224,6 @@ public interface WeChatUtilRemoting {
 
     @Data
     class NetCheckReq implements Serializable {
-        @Serial
         private static final long serialVersionUID = 2992017493498755575L;
         private String action;
         private String check_operator;
@@ -240,8 +233,6 @@ public interface WeChatUtilRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class NetCheckRes extends BaseWeChatApiRes {
-
-        @Serial
         private static final long serialVersionUID = -5207978613699970475L;
 
         private List<DNS> dns;

@@ -24,7 +24,6 @@ import java.util.concurrent.locks.Lock;
  * @version 1.0
  * @since 2023/2/2, &nbsp;&nbsp; <em>version:1.0</em>, &nbsp;&nbsp; <em>java version:17</em>
  */
-@SuppressWarnings("unused")
 public interface WeChatAccessTokenCache {
     /**
      * 添加缓存：

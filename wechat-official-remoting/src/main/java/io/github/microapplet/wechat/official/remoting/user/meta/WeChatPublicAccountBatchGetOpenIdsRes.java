@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -37,7 +36,6 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountBatchGetOpenIdsRes extends BaseWeChatApiRes {
-    @Serial
     private static final long serialVersionUID = 2501932361761225534L;
 
     private Integer total;
@@ -48,7 +46,6 @@ public class WeChatPublicAccountBatchGetOpenIdsRes extends BaseWeChatApiRes {
 
     @Data
     public static class GetWeChatUserOpenIdListData implements Serializable {
-        @Serial
         private static final long serialVersionUID = -5165248657534683275L;
 
         private List<String> openid;

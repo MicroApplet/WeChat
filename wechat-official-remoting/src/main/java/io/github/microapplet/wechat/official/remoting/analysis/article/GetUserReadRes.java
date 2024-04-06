@@ -21,8 +21,6 @@ import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
-import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,8 +34,6 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class GetUserReadRes extends BaseWeChatApiRes {
-
-    @Serial
     private static final long serialVersionUID = -3503112397816952313L;
     private List<GetUserReadData> list;
 

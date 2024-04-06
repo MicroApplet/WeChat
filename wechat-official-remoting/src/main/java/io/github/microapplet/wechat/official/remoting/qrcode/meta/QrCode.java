@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -36,7 +35,6 @@ import java.nio.charset.StandardCharsets;
 @NoArgsConstructor
 @AllArgsConstructor
 public class QrCode implements Serializable {
-    @Serial
     private static final long serialVersionUID = -8619383854167411715L;
 
     /**
@@ -63,7 +61,7 @@ public class QrCode implements Serializable {
     @SneakyThrows
     public static QrCode createQrCode(CreateQrCodeResponse response){
         String ticket = response.getTicket();
-        String ticketUrl = String.format("https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=%s",URLEncoder.encode(ticket, StandardCharsets.UTF_8));
+        String ticketUrl = String.format("https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=%s",URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()));
         return new QrCode(response.getUrl(),ticket,ticketUrl);
     }
 }

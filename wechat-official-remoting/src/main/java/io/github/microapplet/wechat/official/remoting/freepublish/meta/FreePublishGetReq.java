@@ -21,7 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -34,7 +33,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class FreePublishGetReq implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = 3140770413129748579L;
 
     private String publish_id;

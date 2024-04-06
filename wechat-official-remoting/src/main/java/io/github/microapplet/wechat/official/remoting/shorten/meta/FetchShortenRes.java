@@ -22,7 +22,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * Fetch Shorten Key Res
@@ -35,7 +34,6 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class FetchShortenRes extends BaseWeChatApiRes {
-    @Serial
     private static final long serialVersionUID = 410895536487073044L;
 
     @JsonProperty("long_data")

@@ -15,8 +15,7 @@
  */
 package io.github.microapplet.wechat.remoting.context;
 
-
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 
 /**
  * 微信API访问令牌仓库
@@ -24,7 +23,6 @@ import jakarta.annotation.PostConstruct;
  * @version 1.0
  * @since 2023/1/28, &nbsp;&nbsp; <em>version:1.0</em>, &nbsp;&nbsp; <em>java version:17</em>
  */
-@SuppressWarnings("unused")
 public interface WeChatAccessTokenRepository {
 
     @PostConstruct

@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
 
 /**
  * 推送模板消息相应
@@ -33,7 +32,6 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class SendTemplateMsgRes extends BaseWeChatApiRes {
-    @Serial
     private static final long serialVersionUID = 6527803407240885457L;
 
     @JsonProperty("msgid")

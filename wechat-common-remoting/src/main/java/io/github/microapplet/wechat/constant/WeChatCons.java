@@ -22,7 +22,6 @@ package io.github.microapplet.wechat.constant;
  * @version 1.0
  * @since 2023/1/28, &nbsp;&nbsp; <em>version:1.0</em>, &nbsp;&nbsp; <em>java version:17</em>
  */
-@SuppressWarnings("unused")
 public interface WeChatCons {
 
     /**

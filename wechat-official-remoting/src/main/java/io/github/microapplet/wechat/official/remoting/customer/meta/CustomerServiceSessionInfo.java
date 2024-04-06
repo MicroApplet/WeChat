@@ -18,7 +18,6 @@ package io.github.microapplet.wechat.official.remoting.customer.meta;
 
 import lombok.Data;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -30,8 +29,6 @@ import java.io.Serializable;
  */
 @Data
 public class CustomerServiceSessionInfo implements Serializable {
-
-    @Serial
     private static final long serialVersionUID = 4072791221074500344L;
 
     private Long createtime;

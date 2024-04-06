@@ -32,7 +32,7 @@ import org.springframework.stereotype.Component;
 public interface WeChatApplicationMapperService extends IService<WeChatApplication> {
 
     @Component
-    class  WeChatApplicationMapperServiceImpl extends ServiceImpl<WeChatApplicationBaseMapper,WeChatApplication> implements WeChatApplicationMapperService{
+    class WeChatApplicationMapperServiceImpl extends ServiceImpl<WeChatApplicationBaseMapper, WeChatApplication> implements WeChatApplicationMapperService {
 
     }
 }
