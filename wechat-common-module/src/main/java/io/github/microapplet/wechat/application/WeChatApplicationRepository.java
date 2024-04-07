@@ -124,7 +124,7 @@ public interface WeChatApplicationRepository {
          * @since 2023/12/16
          */
         public List<WeChatApplication> allApps(){
-            if (CollectionUtils.isNotEmpty(repositories))
+            if (CollectionUtils.isEmpty(repositories))
                 return Collections.emptyList();
 
             List<WeChatApplication> all = new ArrayList<>();
@@ -143,7 +143,7 @@ public interface WeChatApplicationRepository {
          * @since 2023/12/16
          */
         public WeChatApplication appByIndexThrowable(String weChatIndex){
-            if (CollectionUtils.isNotEmpty(repositories))
+            if (CollectionUtils.isEmpty(repositories))
                 throw new IllegalStateException("找不到索引为" + weChatIndex + "的微信应用");
 
             for (WeChatApplicationRepository repository : repositories) {

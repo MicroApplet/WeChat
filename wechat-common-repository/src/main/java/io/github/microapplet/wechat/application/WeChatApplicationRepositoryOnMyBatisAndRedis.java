@@ -43,7 +43,8 @@ import java.util.Objects;
 public class WeChatApplicationRepositoryOnMyBatisAndRedis {
     @Resource
     private RedissonClient redissonClient;
-    @Resource private WeChatApplicationMapperService weChatApplicationMapperService;
+    @Resource
+    private WeChatApplicationMapperService weChatApplicationMapperService;
 
     @Bean
     public WeChatApplicationRepository weChatApplicationRepositoryOnMyBatisAndRedis() {

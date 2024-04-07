@@ -20,6 +20,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -32,9 +33,9 @@ import java.io.Serializable;
  */
 @Data
 @TableName("wx_app")
+@Accessors(chain = true)
 public class WeChatApplication implements Serializable {
     private static final long serialVersionUID = 4412693788847340328L;
-
 
     /**
      * 微信公众平台应用微信号,除应用类型为企业微信，一般情况下，与 {@link #getSubjectId()} 相同

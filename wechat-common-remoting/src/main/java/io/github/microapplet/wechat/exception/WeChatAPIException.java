@@ -41,12 +41,16 @@ public final class WeChatAPIException extends RuntimeException {
         this(String.valueOf(resultEnumeration.getErrcode()), resultEnumeration.getErrmsg());
     }
 
-    public String code(){
+    public String code() {
         return this.code;
     }
 
     @Override
     public String getMessage() {
         return this.msg;
+    }
+
+    public static void cast(WeChatApiResultEnumeration resultEnumeration) {
+        throw new WeChatAPIException(resultEnumeration);
     }
 }
