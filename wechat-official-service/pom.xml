@@ -66,6 +66,19 @@
             <version>Java8-1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>wechat-official-remoting</artifactId>
+            <version>Java8-1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>wechat-official-repository</artifactId>
+            <version>Java8-1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

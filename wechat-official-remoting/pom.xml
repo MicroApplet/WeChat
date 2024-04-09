@@ -29,28 +29,20 @@
     <artifactId>wechat-official-remoting</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
+
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
             <version>Java8-1.0.0-SNAPSHOT</version>
         </dependency>
+
+
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>io.github.microapplet</groupId>
-            <artifactId>remote-net-http-apache</artifactId>
-        </dependency>
     </dependencies>
-
-
-
 </project>

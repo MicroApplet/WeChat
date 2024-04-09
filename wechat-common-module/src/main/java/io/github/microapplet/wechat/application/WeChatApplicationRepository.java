@@ -34,7 +34,6 @@ import java.util.Objects;
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
 public interface WeChatApplicationRepository {
-
     String PREFIX = "wx:app:all";
     String CACHE = "wx:app:%s";
 
@@ -143,6 +142,8 @@ public interface WeChatApplicationRepository {
          * @since 2023/12/16
          */
         public WeChatApplication appByIndexThrowable(String weChatIndex){
+            if (StringUtils.isBlank(weChatIndex))
+                throw new IllegalArgumentException("空的微信应用索引编号");
             if (CollectionUtils.isEmpty(repositories))
                 throw new IllegalStateException("找不到索引为" + weChatIndex + "的微信应用");
 

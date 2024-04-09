@@ -14,19 +14,6 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.application.mapper;
-
-import com.mybatisflex.core.BaseMapper;
-import io.github.microapplet.wechat.application.WeChatApplication;
-import org.springframework.stereotype.Repository;
-
-/**
- * 微信公众平台应用信息数据库持久化服务
+package io.github.microapplet.wechat.official.service;/*
  *
- * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
- * @version 1.0
- * @since 2023/12/18, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-@Repository
-public interface WeChatApplicationBaseMapper extends BaseMapper<WeChatApplication> {
-}

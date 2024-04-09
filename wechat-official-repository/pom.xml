@@ -28,4 +28,39 @@
 
     <artifactId>wechat-official-repository</artifactId>
 
+    <dependencies>
+        <!--suppress VulnerableLibrariesLocal -->
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>wechat-common-repository</artifactId>
+            <version>Java8-1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>wechat-official-module</artifactId>
+            <version>Java8-1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!--suppress VulnerableLibrariesLocal -->
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring</artifactId>
+        </dependency>
+        <!--suppress VulnerableLibrariesLocal -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+
+    </dependencies>
+
 </project>

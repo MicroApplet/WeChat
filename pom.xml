@@ -100,6 +100,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring-boot.version>2.7.18</spring-boot.version>
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
+        <mybatis-flex.version>1.8.6</mybatis-flex.version>
         <remote.version>Java8-1.0.0</remote.version>
     </properties>
 
@@ -120,11 +121,24 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-bom</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-dependencies</artifactId>
+                <version>4.4.0</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mybatis-flex</groupId>
+                <artifactId>mybatis-flex-dependencies</artifactId>
+                <version>${mybatis-flex.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>2.1.2</version>
             </dependency>
 
             <dependency>

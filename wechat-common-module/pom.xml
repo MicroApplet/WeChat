@@ -25,8 +25,8 @@
         <version>Java8-1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>wechat-common-module</artifactId>
 
+    <artifactId>wechat-common-module</artifactId>
 
     <dependencies>
         <!--suppress VulnerableLibrariesLocal -->
@@ -34,31 +34,44 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.6.6</version>
+            <scope>provided</scope>
+        </dependency>
 
+
+        <!-- Apache相关 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-annotation</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
+        <!-- Apache相关 -->
+
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-annotation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>wechat-common-remoting</artifactId>
+            <version>Java8-1.0.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.microapplet</groupId>
             <artifactId>remote-net</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

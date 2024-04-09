@@ -28,5 +28,12 @@
 
     <artifactId>wechat-official-module</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.microapplet</groupId>
+            <artifactId>remote-net</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

@@ -16,7 +16,7 @@
 
 package io.github.microapplet.wechat.official.controller;
 
-import io.github.microapplet.wechat.official.service.WeChatOfficialCallbackMessageService;
+import io.github.microapplet.wechat.official.service.message.WeChatOfficialCallbackMessageService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

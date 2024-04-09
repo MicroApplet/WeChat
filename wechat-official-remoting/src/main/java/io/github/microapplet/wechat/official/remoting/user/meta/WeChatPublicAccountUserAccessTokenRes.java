@@ -51,4 +51,5 @@ public class WeChatPublicAccountUserAccessTokenRes extends BaseWeChatApiRes {
     @JsonProperty("is_snapshotuser")
     private Integer isSnapshotUser;
     private String unionid;
+    private String redirectUrl;
 }

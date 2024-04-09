@@ -16,8 +16,8 @@
 
 package io.github.microapplet.wechat.application.db;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mybatisflex.core.service.IService;
+import com.mybatisflex.spring.service.impl.*;
 import io.github.microapplet.wechat.application.WeChatApplication;
 import io.github.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
 import org.springframework.stereotype.Component;

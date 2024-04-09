@@ -32,12 +32,9 @@
     <dependencies>
         <dependency>
             <groupId>io.github.microapplet</groupId>
-            <artifactId>remote-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.microapplet</groupId>
             <artifactId>remote-net-http</artifactId>
         </dependency>
+
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>io.github.microapplet</groupId>
@@ -49,10 +46,5 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.github.microapplet</groupId>
-            <artifactId>remote-net</artifactId>
-        </dependency>
     </dependencies>
-
 </project>

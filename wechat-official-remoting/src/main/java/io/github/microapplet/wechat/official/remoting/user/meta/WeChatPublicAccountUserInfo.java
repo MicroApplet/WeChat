@@ -67,4 +67,5 @@ public class WeChatPublicAccountUserInfo extends BaseWeChatApiRes {
     @JsonProperty("qr_scene_str")
     private String qrSceneStr;
     private String subjectId;
+    private String redirectUrl;
 }

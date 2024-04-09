@@ -1,19 +1,19 @@
 /*
- *  Copyright 2022/5/25 <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * Copyright 2014-2024 <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package io.github.microapplet.wechat.official.service;
+package io.github.microapplet.wechat.official.service.message;
 
 
 import io.github.microapplet.wechat.official.controller.WeChatOfficialMessageController;
@@ -97,7 +97,7 @@ public class WeChatOfficialCallbackMessageService {
 
         try {
             String xml = IOUtils.toString(request.getInputStream(), request.getCharacterEncoding());
-            String replyMsg = weChatOfficialCallBackMsgService.event(xml, signature, timestamp, nonce, echoStr);
+            String replyMsg = weChatOfficialCallBackMsgService.event(xml, signature, timestamp, nonce, encryptType);
             writeBack(replyMsg, response);
         } catch (Throwable t) {
             log.info("Event for Message: {} Exception: {}", timestamp, t.getMessage());
