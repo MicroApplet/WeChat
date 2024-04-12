@@ -16,19 +16,34 @@
 
 package io.github.microapplet.wechat.context;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
- * API响应结果
+ * 响应代码
  *
- * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
- * @version 1.0
- * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @version 1.0.0
+ * @since 2024 04 10, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
-public interface APIResult<T> extends Code {
+public interface Code {
+    String getCode();
 
-    T getData();
+    String getMsg();
 
-    @SuppressWarnings("unchecked")
-    default WeChatResult<T> result(){
-        return result(getData());
+    @Getter
+    @AllArgsConstructor
+    enum DEF implements Code {
+        SUCCESS(WeChatResult.SUCCESS_CODE,WeChatResult.SUCCESS_MSG);
+        private final String code;
+        private final String msg;
+    }
+
+    default<T> WeChatResult<T> result(){
+        return WeChatResult.codeOf(this);
+    }
+
+    default<T> WeChatResult<T> result(T data){
+        return WeChatResult.<T>codeOf(this).setData(data);
     }
 }

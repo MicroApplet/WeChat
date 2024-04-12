@@ -16,6 +16,8 @@
 
 package io.github.microapplet.wechat.remoting.context;
 
+import io.github.microapplet.wechat.context.Code;
+import io.github.microapplet.wechat.context.WeChatResult;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -31,7 +33,7 @@ import java.util.Objects;
  */
 @Getter
 @AllArgsConstructor
-public enum WeChatApiResultEnumeration {
+public enum WeChatApiResultEnumeration implements Code {
     CODE__1(-1, "System is Busy", "系统繁忙，此时请开发者稍候再试"),
     CODE_0(0, "Request Success", "请求成功"),
 
@@ -287,7 +289,23 @@ public enum WeChatApiResultEnumeration {
      */
     private final String errmsg, cnMsg;
 
+
+
     public static WeChatApiResultEnumeration codeOf(int code) {
         return Arrays.stream(values()).filter(item -> Objects.equals(code, item.getErrcode())).findFirst().orElse(UNKNOWN);
+    }
+
+    @Override
+    public String getCode() {
+        return String.valueOf(getErrcode());
+    }
+
+    @Override
+    public String getMsg() {
+        return getErrmsg();
+    }
+
+    public <T> WeChatResult<T> resultOf(){
+        return WeChatResult.<T>codeOf(this).extraOf("cnMsg", getCnMsg());
     }
 }

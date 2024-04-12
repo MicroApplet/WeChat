@@ -16,6 +16,8 @@
 
 package io.github.microapplet.wechat.remoting.context;
 
+import io.github.microapplet.wechat.context.Code;
+
 import java.util.Objects;
 
 /**
@@ -25,32 +27,45 @@ import java.util.Objects;
  * @version 1.0
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-public interface WeChatApiRes {
-    Integer getErrcode();
-
-    void setErrcode(Integer errcode);
-
-    String getErrmsg();
-
-    void setErrmsg(String errmsg);
-
-    default Boolean success() {
-        return Objects.isNull(getErrcode()) || 0 == getErrcode();
-    }
-
-    default Boolean notSuccess() {
-        return !success();
-    }
-
-    default WeChatApiResultEnumeration apiResultEnumeration(){
-        return WeChatApiResultEnumeration.codeOf(getErrcode());
-    }
-
+public interface WeChatApiRes extends Code {
     static boolean success(WeChatApiRes apiRes) {
         return Objects.nonNull(apiRes) && apiRes.success();
     }
 
     static boolean notSuccess(WeChatApiRes apiRes) {
         return !success(apiRes);
+    }
+
+    @SuppressWarnings("SpellCheckingInspection")
+    Integer getErrcode();
+
+    @SuppressWarnings("SpellCheckingInspection")
+    void setErrcode(Integer errcode);
+
+    @SuppressWarnings("SpellCheckingInspection")
+    String getErrmsg();
+
+    @SuppressWarnings("SpellCheckingInspection")
+    void setErrmsg(String errmsg);
+
+    default String getCode() {
+        return String.valueOf(getErrcode());
+    }
+
+    default String getMsg() {
+        return getErrmsg();
+    }
+
+    default Boolean success() {
+        return Objects.isNull(getErrcode()) || 0 == getErrcode();
+    }
+
+    @SuppressWarnings("unused")
+    default Boolean notSuccess() {
+        return !success();
+    }
+
+    default WeChatApiResultEnumeration apiResultEnumeration() {
+        return WeChatApiResultEnumeration.codeOf(getErrcode());
     }
 }
