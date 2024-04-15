@@ -15,7 +15,6 @@
  */
 package io.github.microapplet.wechat.remoting;
 
-
 import io.github.microapplet.remote.http.annotation.HttpMapping;
 import io.github.microapplet.remote.http.annotation.HttpMethod;
 import io.github.microapplet.remote.http.annotation.HttpQuery;
@@ -25,6 +24,8 @@ import io.github.microapplet.wechat.constant.WeChatCons;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import io.github.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
 import lombok.*;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
@@ -91,10 +92,8 @@ public interface WeChatAccessTokenRemoting {
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/component/api_authorizer_token")
     AuthorizerAccessTokenRes authorizerAccessToken(@HttpQuery(name = "component_access_token") String token, @JsonBody AuthorizerAccessTokenReq req);
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class AuthorizerAccessTokenReq implements Serializable {
         private static final long serialVersionUID = -7639034745138301631L;
 
@@ -114,17 +113,14 @@ public interface WeChatAccessTokenRemoting {
         private String authorizer_refresh_token;
     }
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class ComponentAccessTokenReq implements Serializable {
         private static final long serialVersionUID = -7682607854977975316L;
         private String component_appid;
         private String component_appsecret;
         private String component_verify_ticket;
     }
-
 
     @Data
     @ToString(callSuper = true)
@@ -136,7 +132,8 @@ public interface WeChatAccessTokenRemoting {
         private Integer expires_in;
     }
 
-    @Data
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class StableTokenReq implements Serializable {
         private String grant_type;
         private String appid;

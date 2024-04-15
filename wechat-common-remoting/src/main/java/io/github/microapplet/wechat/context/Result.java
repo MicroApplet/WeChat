@@ -23,7 +23,7 @@ package io.github.microapplet.wechat.context;
  * @version 1.0
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
-public interface APIResult<T> extends Code {
+public interface Result<T> extends Code {
 
     T getData();
 

@@ -16,12 +16,14 @@
 
 package io.github.microapplet.wechat.official.controller;
 
+import io.github.microapplet.wechat.context.Code;
+import io.github.microapplet.wechat.context.WeChatResult;
+import io.github.microapplet.wechat.official.authpage.WeChatOfficialAuthPage;
 import io.github.microapplet.wechat.official.service.authpage.WeChatOfficialAuthPageService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
-
 import static io.github.microapplet.wechat.official.controller.WeChatOfficialAuthPageController.URI;
 
 
@@ -34,9 +36,24 @@ import static io.github.microapplet.wechat.official.controller.WeChatOfficialAut
  */
 @RestController
 @RequestMapping(URI)
+@Api(tags = "微信公众号授权网页链接API")
 public class WeChatOfficialAuthPageController {
     public static final String URI = "/wechat/official/authpage";
 
-    @Resource private WeChatOfficialAuthPageService authPageService;
+    @Resource
+    private WeChatOfficialAuthPageService authPageService;
 
+    @PostMapping
+    @ApiOperation("添加授权网页链接")
+    public WeChatResult<WeChatOfficialAuthPage> addAuthPage(@RequestBody WeChatOfficialAuthPage authPage) {
+        WeChatOfficialAuthPage page = this.authPageService.addAuthPage(authPage);
+        return Code.DEF.SUCCESS.result(page);
+    }
+
+    @GetMapping("/{state}")
+    @ApiOperation("查询指定业务代码的授权网页链接信息")
+    public WeChatResult<WeChatOfficialAuthPage> pageOf(@PathVariable("state") String state) {
+        WeChatOfficialAuthPage page = this.authPageService.pageOfState(state);
+        return Code.DEF.SUCCESS.result(page);
+    }
 }

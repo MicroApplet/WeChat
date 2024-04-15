@@ -55,7 +55,7 @@ public class WeChatPublicAccountMenuButton implements Serializable {
      */
     private WeChatMenuButtonType type;
     public void setType(String type){this.type = WeChatMenuButtonType.nameOf(type); }
-    public String getType(){ return Objects.nonNull(this.type) ? this.type.getName() : ""; }
+    public String getType(){ return Objects.nonNull(this.type) ? this.type.getCode() : ""; }
 
     /**
      * 菜单标题，不超过16个字节，子菜单不超过60个字节.

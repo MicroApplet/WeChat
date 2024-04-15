@@ -17,7 +17,7 @@
 package io.github.microapplet.wechat.exception;
 
 import io.github.microapplet.wechat.remoting.context.WeChatApiRes;
-import io.github.microapplet.wechat.remoting.context.WeChatApiResultEnumeration;
+import io.github.microapplet.wechat.context.WeChatApiResultEnumeration;
 import lombok.AllArgsConstructor;
 
 /**

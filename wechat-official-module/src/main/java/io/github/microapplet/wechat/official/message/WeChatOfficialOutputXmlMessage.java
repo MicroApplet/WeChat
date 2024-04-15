@@ -16,19 +16,13 @@
 
 package io.github.microapplet.wechat.official.message;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.*;
 import io.github.microapplet.remote.net.jackson.AbstractJacksonUtil;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 微信公众号被动回复消息
@@ -37,10 +31,11 @@ import java.util.List;
  * @version 1.0.0
  * @since 2024 04 09, &nbsp;&nbsp; <em>version:1.0.0</em>
  */
-@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
+@Data(staticConstructor = "create")
 @JacksonXmlRootElement(localName = "xml")
 public class WeChatOfficialOutputXmlMessage implements Serializable {
     private static final long serialVersionUID = 6920442425097742418L;

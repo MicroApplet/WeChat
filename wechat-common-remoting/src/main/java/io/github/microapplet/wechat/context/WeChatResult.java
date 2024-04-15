@@ -38,8 +38,11 @@ import java.util.Objects;
 @ApiModel("微信响应")
 @Accessors(chain = true)
 @Data(staticConstructor = "create")
-public class WeChatResult<T> implements APIResult<T>, Serializable {
+public class WeChatResult<T> implements Result<T>, Serializable {
     private static final long serialVersionUID = 4700371977208642274L;
+    public static final String SYSTEM_ERR_CODE = "-999";
+    public static final String SYSTEM_ERR_MSG = "System Err";
+
     public static final String SUCCESS_CODE = "0";
     public static final String SUCCESS_MSG = "SUCCESS";
 
@@ -75,9 +78,7 @@ public class WeChatResult<T> implements APIResult<T>, Serializable {
     }
 
     public static<T> WeChatResult<T> codeOf(Code apiCode){
-        return WeChatResult.<T>create()
-                .setCode(apiCode.getCode())
-                .setMsg(apiCode.getMsg());
+        return WeChatResult.<T>create().setCode(apiCode.getCode()).setMsg(apiCode.getMsg());
     }
 
     public static<T> WeChatResult<T> success(){

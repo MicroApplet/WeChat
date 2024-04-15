@@ -27,6 +27,7 @@ import io.github.microapplet.remote.http.annotation.HttpQuery;
 import io.github.microapplet.remote.http.annotation.body.JsonBody;
 import io.github.microapplet.remote.net.annotation.Server;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.List;
@@ -156,11 +157,11 @@ public interface WeChatUtilRemoting {
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/openapi/rid/get")
     BaseWeChatApiRes clearQuotaV2(@HttpQuery(name = "appid") String appid, @HttpQuery(name = "appsecret") String secret);
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class QueryRidReq implements Serializable {
+        private static final long serialVersionUID = 3567595575834082247L;
+
         private String rid;
     }
 
@@ -168,11 +169,16 @@ public interface WeChatUtilRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class QueryRidRes extends BaseWeChatApiRes {
+        private static final long serialVersionUID = -7550895246747588741L;
+
         private RidRequest request;
     }
 
-    @Data
-    class RidRequest {
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
+    class RidRequest implements Serializable {
+        private static final long serialVersionUID = -2695446374149881372L;
+
         private Long invoke_time;
         private Integer cost_in_ms;
         private String request_url;
@@ -185,31 +191,34 @@ public interface WeChatUtilRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class QueryQuotaRes extends BaseWeChatApiRes {
+        private static final long serialVersionUID = -1636218300949370997L;
+
         private Quota quota;
     }
 
-    @Data
-    class Quota {
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
+    class Quota implements Serializable {
+        private static final long serialVersionUID = 7370332482279896996L;
+
         private Integer daily_limit;
         private Integer used;
         private Integer remain;
     }
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class QueryQuotaReq implements Serializable {
         private static final long serialVersionUID = 6140830683300582536L;
+
         private String cgi_path;
     }
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class ClearuQotaReq implements Serializable {
         private static final long serialVersionUID = -5684073411227225834L;
+
         private String appid;
     }
 
@@ -218,13 +227,16 @@ public interface WeChatUtilRemoting {
     @EqualsAndHashCode(callSuper = true)
     class WeChatIPList extends BaseWeChatApiRes {
         private static final long serialVersionUID = 914642389706182234L;
+
         @JsonProperty("ip_list")
         private List<String> ipList;
     }
 
-    @Data
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
     class NetCheckReq implements Serializable {
         private static final long serialVersionUID = 2992017493498755575L;
+
         private String action;
         private String check_operator;
     }
@@ -239,15 +251,21 @@ public interface WeChatUtilRemoting {
         private List<PING> ping;
     }
 
-    @Data
-    class DNS {
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
+    class DNS implements Serializable{
+        private static final long serialVersionUID = 1953671404371727430L;
+
         private String ip;
         @JsonProperty("real_operator")
         private String realOperator;
     }
 
-    @Data
-    class PING {
+    @Accessors(chain = true)
+    @Data(staticConstructor = "create")
+    class PING implements Serializable {
+        private static final long serialVersionUID = -7890871019506211152L;
+
         private String ip;
         @JsonProperty("from_operator")
         private String fromOperator;

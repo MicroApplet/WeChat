@@ -17,6 +17,7 @@
 package io.github.microapplet.wechat.remoting.context;
 
 import io.github.microapplet.wechat.context.Code;
+import io.github.microapplet.wechat.context.WeChatApiResultEnumeration;
 
 import java.util.Objects;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.official.datasource.po;
+package io.github.microapplet.wechat.official.datasource.po.authpage;
 
 import com.mybatisflex.annotation.Column;
 import com.mybatisflex.annotation.Id;

@@ -20,12 +20,12 @@ import io.github.microapplet.remote.spring.RemoteScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 微信API客户端Bean
+ * 微信 API 客户端 Bean
  *
  * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
  * @version 1.0
  * @since 2023/12/14, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
 @Configuration
-@RemoteScan("io.gitee.asilajim.wechat")
+@RemoteScan("io.github.microapplet.wechat")
 public class WeChatRemotingBean { }

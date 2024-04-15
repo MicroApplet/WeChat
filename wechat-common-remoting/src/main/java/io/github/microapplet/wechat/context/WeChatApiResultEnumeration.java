@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.remoting.context;
+package io.github.microapplet.wechat.context;
 
-import io.github.microapplet.wechat.context.Code;
-import io.github.microapplet.wechat.context.WeChatResult;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -288,8 +286,6 @@ public enum WeChatApiResultEnumeration implements Code {
      * 微信服务器响应业务消息
      */
     private final String errmsg, cnMsg;
-
-
 
     public static WeChatApiResultEnumeration codeOf(int code) {
         return Arrays.stream(values()).filter(item -> Objects.equals(code, item.getErrcode())).findFirst().orElse(UNKNOWN);

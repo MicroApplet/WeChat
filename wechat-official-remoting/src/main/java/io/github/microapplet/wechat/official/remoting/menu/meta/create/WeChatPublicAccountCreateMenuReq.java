@@ -49,7 +49,7 @@ public class WeChatPublicAccountCreateMenuReq implements Serializable {
      * 个性化菜单匹配规则
      */
     @JsonProperty(value = "matchrule")
-    protected WeChatMenuMatchRule matchRule;
+    protected WeChatOfficialMenuMatchRule matchRule;
 
     /**
      * <h3>FIELD DESCRIPTION</h3>

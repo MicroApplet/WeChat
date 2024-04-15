@@ -17,6 +17,8 @@
 package io.github.microapplet.wechat.official.controller;
 
 import io.github.microapplet.wechat.official.service.message.WeChatOfficialCallbackMessageService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -34,12 +36,14 @@ import static io.github.microapplet.wechat.official.controller.WeChatOfficialMes
  */
 @RestController
 @RequestMapping(URI)
+@Api(tags = "公众号消息回调服务API")
 public class WeChatOfficialMessageController {
     public static final String URI = "/wechat/official/message";
     @Resource
     private WeChatOfficialCallbackMessageService weChatPaCallbackMessageService;
 
     @GetMapping
+    @ApiOperation("服务器验证/授权网页链接处理")
     public void message(@RequestParam(required = false) final String signature,
                         @RequestParam(required = false) final String timestamp,
                         @RequestParam(required = false) final String nonce,
@@ -52,6 +56,7 @@ public class WeChatOfficialMessageController {
     }
 
     @PostMapping
+    @ApiOperation("微信公众号消息回调")
     public void paCallback(@RequestParam(required = false) final String signature,
                            @RequestParam(required = false) final String timestamp,
                            @RequestParam(required = false) final String nonce,

@@ -34,7 +34,9 @@ public interface Code {
     @Getter
     @AllArgsConstructor
     enum DEF implements Code {
+        SYS_ERR(WeChatResult.SYSTEM_ERR_CODE,WeChatResult.SYSTEM_ERR_MSG),
         SUCCESS(WeChatResult.SUCCESS_CODE,WeChatResult.SUCCESS_MSG);
+
         private final String code;
         private final String msg;
     }

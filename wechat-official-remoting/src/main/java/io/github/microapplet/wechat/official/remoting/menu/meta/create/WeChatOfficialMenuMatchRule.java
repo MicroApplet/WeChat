@@ -17,9 +17,9 @@
 package io.github.microapplet.wechat.official.remoting.menu.meta.create;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -30,11 +30,11 @@ import java.io.Serializable;
  * @version 1.0
  * @since 2023/2/8, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:17</em>
  */
-@Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WeChatMenuMatchRule implements Serializable {
+@Accessors(chain = true)
+@Data(staticConstructor = "create")
+public class WeChatOfficialMenuMatchRule implements Serializable {
     private static final long serialVersionUID = 7789472219902355588L;
 	
 	/**

@@ -142,4 +142,8 @@ public class WeChatOfficialAuthPageService {
     private String genState() {
         return UUID.randomUUID().toString().substring(0, 8);
     }
+
+    public void deleteAuthPage(List<String> authPageIds) {
+        this.weChatOfficialAuthPageDBService.deleteBatch(authPageIds);
+    }
 }

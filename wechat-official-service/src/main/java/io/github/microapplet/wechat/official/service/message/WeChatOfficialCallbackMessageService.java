@@ -40,14 +40,12 @@ import java.util.Objects;
 @Slf4j
 @Component
 public class WeChatOfficialCallbackMessageService {
-    @Resource private WeChatOfficialCallBackMsgService weChatOfficialCallBackMsgService;
+    @Resource
+    private WeChatOfficialCallBackMsgService weChatOfficialCallBackMsgService;
 
-    public void message(String signature,
-                        String timestamp,
-                        String nonce,
-                        String echoStr,
-                        String code,
-                        String state,
+    public void message(String signature, String timestamp,
+                        String nonce, String echoStr,
+                        String code, String state,
                         HttpServletResponse response) {
 
         ServletOutputStream outputStream = null;
@@ -83,13 +81,9 @@ public class WeChatOfficialCallbackMessageService {
         }
     }
 
-    public void message(String signature,
-                        String timestamp,
-                        String nonce,
-                        String openid,
-                        String echoStr,
-                        String encryptType,
-                        String msgSignature,
+    public void message(String signature, String timestamp,
+                        String nonce, String openid, String echoStr,
+                        String encryptType, String msgSignature,
                         HttpServletRequest request,
                         HttpServletResponse response) {
 
@@ -105,9 +99,8 @@ public class WeChatOfficialCallbackMessageService {
     }
 
     private void writeBack(String msg, HttpServletResponse response) {
-        ServletOutputStream outputStream;
         try {
-            outputStream = response.getOutputStream();
+            ServletOutputStream outputStream = response.getOutputStream();
             response.setContentType("text/plain;charset=UTF-8");
             outputStream.write(msg.getBytes(StandardCharsets.UTF_8));
             outputStream.flush();
