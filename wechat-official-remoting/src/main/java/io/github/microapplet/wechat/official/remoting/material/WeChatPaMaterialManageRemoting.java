@@ -47,4 +47,17 @@ public interface WeChatPaMaterialManageRemoting {
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/add_news")
     AddNewsRes addNews(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody AddNewsReq body);
+
+    /**
+     * 修改永久图文素材
+     *
+	 * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
+	 * @param body {@link AddNewsReq body}
+     * @return {@link AddNewsRes }
+     * @since 2024 04 15
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/material/update_news")
+    AddNewsRes updateNews(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody AddNewsReq body);
+
+
 }

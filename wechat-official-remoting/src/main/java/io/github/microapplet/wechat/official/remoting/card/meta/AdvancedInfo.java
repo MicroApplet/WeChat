@@ -14,6 +14,24 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.official.datasource;/*
- *
+package io.github.microapplet.wechat.official.remoting.card.meta;
+
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+import java.util.List;
+
+/**
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @since 2024 04 15, &nbsp;&nbsp; <em>version:</em>
  */
+@Accessors(chain = true)
+@Data(staticConstructor = "create")
+public class AdvancedInfo {
+    private List<TimeLimit> timeLimit;
+    private List<TextImageList> textImageList;
+    private UseCondition useCondition;
+    private List<String> businessService;
+    private Abstract advancedInfoAbstract;
+
+}

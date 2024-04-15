@@ -150,12 +150,10 @@ public interface WeChatPublicAccountMediaRemoting {
     @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/material/get_materialcount")
     GetMaterialCountRes getMaterialCount(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
 
-
-
     /**
      * <pre>
-     * 上传图文消息内的图片获取URL
-     * 本接口所上传的图片不占用公众号的素材库中图片数量的100000个的限制。图片仅支持jpg/png格式，大小必须在1MB以下。
+     * 上传图文消息内的图片获取URL【订阅号与服务号认证后均可用】
+     * 请注意，本接口所上传的图片不占用公众号的素材库中图片数量的5000个的限制。图片仅支持jpg/png格式，大小必须在1MB以下。*
      * </pre>
      *
      * @param weChatIndex {@link String weChatIndex}

@@ -14,6 +14,25 @@
  * limitations under the License.
  */
 
-package io.github.microapplet.wechat.official.datasource.po;/*
- *
+package io.github.microapplet.wechat.official.remoting.analysis.ad;
+
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+
+/**
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @since 2024 04 15, &nbsp;&nbsp; <em>version:</em>
  */
+@Accessors(chain = true)
+@Data(staticConstructor = "create")
+public class AdPosGeneralReq implements Serializable {
+    private static final long serialVersionUID = -4454000046506240909L;
+
+    private Integer page;
+    private Integer page_size;
+    private String start_date;
+    private String end_date;
+    private String ad_slot;
+}
