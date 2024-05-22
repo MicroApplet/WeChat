@@ -27,6 +27,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+import static io.github.microapplet.remote.annotation.Retryable.RETRY_ABLE_KEY;
+
 
 /**
  * 微信公众号平台应用编号 *
@@ -53,6 +55,7 @@ public @interface WeChatAccessTokenParam {
 
         @Override
         public void before(Object data, RemoteMethodConfig methodConfig, RemoteReqContext req, RemoteResContext res, Object[] args) {
+            req.put(RETRY_ABLE_KEY, Boolean.TRUE);
             RemoteMethodParameter parameter = methodConfig.config(ACCESS_TOKEN_CONFIG_KEY);
             String wechatIndex = (String) args[parameter.getIndex()];
             String accessToken = doQueryAccessToken(wechatIndex);
