@@ -16,8 +16,8 @@
 
 package io.github.microapplet.wechat.application;
 
-import io.gitee.asialjim.wechat.application.WeChatApplication;
-import io.gitee.asialjim.wechat.application.WeChatApplicationRepository;
+import io.github.microapplet.wechat.application.WeChatApplication;
+import io.github.microapplet.wechat.application.WeChatApplicationRepository;
 import io.github.microapplet.wechat.application.db.WeChatApplicationMapperService;
 import io.github.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
 import jakarta.annotation.Resource;

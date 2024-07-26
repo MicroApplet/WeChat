@@ -16,9 +16,8 @@
 
 package io.github.microapplet.wechat.application;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.mybatisflex.annotation.Id;
+import com.mybatisflex.annotation.Table;
 import lombok.Data;
 
 import java.io.Serial;
@@ -32,7 +31,7 @@ import java.io.Serializable;
  * @since 2023/12/16, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
 @Data
-@TableName("wx_app")
+@Table("wechat_app")
 public class WeChatApplication implements Serializable {
     @Serial
     private static final long serialVersionUID = 4412693788847340328L;
@@ -41,14 +40,21 @@ public class WeChatApplication implements Serializable {
     /**
      * 微信公众平台应用微信号,除应用类型为企业微信，一般情况下，与 {@link #getSubjectId()} 相同
      */
-    @TableId(type = IdType.INPUT)
+    @Id
     private String id;
 
     /**
      * 微信公众平台应用名
      */
     private String name;
+    /**
+     * 企业微信时：   corid
+     */
     private String subjectId;
+    /**
+     * 企业微信时：   agentId
+     */
+    private String agentId;
 
     /**
      * 微信公众平台 appid

@@ -16,14 +16,14 @@
 
 package io.github.microapplet.wechat.context;
 
-import io.gitee.asialjim.wechat.application.WeChatApplication;
-import io.gitee.asialjim.wechat.application.WeChatApplicationRepository;
-import io.gitee.asialjim.wechat.exception.WeChatAPIException;
-import io.gitee.asialjim.wechat.remoting.WeChatAccessTokenRemoting;
-import io.gitee.asialjim.wechat.remoting.context.WeChatAccessTokenCache;
-import io.gitee.asialjim.wechat.remoting.context.WeChatAccessTokenRepository;
-import io.gitee.asialjim.wechat.remoting.context.WeChatApiRes;
-import io.gitee.asialjim.wechat.remoting.meta.WeChatAccessTokenRes;
+import io.github.microapplet.wechat.application.WeChatApplication;
+import io.github.microapplet.wechat.application.WeChatApplicationRepository;
+import io.github.microapplet.wechat.exception.WeChatAPIException;
+import io.github.microapplet.wechat.remoting.WeChatAccessTokenRemoting;
+import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenCache;
+import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenRepository;
+import io.github.microapplet.wechat.remoting.context.WeChatApiRes;
+import io.github.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

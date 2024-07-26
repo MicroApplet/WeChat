@@ -31,27 +31,22 @@
     <dependencies>
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
-            <groupId>io.gitee.asialjim.wechat</groupId>
+            <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.gitee.asialjim.wechat</groupId>
+            <groupId>io.github.microapplet</groupId>
             <artifactId>wechat-common-module</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-core</artifactId>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>2.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>

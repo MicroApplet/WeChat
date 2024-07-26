@@ -16,6 +16,7 @@
 package io.github.microapplet.wechat.remoting.context;
 
 import io.github.microapplet.remote.annotation.RemoteLifeCycle;
+import io.github.microapplet.remote.annotation.Retryable;
 import io.github.microapplet.remote.context.*;
 import io.github.microapplet.remote.http.annotation.lifecycle.AbstractHttpQueryLifeCycle;
 import io.github.microapplet.remote.lifecycle.callback.*;
@@ -53,6 +54,7 @@ public @interface WeChatAccessTokenParam {
 
         @Override
         public void before(Object data, RemoteMethodConfig methodConfig, RemoteReqContext req, RemoteResContext res, Object[] args) {
+            req.put(Retryable.RETRY_ABLE_KEY,true);
             RemoteMethodParameter parameter = methodConfig.config(ACCESS_TOKEN_CONFIG_KEY);
             String wechatIndex = (String) args[parameter.getIndex()];
             String accessToken = doQueryAccessToken(wechatIndex);
@@ -104,7 +106,10 @@ public @interface WeChatAccessTokenParam {
                 if (StringUtils.isNotBlank(accessToken))
                     return accessToken;
             } catch (Throwable t) {
+                if  (log.isDebugEnabled())
                 log.warn("获取微信：【{}】AccessToken失败：{}", weChatIndex, t.getMessage(), t);
+                else
+                    log.warn("获取微信：【{}】AccessToken失败：{}", weChatIndex, t.getMessage());
             }
 
             return weChatIndex;

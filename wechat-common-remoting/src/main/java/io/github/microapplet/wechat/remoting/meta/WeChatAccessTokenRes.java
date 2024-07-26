@@ -37,44 +37,4 @@ public class WeChatAccessTokenRes extends BaseWeChatApiRes {
 
     private String access_token;
     private Integer expires_in;
-
-    public static AccessTokenBuilder accessTokenBuilder(){
-        return new AccessTokenBuilder();
-    }
-
-    public static class AccessTokenBuilder {
-        private String access_token;
-        private Integer expires_in;
-        private Integer errcode;
-        private String errmsg;
-
-        public WeChatAccessTokenRes build(){
-            WeChatAccessTokenRes res = new WeChatAccessTokenRes();
-            res.setAccess_token(access_token);
-            res.setExpires_in(expires_in);
-            res.setErrcode(errcode);
-            res.setErrmsg(errmsg);
-            return res;
-        }
-
-        public AccessTokenBuilder access_token(String access_token){
-            this.access_token = access_token;
-            return this;
-        }
-
-        public AccessTokenBuilder expires_in(Integer expires_in){
-            this.expires_in = expires_in;
-            return this;
-        }
-
-        public AccessTokenBuilder errcode(Integer errcode){
-            this.errcode = errcode;
-            return this;
-        }
-
-        public AccessTokenBuilder errmsg(String errmsg){
-            this.errmsg = errmsg;
-            return this;
-        }
-    }
 }

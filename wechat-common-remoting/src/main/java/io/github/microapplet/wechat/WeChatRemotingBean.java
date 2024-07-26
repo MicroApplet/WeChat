@@ -27,5 +27,5 @@ import org.springframework.context.annotation.Configuration;
  * @since 2023/12/14, &nbsp;&nbsp; <em>version:1.0</em>,  &nbsp;&nbsp;  <em>java version:8</em>
  */
 @Configuration
-@RemoteScan("io.gitee.asilajim.wechat")
+@RemoteScan("io.github.microapplet.wechat")
 public class WeChatRemotingBean { }
