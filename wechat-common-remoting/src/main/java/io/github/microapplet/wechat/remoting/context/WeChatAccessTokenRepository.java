@@ -16,7 +16,7 @@
 package io.github.microapplet.wechat.remoting.context;
 
 
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 
 /**
  * 微信API访问令牌仓库

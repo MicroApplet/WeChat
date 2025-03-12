@@ -20,7 +20,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -34,7 +34,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageContent implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 2435818355305181876L;
 
     private String value;

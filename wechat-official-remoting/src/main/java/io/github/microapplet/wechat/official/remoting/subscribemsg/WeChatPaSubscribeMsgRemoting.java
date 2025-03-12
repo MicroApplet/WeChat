@@ -23,12 +23,9 @@ import io.github.microapplet.remote.net.annotation.Server;
 import io.github.microapplet.wechat.constant.WeChatCons;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -68,8 +65,9 @@ public interface WeChatPaSubscribeMsgRemoting {
      * @return {@link String }
      * @since 2023/12/26
      */
+    @SneakyThrows
     default String buildSubscriptMsgUrl(String appid, int scene, String templateId, String redirectUrl, String resreved) {
-        return String.format(URI_TEMP, appid, scene, templateId, URLEncoder.encode(redirectUrl, StandardCharsets.UTF_8), URLEncoder.encode(resreved, StandardCharsets.UTF_8));
+        return String.format(URI_TEMP, appid, scene, templateId, URLEncoder.encode(redirectUrl, StandardCharsets.UTF_8.name()), URLEncoder.encode(resreved, StandardCharsets.UTF_8.name()));
     }
 
 
@@ -89,7 +87,7 @@ public interface WeChatPaSubscribeMsgRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class SendSubscribeTemplateMsgReq implements Serializable {
-        @Serial
+
         private static final long serialVersionUID = -2762720653829973705L;
 
         private String touser;

@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.util.List;
 
 /**
@@ -34,7 +34,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountMenuTryMatchRes extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = -3210293222963305888L;
 
     private List<WeChatPublicAccountMenuButton> button;

@@ -33,7 +33,11 @@ public class PKCS7Encoder {
 		}
 		// 获得补位所用的字符
 		char padChr = chr(amountToPad);
-        return String.valueOf(padChr).repeat(Math.max(0, amountToPad)).getBytes(CHARSET);
+		StringBuilder tmp = new StringBuilder();
+		for (int i = 0; i < amountToPad; i++) {
+			tmp.append(padChr);
+		}
+		return tmp.toString().getBytes(CHARSET);
 	}
 
 	/**

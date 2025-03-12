@@ -23,7 +23,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.activation.MimeType;
-import java.io.Serial;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -40,7 +40,7 @@ import java.util.Objects;
 @EqualsAndHashCode(callSuper = true)
 public class BaseWeChatDownloadApiRes extends BaseWeChatApiRes implements BufferResponse, ResWithHeader {
 
-    @Serial
+
     private static final long serialVersionUID = -3151047355012345095L;
     private String fileName;
     private String contentType;

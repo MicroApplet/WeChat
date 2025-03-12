@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 
 /**
@@ -35,7 +35,7 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class CreateQrCodeResponse extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = 6818875578723840455L;
 
     private String ticket;

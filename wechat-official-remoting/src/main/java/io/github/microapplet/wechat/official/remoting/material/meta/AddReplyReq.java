@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -33,7 +33,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddReplyReq implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = -7023878437504776443L;
 
     private Long msg_data_id;

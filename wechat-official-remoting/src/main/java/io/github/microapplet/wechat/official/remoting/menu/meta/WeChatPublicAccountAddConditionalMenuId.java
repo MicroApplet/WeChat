@@ -20,7 +20,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 
 /**
@@ -33,7 +33,7 @@ import java.io.Serial;
 @ToString
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountAddConditionalMenuId extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = 5758806658665931065L;
 
     private String menuid;

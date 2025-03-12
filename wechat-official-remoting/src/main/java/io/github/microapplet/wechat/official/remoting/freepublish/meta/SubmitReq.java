@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -34,7 +34,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class SubmitReq implements Serializable {
 
-    @Serial
+    
     private static final long serialVersionUID = -1507153661986481594L;
     private String media_id;
 }

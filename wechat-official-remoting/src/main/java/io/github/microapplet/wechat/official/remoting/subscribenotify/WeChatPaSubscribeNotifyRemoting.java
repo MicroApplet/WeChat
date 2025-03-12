@@ -27,7 +27,7 @@ import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import lombok.*;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -127,7 +127,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
 
     @Data
     class BizSendReq implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 3253570433403046867L;
 
         @JsonProperty("touser")
@@ -167,7 +167,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
 
     @Data
     class GetTemplateListData implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 6440665114179559456L;
 
         private String priTmplId;
@@ -182,7 +182,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class GetPubTemplateTitleListRes extends BaseWeChatApiRes {
-        @Serial
+        
         private static final long serialVersionUID = 4756755496267943915L;
 
         private Long count;
@@ -201,7 +201,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class GetPubTemplateKeywordsRes extends BaseWeChatApiRes {
-        @Serial
+        
         private static final long serialVersionUID = 2314889574367857951L;
 
         private Long count;
@@ -221,7 +221,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @EqualsAndHashCode(callSuper = true)
     class GetCategoryRes extends BaseWeChatApiRes {
 
-        @Serial
+        
         private static final long serialVersionUID = 1167408052198683353L;
         private List<GetCategoryData> data;
     }
@@ -237,7 +237,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class DeleteTemplateReq implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 3021922187829863323L;
         private String priTmplId;
     }
@@ -247,7 +247,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class AddTemplateReq implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 7077008714059354327L;
         private String tid;
         private List<Integer> kidList;
@@ -258,7 +258,7 @@ public interface WeChatPaSubscribeNotifyRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class AddTemplateRes extends BaseWeChatApiRes {
-        @Serial
+        
         private static final long serialVersionUID = -2919822704267536946L;
 
         private String priTmplId;

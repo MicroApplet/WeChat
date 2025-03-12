@@ -28,7 +28,7 @@ import io.github.microapplet.wechat.official.remoting.mass.meta.SendMassMessageT
 import io.github.microapplet.wechat.official.remoting.mass.meta.SendMassMessageToUser;
 import lombok.*;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -112,7 +112,7 @@ public interface WeChatPaMassRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class QueryMassMesageSendSpeedRes extends BaseWeChatApiRes{
-        @Serial
+        
         private static final long serialVersionUID = -6490925918064024024L;
         /**
          * 速度级别
@@ -126,7 +126,7 @@ public interface WeChatPaMassRemoting {
 
     @Data
     class SetMassMessageSendSpeedReq implements Serializable{
-        @Serial
+        
         private static final long serialVersionUID = 7147723068684638238L;
         /**
          * 速度级别
@@ -167,7 +167,7 @@ public interface WeChatPaMassRemoting {
 
     @Data
     class QueryMassMessageSendStatusReq implements Serializable{
-        @Serial
+        
         private static final long serialVersionUID = -2185620250607181941L;
         private Integer msg_id;
         private String msg_status;
@@ -177,7 +177,7 @@ public interface WeChatPaMassRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class QueryMassMessageSendStatusRes extends BaseWeChatApiRes{
-        @Serial
+        
         private static final long serialVersionUID = 3298917046569810814L;
         private String msg_id;
     }
@@ -187,7 +187,7 @@ public interface WeChatPaMassRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class DeleteMassMessageReq implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 5574047756590767011L;
         private Integer msg_id;
         private Integer article_idx;
@@ -198,7 +198,7 @@ public interface WeChatPaMassRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class SendMassMessageRes extends BaseWeChatApiRes {
-        @Serial
+        
         private static final long serialVersionUID = 6743833537771306754L;
 
         private String type;

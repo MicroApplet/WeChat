@@ -23,7 +23,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -38,7 +38,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @Table("wechat_official_menu")
 public class WeChatOfficialMenuProperty implements Comparable<WeChatOfficialMenuProperty>, Serializable {
-    @Serial
+    
     private static final long serialVersionUID = -8621561297684751280L;
 
     @Id

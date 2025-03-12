@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -35,7 +35,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateQrCodeRequest implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = -2542154974298361660L;
 
     @JsonProperty("expire_seconds")
@@ -52,14 +52,14 @@ public class CreateQrCodeRequest implements Serializable {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class ActionInfo implements Serializable{
-        @Serial
+        
         private static final long serialVersionUID = 2604520375906633214L;
         private Scene scene;
     }
 
     @Data
     public static class Scene implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = -7353280290065769354L;
 
         @JsonProperty("scene_str")

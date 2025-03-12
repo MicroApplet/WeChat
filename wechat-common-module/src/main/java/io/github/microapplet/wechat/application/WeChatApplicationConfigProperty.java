@@ -20,7 +20,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
@@ -36,13 +36,13 @@ import java.util.Optional;
 @Configuration
 @ConfigurationProperties("wechat.platform")
 public class WeChatApplicationConfigProperty implements Serializable{
-    @Serial
+    
     private static final long serialVersionUID = -4405536745987056647L;
     private List<WeChatApplicationProperty> applications;
 
     @Data
     public static class WeChatApplicationProperty implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = -3219562843851487447L;
         private String id;
         private String name;

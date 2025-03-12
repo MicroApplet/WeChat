@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -36,7 +36,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountCurrentMenuInfoRes extends BaseWeChatApiRes {
-    @Serial
+
     private static final long serialVersionUID = -3148595272603238535L;
 
     @JsonProperty("is_menu_open")
@@ -47,7 +47,7 @@ public class WeChatPublicAccountCurrentMenuInfoRes extends BaseWeChatApiRes {
 
     @Data
     public static class WeChatPublicAccountMenuInfo implements Serializable{
-        @Serial
+
         private static final long serialVersionUID = -5734972663514654125L;
 
         private List<WeChatPublicAccountMenuInfoButton> button;
@@ -55,7 +55,7 @@ public class WeChatPublicAccountCurrentMenuInfoRes extends BaseWeChatApiRes {
 
     @Data
     public static class WeChatPublicAccountMenuInfoButton implements Serializable{
-        @Serial
+
         private static final long serialVersionUID = -1194273465565414178L;
 
         private String name;
@@ -66,7 +66,7 @@ public class WeChatPublicAccountCurrentMenuInfoRes extends BaseWeChatApiRes {
 
     @Data
     public static class WeChatPublicAccountMenuSubButton implements Serializable{
-        @Serial
+
         private static final long serialVersionUID = -8989213218029890397L;
 
         private List<WeChatPublicAccountMenuButton> list;

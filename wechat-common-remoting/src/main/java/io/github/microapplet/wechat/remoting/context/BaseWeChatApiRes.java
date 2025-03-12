@@ -17,7 +17,7 @@ package io.github.microapplet.wechat.remoting.context;
 
 import lombok.*;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -31,7 +31,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaseWeChatApiRes implements WeChatApiRes, Serializable {
-    @Serial
+    
     private static final long serialVersionUID = -3722640486042138626L;
 
     /**

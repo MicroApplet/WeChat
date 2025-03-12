@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 /**
  * <h1><em>ASIAL JIM JAVA DOC</em></h1><hr/>
@@ -35,7 +35,7 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountUserAccessTokenRes extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = -5016023123420136163L;
 
     @JsonProperty("access_token")

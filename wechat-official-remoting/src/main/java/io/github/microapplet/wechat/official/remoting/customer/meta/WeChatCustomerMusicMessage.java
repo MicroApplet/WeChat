@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 
 /**
@@ -37,7 +37,7 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = false)
 public final class WeChatCustomerMusicMessage extends WeChatCustomerMessage<WeChatCustomerMusicMessage> {
 
-    @Serial
+    
     private static final long serialVersionUID = -3771429540698421446L;
 	private Music music;
 
