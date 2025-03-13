@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2024 <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * Copyright 2014-2025 <a href="mailto:asialjim@qq.com">Asial Jim</a>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,30 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.microapplet.wechat.remoting.context;
 
-import lombok.*;
+package io.github.microapplet.wechat.applet.opendata;
 
+import lombok.Data;
 
 import java.io.Serializable;
 
 /**
- * 微信API响应结果 *
- * @author Copyright © <a href="mailto:asialjim@hotmail.com">Asial Jim</a>   Co., LTD
+ * 加密的开放数据
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0
- * @since 2023/1/3, &nbsp;&nbsp; <em>version:1.0</em>, &nbsp;&nbsp; <em>java version:8</em>
+ * @since 2025/2/26, &nbsp;&nbsp; <em>version:1.0</em>
  */
 @Data
-public class BaseWeChatApiRes implements WeChatApiRes, Serializable {
-    
-    private static final long serialVersionUID = -3722640486042138626L;
+public class EncryptedOpenData implements Serializable {
+    private static final long serialVersionUID = 9183269008981898087L;
 
     /**
-     * 微信服务器响应业务代码
+     * 加密数据块
      */
-    private Integer errcode;
+    private String encryptedData;
+
     /**
-     * 微信服务器响应业务消息
+     * 加密向量
      */
-    private String errmsg;
+    private String iv;
 }
