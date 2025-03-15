@@ -80,14 +80,7 @@ public class XMLParse {
 	 */
 	public static String generate(String encrypt, String signature, String timestamp, String nonce) {
 
-		String format = """
-                <xml>
-                <Encrypt><![CDATA[%1$s]]></Encrypt>
-                <MsgSignature><![CDATA[%2$s]]></MsgSignature>
-                <TimeStamp>%3$s</TimeStamp>
-                <Nonce><![CDATA[%4$s]]></Nonce>
-                </xml>""";
+		String format = "<xml><Encrypt><![CDATA[%1$s]]></Encrypt><MsgSignature><![CDATA[%2$s]]></MsgSignature><TimeStamp>%3$s</TimeStamp><Nonce><![CDATA[%4$s]]></Nonce></xml>";
 		return String.format(format, encrypt, signature, timestamp, nonce);
-
 	}
 }

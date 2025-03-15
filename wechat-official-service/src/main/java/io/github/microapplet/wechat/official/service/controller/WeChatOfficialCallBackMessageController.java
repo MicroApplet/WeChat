@@ -17,9 +17,11 @@
 package io.github.microapplet.wechat.official.service.controller;
 
 import io.github.microapplet.wechat.official.module.message.WeChatOfficialCallBackVerifyService;
-import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.annotation.Resource;
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

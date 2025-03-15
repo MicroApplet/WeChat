@@ -21,7 +21,7 @@ import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import java.io.Serial;
+
 import java.util.List;
 
 /**
@@ -35,7 +35,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class CustomerServiceAccountList extends BaseWeChatApiRes {
-    @Serial
+
     private static final long serialVersionUID = -260453331327613275L;
 
     @JsonProperty("kf_list")

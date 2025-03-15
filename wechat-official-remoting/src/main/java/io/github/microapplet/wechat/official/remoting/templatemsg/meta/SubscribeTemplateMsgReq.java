@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.Map;
 
@@ -37,7 +37,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SubscribeTemplateMsgReq implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 5288497098182303168L;
 
     private String touser;

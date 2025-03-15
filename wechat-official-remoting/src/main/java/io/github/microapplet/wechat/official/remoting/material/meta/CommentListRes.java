@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.util.List;
 
 /**
@@ -32,7 +32,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class CommentListRes extends BaseWeChatApiRes {
-    @Serial
+
     private static final long serialVersionUID = 4218257380276771478L;
     private Long total;
     private List<CommentItem> comment;

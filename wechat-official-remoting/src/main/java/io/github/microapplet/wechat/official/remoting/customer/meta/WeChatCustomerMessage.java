@@ -22,7 +22,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -33,20 +33,10 @@ import java.io.Serializable;
  * @since 2021/3/8   &nbsp;&nbsp; JDK 8
  */
 @Data
-public abstract sealed class WeChatCustomerMessage<T extends WeChatCustomerMessage<?>>
-        implements Serializable
-        permits WeChatCustomerImageMessage,
-        WeChatCustomerMiniProMessage,
-        WeChatCustomerMpMessage,
-        WeChatCustomerMsgMenuMessage,
-        WeChatCustomerMusicMessage,
-        WeChatCustomerNewsMessage,
-        WeChatCustomerTextMessage,
-        WeChatCustomerVideoMessage,
-        WeChatCustomerVoiceMessage,
-        WeChatCustomerWxCardMessage {
+public abstract class WeChatCustomerMessage<T extends WeChatCustomerMessage<?>>
+        implements Serializable {
 
-    @Serial
+    
     private static final long serialVersionUID = 6476058797183234088L;
 
     /**

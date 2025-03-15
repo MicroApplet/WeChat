@@ -18,7 +18,7 @@ package io.github.microapplet.wechat.remoting.meta;
 import io.github.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.*;
 
-import java.io.Serial;
+
 
 
 /**
@@ -32,7 +32,7 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatAccessTokenRes extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = -8803169692199272138L;
 
     private String access_token;

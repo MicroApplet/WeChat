@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 /**
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
@@ -31,7 +31,7 @@ import java.io.Serial;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class DraftCountRes extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = 8344725004295965628L;
 
     private Long total_count;

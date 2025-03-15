@@ -20,7 +20,7 @@ import io.github.microapplet.wechat.application.WeChatApplication;
 import io.github.microapplet.wechat.application.WeChatApplicationRepository;
 import io.github.microapplet.wechat.application.db.WeChatApplicationMapperService;
 import io.github.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.apache.commons.collections4.CollectionUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.redisson.api.RBucket;

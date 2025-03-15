@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class GetArticleTotalRes extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = 8213811032573016019L;
     private List<GetArticleTotalData> list;
 

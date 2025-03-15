@@ -23,7 +23,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -39,7 +39,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetUserCumulateReq implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = -1395867326233156228L;
 
     @JsonProperty("begin_date")

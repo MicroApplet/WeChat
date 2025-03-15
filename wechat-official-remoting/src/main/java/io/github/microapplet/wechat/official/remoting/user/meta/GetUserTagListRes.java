@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.util.List;
 
 /**
@@ -33,7 +33,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class GetUserTagListRes extends BaseWeChatApiRes {
 
-    @Serial
+    
     private static final long serialVersionUID = -8002654257122881862L;
 
     private List<Long> tagid_list;

@@ -16,7 +16,8 @@
 
 package io.github.microapplet.wechat.application;
 
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;
 

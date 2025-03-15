@@ -25,8 +25,9 @@ import lombok.experimental.Accessors;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serial;
+
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -44,7 +45,7 @@ import java.util.concurrent.TimeUnit;
 @Accessors(chain = true)
 @Table("wechat_official_auth_page")
 public class WeChatOfficialAuthPage implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 363677825168545694L;
     public static final String SNS_API_BASE = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_base&state=%s#wechat_redirect";
     public static final String SNS_API_USERINFO = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s#wechat_redirect";
@@ -121,9 +122,12 @@ public class WeChatOfficialAuthPage implements Serializable {
         if (MapUtils.isNotEmpty(getParameter())) {
             StringJoiner sj = new StringJoiner("&");
             getParameter().forEach((k, v) -> {
-                String key = URLEncoder.encode(k, StandardCharsets.UTF_8);
-                String value = URLEncoder.encode(v, StandardCharsets.UTF_8);
-                sj.add(key + "=" + value);
+                try {
+                    String key = URLEncoder.encode(k, StandardCharsets.UTF_8.name());
+                    String value = URLEncoder.encode(v, StandardCharsets.UTF_8.name());
+                    sj.add(key + "=" + value);
+                } catch (UnsupportedEncodingException ignored) {
+                }
             });
             String parameterUrl = sj.toString();
             if (StringUtils.isNotBlank(parameterUrl)) {

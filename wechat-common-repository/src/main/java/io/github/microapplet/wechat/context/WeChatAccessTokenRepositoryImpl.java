@@ -24,7 +24,7 @@ import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenCache;
 import io.github.microapplet.wechat.remoting.context.WeChatAccessTokenRepository;
 import io.github.microapplet.wechat.remoting.context.WeChatApiRes;
 import io.github.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
@@ -35,6 +35,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.Executor;
 import java.util.concurrent.locks.Lock;
+import java.util.stream.Stream;
 
 /**
  * 微信API访问令牌仓库
@@ -119,7 +120,7 @@ public class WeChatAccessTokenRepositoryImpl implements WeChatAccessTokenReposit
         }
 
         accessTokenCache.remove(targetAppid);
-        Executor executor = Optional.ofNullable(this.executors).stream().flatMap(Collection::stream).findAny().orElse(null);
+        Executor executor =  Optional.ofNullable(this.executors).map(Collection::stream).orElseGet(Stream::empty).findAny().orElse(null);
 
         if (Objects.nonNull(executor)) {
             executor.execute(() -> accessToken(targetAppid, targetSecret));

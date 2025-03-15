@@ -19,7 +19,7 @@ package io.github.microapplet.wechat.official.module.message;
 import io.github.microapplet.wechat.application.WeChatApplication;
 import io.github.microapplet.wechat.application.WeChatApplicationRepository;
 import io.github.microapplet.wechat.encryt.official.WeChatOfficialMsgCryptService;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

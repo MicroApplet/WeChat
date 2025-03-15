@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -35,7 +35,7 @@ import java.util.List;
 @AllArgsConstructor
 public class AddDraftReq implements Serializable {
 
-    @Serial
+    
     private static final long serialVersionUID = -5862205285037408916L;
     private List<DraftArticle> articles;
 }

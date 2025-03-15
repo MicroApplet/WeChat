@@ -97,11 +97,11 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <spring-boot.version>3.2.1</spring-boot.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <spring-boot.version>2.7.18</spring-boot.version>
         <mybatis-flex.version>1.9.4</mybatis-flex.version>
-        <remote.version>1.0.2-SNAPSHOT</remote.version>
+        <remote.version>Java8-1.0.1-SNAPSHOT</remote.version>
     </properties>
 
     <dependencyManagement>
@@ -217,13 +217,20 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
+                    <!-- 自动生成 release 版本号（如 1.0.0 → 1.0.1-SNAPSHOT） -->
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <!-- 定义版本递增策略 -->
+                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection -->
+                    <releaseVersion>${releaseVersion}</releaseVersion>
+                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection -->
+                    <developmentVersion>${developmentVersion}</developmentVersion>
+                    <!-- 自动生成 Tag 名称（默认格式：项目名-版本号） -->
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
-
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -247,7 +254,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -261,6 +267,8 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <encoding>UTF-8</encoding> <!-- 关键配置 -->
+                    <docencoding>UTF-8</docencoding>
                     <additionalJOptions>
                         <additionalJOption>-Xdoclint:none</additionalJOption>
                     </additionalJOptions>
@@ -279,14 +287,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.7</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
                         <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>

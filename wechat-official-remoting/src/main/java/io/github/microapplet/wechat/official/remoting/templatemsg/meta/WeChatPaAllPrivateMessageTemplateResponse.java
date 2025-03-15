@@ -20,7 +20,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -34,14 +34,14 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPaAllPrivateMessageTemplateResponse extends BaseWeChatApiRes {
-    @Serial
+    
     private static final long serialVersionUID = 8370961983874006452L;
 
     private List<TemplateInfo> template_list;
 
     @Data
     public static class TemplateInfo implements Serializable {
-        @Serial
+        
         private static final long serialVersionUID = 8000265497424503341L;
 
         private String template_id;

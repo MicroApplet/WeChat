@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -33,7 +33,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DraftMedia implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 3858937898908108906L;
     private String media_id;
 }

@@ -22,7 +22,7 @@ import io.github.microapplet.remote.net.jackson.AbstractJacksonUtil;
 import io.github.microapplet.wechat.official.module.authpage.mapper.WeChatOfficialAuthPageBaseMapper;
 import io.github.microapplet.wechat.official.module.authpage.po.WeChatOfficialAuthPage;
 import io.github.microapplet.wechat.official.module.authpage.service.WeChatOfficialAuthPageMapperService;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -32,6 +32,7 @@ import java.time.Duration;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * 授权网页链接数据服务
@@ -79,7 +80,7 @@ public class WeChatOfficialAuthPageMapperServiceImpl extends ServiceImpl<WeChatO
 
     @Override
     public boolean removeByIds(Collection<? extends Serializable> ids) {
-        List<String> keys = ids.stream().map(item -> CACHE_KEY + item).toList();
+        List<String> keys = ids.stream().map(item -> CACHE_KEY + item).collect(Collectors.toList());;
         stringRedisTemplate.delete(keys);
         return super.removeByIds(ids);
     }

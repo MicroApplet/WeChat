@@ -101,7 +101,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @return {@link WeChatPublicAccountUserInfo}
      * @since 2021/12/29 17:05
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/user/info", queries = @HttpQuery(name = "lang", value = "zh_CN"))
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/model/info", queries = @HttpQuery(name = "lang", value = "zh_CN"))
     WeChatPublicAccountUserInfo weChatUserInfoByApi(@WeChatAccessTokenParam String subjectId,
                                                     @HttpQuery(name = "openid") String openid);
 
@@ -113,7 +113,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @return {@link WeChatPublicAccountBatchGetUserRes }  批量获取微信用户结果
      * @since 2021/12/29 17:18
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/user/info/batchget")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/model/info/batchget")
     WeChatPublicAccountBatchGetUserRes batchGetUserInfo(@WeChatAccessTokenParam String subjectId,
                                                         @JsonBody WeChatPublicAccountBatchGetUserReq req);
 
@@ -125,7 +125,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @return {@link WeChatPublicAccountBatchGetOpenIdsRes}
      * @since 2021/12/29 17:24
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/user/get")
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/model/get")
     WeChatPublicAccountBatchGetOpenIdsRes weChatUserOpenIds(@WeChatAccessTokenParam String subjectId,
                                                             @HttpQuery(name = "next_openid") String nextUser);
 
@@ -181,7 +181,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @return {@link GetUsersByTagRes }
      * @since 2024/2/23
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/user/tag/get")
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/model/tag/get")
     GetUsersByTagRes get(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody GetUsersByTagReq body);
 
     /**
@@ -228,7 +228,7 @@ public interface WeChatPublicAccountUserRemoting {
      * @return {@link BaseWeChatApiRes }
      * @since 2024/2/23
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/user/info/updateremark")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/model/info/updateremark")
     BaseWeChatApiRes updateRemark(@WeChatAccessTokenParam String weChatIndexOrAccessToken, @JsonBody UpdateRemarkReq body);
 
     /**

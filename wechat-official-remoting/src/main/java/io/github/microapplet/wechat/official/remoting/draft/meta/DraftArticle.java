@@ -21,7 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -34,7 +34,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class DraftArticle implements Serializable {
 
-    @Serial
+    
     private static final long serialVersionUID = -5232829056873416683L;
     private String title;
     private String author;

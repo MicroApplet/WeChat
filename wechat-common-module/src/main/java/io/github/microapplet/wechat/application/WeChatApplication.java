@@ -20,7 +20,7 @@ import com.mybatisflex.annotation.Id;
 import com.mybatisflex.annotation.Table;
 import lombok.Data;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -33,7 +33,7 @@ import java.io.Serializable;
 @Data
 @Table("wechat_app")
 public class WeChatApplication implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 4412693788847340328L;
 
 

@@ -17,7 +17,7 @@ package io.github.microapplet.wechat.official.remoting.menu.meta;
 
 import lombok.Data;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 
 /**
@@ -28,7 +28,7 @@ import java.io.Serializable;
  */
 @Data
 public class WeChatPublicAccountMenuTryMatchReq implements Serializable {
-    @Serial
+    
     private static final long serialVersionUID = 1593280257262618441L;
 
     private String user_id;

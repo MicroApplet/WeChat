@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serial;
+
 
 /**
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
@@ -32,7 +32,7 @@ import java.io.Serial;
 @EqualsAndHashCode(callSuper = true)
 public class DraftSwitchRes extends BaseWeChatApiRes {
 
-    @Serial
+
     private static final long serialVersionUID = -5658555682083371934L;
 
     private Long is_open;
