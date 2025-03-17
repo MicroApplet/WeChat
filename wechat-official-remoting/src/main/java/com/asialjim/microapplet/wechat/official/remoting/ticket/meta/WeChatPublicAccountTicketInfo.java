@@ -14,12 +14,13 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.ticket.meta;
+
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
 
 
 @Data

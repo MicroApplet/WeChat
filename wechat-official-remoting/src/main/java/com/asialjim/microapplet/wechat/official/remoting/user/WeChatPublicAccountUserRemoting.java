@@ -14,6 +14,8 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.user;
+
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.HttpQuery;
@@ -22,6 +24,7 @@ import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.official.remoting.user.meta.*;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 
 @SuppressWarnings("unused")
 @Server(

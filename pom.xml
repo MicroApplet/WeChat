@@ -197,8 +197,8 @@
                     <goals>deploy</goals>
                     <!-- 在准备阶段先执行版本替换 -->
                     <preparationGoals>
-                        <!--                        clean versions:use-release verify-->
-                        clean versions:update-properties verify
+                        <!-- clean versions:use-release verify-->
+                        <!-- clean versions:update-properties verify-->
                     </preparationGoals>
                 </configuration>
             </plugin>
@@ -231,6 +231,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.6.3</version>
+                <configuration>
+                    <!-- 解决中文乱码 -->
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <!-- 禁用严格检查 -->
+                    <additionalOptions>-Xdoclint:none</additionalOptions>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -239,13 +247,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <encoding>UTF-8</encoding> <!-- 关键配置 -->
-                    <docencoding>UTF-8</docencoding>
-                    <additionalJOptions>
-                        <additionalJOption>-Xdoclint:none</additionalJOption>
-                    </additionalJOptions>
-                </configuration>
             </plugin>
 
             <!-- 手动管理版本号工具  -->
@@ -256,20 +257,6 @@
                 <configuration>
                     <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>replace-snapshots</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>use-releases</goal>
-                        </goals>
-                        <configuration>
-                            <processDependencyManagement>true</processDependencyManagement>
-                            <processDependencies>true</processDependencies>
-                            <failIfNotReplaced>true</failIfNotReplaced>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <!-- 签名 -->
@@ -363,7 +350,6 @@
             </build>
         </profile>
     </profiles>
-
 
 
 </project>

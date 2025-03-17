@@ -13,7 +13,9 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.official.remoting.menu.meta;
 
+import com.asialjim.microapplet.wechat.official.remoting.menu.meta.create.WeChatPublicAccountMenuButton;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

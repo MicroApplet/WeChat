@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.official.remoting.templatemsg.meta;
 
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;

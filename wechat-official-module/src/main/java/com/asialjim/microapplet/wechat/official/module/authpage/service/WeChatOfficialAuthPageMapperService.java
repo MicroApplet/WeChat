@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
- */age com.asialjim.microapplet.wechat.official.module.authpage.service;
+ */
+package com.asialjim.microapplet.wechat.official.module.authpage.service;
 
 import com.asialjim.microapplet.wechat.official.module.authpage.po.WeChatOfficialAuthPage;
 import com.mybatisflex.core.service.IService;

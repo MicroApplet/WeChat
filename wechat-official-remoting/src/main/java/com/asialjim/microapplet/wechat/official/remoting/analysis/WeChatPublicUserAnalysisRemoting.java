@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.official.remoting.analysis;
 
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
@@ -21,6 +22,7 @@ import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.official.remoting.analysis.user.GetUserCumulateRes;
 import com.asialjim.microapplet.wechat.official.remoting.analysis.user.GetUserSummaryReq;
 import com.asialjim.microapplet.wechat.official.remoting.analysis.user.GetUserSummaryRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**

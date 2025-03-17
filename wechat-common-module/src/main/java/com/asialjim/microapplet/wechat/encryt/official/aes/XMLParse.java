@@ -13,7 +13,9 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.encryt.official.aes;
 
+import com.asialjim.microapplet.wechat.encryt.official.aes.AesException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -37,7 +39,7 @@ public class XMLParse {
 	 * @param xmltext 待提取的xml字符串
 	 * @return 提取出的加密消息字符串
 	 */
-	public static Object[] extract(String xmltext) throws AesException     {
+	public static Object[] extract(String xmltext) throws AesException {
 		Object[] result = new Object[3];
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

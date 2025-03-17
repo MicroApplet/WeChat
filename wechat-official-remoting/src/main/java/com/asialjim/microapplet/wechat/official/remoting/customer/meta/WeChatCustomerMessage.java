@@ -14,6 +14,8 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.customer.meta;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

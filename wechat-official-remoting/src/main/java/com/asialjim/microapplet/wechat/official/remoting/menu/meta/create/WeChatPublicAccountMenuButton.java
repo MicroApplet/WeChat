@@ -14,6 +14,9 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.menu.meta.create;
+
+import com.asialjim.microapplet.wechat.official.remoting.menu.meta.create.WeChatMenuButtonType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

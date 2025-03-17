@@ -14,6 +14,7 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.subscribenotify;
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.HttpQuery;
@@ -21,6 +22,7 @@ import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
 import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 

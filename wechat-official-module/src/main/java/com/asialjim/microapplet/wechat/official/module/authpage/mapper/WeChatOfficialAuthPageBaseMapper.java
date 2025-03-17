@@ -12,11 +12,13 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
- */age com.asialjim.microapplet.wechat.official.module.authpage.mapper;
+ */
 
+package com.asialjim.microapplet.wechat.official.module.authpage.mapper;
+
+import org.springframework.stereotype.Repository;
 import com.asialjim.microapplet.wechat.official.module.authpage.po.WeChatOfficialAuthPage;
 import com.mybatisflex.core.BaseMapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * 微信公众号授权网页链接持久化服务

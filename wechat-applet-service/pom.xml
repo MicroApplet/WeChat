@@ -28,6 +28,7 @@
     <artifactId>wechat-applet-service</artifactId>
 
     <dependencies>
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-applet-remoting</artifactId>

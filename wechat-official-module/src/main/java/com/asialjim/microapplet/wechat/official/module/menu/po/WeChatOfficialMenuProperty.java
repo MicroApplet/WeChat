@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
- */age com.asialjim.microapplet.wechat.official.module.menu.po;
+ */
+package com.asialjim.microapplet.wechat.official.module.menu.po;
 
 import com.mybatisflex.annotation.Column;
 import com.mybatisflex.annotation.Id;
@@ -35,7 +36,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @Table("wechat_official_menu")
 public class WeChatOfficialMenuProperty implements Comparable<WeChatOfficialMenuProperty>, Serializable {
-    
+
     private static final long serialVersionUID = -8621561297684751280L;
 
     @Id

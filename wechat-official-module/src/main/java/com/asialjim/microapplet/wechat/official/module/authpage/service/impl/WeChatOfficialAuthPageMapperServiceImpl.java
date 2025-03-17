@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
- */age com.asialjim.microapplet.wechat.official.module.authpage.service.impl;
+ */
+package com.asialjim.microapplet.wechat.official.module.authpage.service.impl;
 
 import com.asialjim.microapplet.remote.net.jackson.AbstractJacksonUtil;
 import com.asialjim.microapplet.wechat.official.module.authpage.mapper.WeChatOfficialAuthPageBaseMapper;
@@ -78,7 +79,8 @@ public class WeChatOfficialAuthPageMapperServiceImpl extends ServiceImpl<WeChatO
 
     @Override
     public boolean removeByIds(Collection<? extends Serializable> ids) {
-        List<String> keys = ids.stream().map(item -> CACHE_KEY + item).collect(Collectors.toList());;
+        List<String> keys = ids.stream().map(item -> CACHE_KEY + item).collect(Collectors.toList());
+        ;
         stringRedisTemplate.delete(keys);
         return super.removeByIds(ids);
     }

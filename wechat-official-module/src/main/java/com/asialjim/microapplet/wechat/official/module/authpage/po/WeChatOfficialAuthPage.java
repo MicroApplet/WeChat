@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
- */age com.asialjim.microapplet.wechat.official.module.authpage.po;
+ */
+package com.asialjim.microapplet.wechat.official.module.authpage.po;
 
 import com.asialjim.microapplet.wechat.application.WeChatApplication;
 import com.mybatisflex.annotation.Column;
@@ -42,7 +43,7 @@ import java.util.concurrent.TimeUnit;
 @Accessors(chain = true)
 @Table("wechat_official_auth_page")
 public class WeChatOfficialAuthPage implements Serializable {
-    
+
     private static final long serialVersionUID = 363677825168545694L;
     public static final String SNS_API_BASE = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_base&state=%s#wechat_redirect";
     public static final String SNS_API_USERINFO = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s#wechat_redirect";

@@ -14,11 +14,13 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.autoreplay;
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.official.remoting.autoreplay.meta.QueryCurrentAutoReplyInfoRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 
 @SuppressWarnings("unused")
 @Server(

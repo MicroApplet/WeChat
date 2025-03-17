@@ -14,6 +14,9 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.official.remoting.mass;
+
+
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
@@ -23,6 +26,7 @@ import com.asialjim.microapplet.wechat.official.remoting.mass.meta.SendMassMessa
 import com.asialjim.microapplet.wechat.official.remoting.mass.meta.SendMassMessageToPreview;
 import com.asialjim.microapplet.wechat.official.remoting.mass.meta.SendMassMessageToUser;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import lombok.*;
 
 import java.io.Serializable;

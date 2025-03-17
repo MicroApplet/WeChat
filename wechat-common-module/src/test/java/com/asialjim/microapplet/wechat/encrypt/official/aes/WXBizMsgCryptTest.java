@@ -14,7 +14,10 @@
  *   limitations under the License.
  */
 
+package com.asialjim.microapplet.wechat.encrypt.official.aes;
+
 import com.asialjim.microapplet.wechat.encryt.official.aes.AesException;
+import com.asialjim.microapplet.wechat.encryt.official.aes.WeChatOfficialMsgCrypt;
 import org.junit.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

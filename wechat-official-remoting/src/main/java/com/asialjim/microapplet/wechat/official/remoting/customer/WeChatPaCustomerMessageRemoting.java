@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.official.remoting.customer;
 
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
@@ -23,6 +24,7 @@ import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.official.remoting.customer.meta.*;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
