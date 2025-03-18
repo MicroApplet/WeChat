@@ -201,18 +201,10 @@
                     <processDependencies>true</processDependencies>
                     <processParent>true</processParent>
                     <processAllModules>true</processAllModules>
-                    <allowSnapshots>true</allowSnapshots> <!-- 允许处理SNAPSHOT -->
+                    <allowSnapshots>true</allowSnapshots>
                 </configuration>
                 <executions>
-                    <!-- 准备阶段：强制将所有依赖转换为SNAPSHOT以便版本更新 -->
-                    <execution>
-                        <id>pre-release-update</id>
-                        <goals>
-                            <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
-                            <goal>force-snapshot</goal>
-                        </goals>
-                    </execution>
-                    <!-- 发布后：恢复依赖为下一个SNAPSHOT版本 -->
+                    <!-- 发布后更新到下一个SNAPSHOT版本 -->
                     <execution>
                         <id>post-release-update</id>
                         <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
@@ -220,7 +212,15 @@
                         <goals>
                             <goal>update-parent</goal>
                             <goal>update-child-modules</goal>
+                            <goal>update-properties</goal>
                         </goals>
+                        <configuration>
+                            <properties>
+                                <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
+                                <revision>${developmentVersion}</revision> <!-- 假设使用revision属性 -->
+                            </properties>
+                            <includeProperties>revision</includeProperties>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
