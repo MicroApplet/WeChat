@@ -100,7 +100,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring-boot.version>2.7.18</spring-boot.version>
         <mybatis-flex.version>1.9.4</mybatis-flex.version>
-        <remote.version>1.0.0-SNAPSHOT</remote.version>
+        <com.asialjim.microapplet>1.0.0-SNAPSHOT</com.asialjim.microapplet>
     </properties>
 
     <dependencyManagement>
@@ -115,7 +115,7 @@
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>remote-zen-pom</artifactId>
-                <version>${remote.version}</version>
+                <version>${com.asialjim.microapplet}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -215,6 +215,9 @@
                                 com.asialjim.microapplet:*
                                 com.asialjim:*
                             </includesList>
+                            <includeProperties>
+                                com.asialjim.microapplet:*
+                            </includeProperties>
                         </configuration>
                     </execution>
                 </executions>
