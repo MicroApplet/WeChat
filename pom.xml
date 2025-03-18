@@ -206,6 +206,10 @@
                     <processParent>true</processParent>
                     <processAllModules>true</processAllModules>
                     <allowSnapshots>false</allowSnapshots> <!-- 发布阶段禁止SNAPSHOT -->
+                    <properties>
+                        <!--suppress MavenModelInspection, MybatisPlusMapperXmlInspection, MybatisXMapperXmlInspection -->
+                        <com.asialjim.microapplet>${asialjimVersion}</com.asialjim.microapplet>
+                    </properties>
                 </configuration>
                 <executions>
                     <!-- 强制更新父版本和子模块 -->
@@ -229,10 +233,9 @@
                         </goals>
                         <configuration>
                             <properties>
-                                <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
-                                <revision>${developmentVersion}</revision> <!-- 假设使用revision属性 -->
+                                <!--suppress MavenModelInspection, MybatisPlusMapperXmlInspection, MybatisXMapperXmlInspection -->
+                                <com.asialjim.microapplet>${developmentVersion}</com.asialjim.microapplet>
                             </properties>
-                            <includeProperties>revision</includeProperties>
                         </configuration>
                     </execution>
                 </executions>
