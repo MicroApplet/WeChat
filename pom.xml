@@ -100,6 +100,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring-boot.version>2.7.18</spring-boot.version>
         <mybatis-flex.version>1.9.4</mybatis-flex.version>
+        <remote.version>1.0.0-SNAPSHOT</remote.version>
     </properties>
 
     <dependencyManagement>
@@ -114,7 +115,7 @@
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>remote-zen-pom</artifactId>
-                <version>${project.version}</version>
+                <version>${remote.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -184,7 +185,8 @@
                     <goals>deploy</goals>
                     <!-- 在准备阶段先执行版本替换 -->
                     <preparationGoals>
-                        clean versions:use-releases verify
+<!--                        clean versions:use-releases verify-->
+                        clean versions:update-properties verify
                     </preparationGoals>
                 </configuration>
             </plugin>
@@ -197,6 +199,7 @@
                 <configuration>
                     <allowSnapshots>false</allowSnapshots>
                     <generateBackupPoms>false</generateBackupPoms>
+                    <processProperties>true</processProperties>
                     <processDependencyManagement>true</processDependencyManagement>
                     <processDependencies>true</processDependencies>
                     <processAllModules>true</processAllModules>
@@ -204,8 +207,15 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>use-releases</goal>
+<!--                            <goal>use-releases</goal>-->
+                            <goal>update-properties</goal>
                         </goals>
+                        <configuration>
+                            <includesList>
+                                com.asialjim.microapplet:*
+                                com.asialjim:*
+                            </includesList>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
