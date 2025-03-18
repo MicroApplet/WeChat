@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #
 #  Copyright 2014-2025 <a href="mailto:asialjim@qq.com">Asial Jim</a>
 #
