@@ -163,7 +163,6 @@
                     <publishingServerId>ossrh</publishingServerId>
                     <autoPublish>true</autoPublish>
                     <deploymentName>WeChat</deploymentName>
-                    <waitUntil>published</waitUntil>
                 </configuration>
             </plugin>
 
