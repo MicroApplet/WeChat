@@ -145,10 +145,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
     </dependencies>
-
-
 
     <build>
         <!--发布到maven 中央仓库-->
@@ -161,7 +158,7 @@
                 <configuration>
                     <publishingServerId>ossrh</publishingServerId>
                     <autoPublish>true</autoPublish>
-                    <deploymentName>WeChat</deploymentName>
+                    <deploymentName>Remote</deploymentName>
                 </configuration>
             </plugin>
 
@@ -196,7 +193,11 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.16.2</version>
                 <configuration>
+                    <allowSnapshots>false</allowSnapshots>
                     <generateBackupPoms>false</generateBackupPoms>
+                    <processDependencyManagement>true</processDependencyManagement>
+                    <processDependencies>true</processDependencies>
+                    <processAllModules>true</processAllModules>
                 </configuration>
                 <executions>
                     <execution>
@@ -308,7 +309,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
