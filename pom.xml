@@ -159,6 +159,8 @@
                     <publishingServerId>ossrh</publishingServerId>
                     <autoPublish>true</autoPublish>
                     <deploymentName>Remote</deploymentName>
+                    <ignorePublishedComponents>true</ignorePublishedComponents>
+                    <waitUntil>validated</waitUntil>
                 </configuration>
             </plugin>
 
@@ -303,6 +305,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
