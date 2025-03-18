@@ -175,14 +175,17 @@
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
+                    <!-- 正式版本号 -->
+                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection, UnresolvedMavenProperty -->
+                    <releaseVersion>${releaseVersion}</releaseVersion>
+                    <!-- 下一个开发版本号 -->
+                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection, UnresolvedMavenProperty -->
+                    <developmentVersion>${developmentVersion}</developmentVersion>
                     <goals>deploy</goals>
                     <!-- 强制更新所有依赖版本 -->
                     <preparationGoals>
                         clean versions:force-snapshot versions:update-properties verify
                     </preparationGoals>
-                    <!-- 版本号自动递增策略 -->
-                    <!--suppress MybatisXMapperXmlInspection, MavenModelInspection, MybatisPlusMapperXmlInspection -->
-                    <arguments>-DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}</arguments>
                 </configuration>
             </plugin>
 
