@@ -166,60 +166,61 @@
             </plugin>
 
 
-            <!-- 版本号管理 -->
+            <!-- 版本发布核心插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <!-- 自动生成 release 版本号（如 1.0.0 → 1.0.1-SNAPSHOT） -->
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <!-- 定义版本递增策略 -->
-                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection, UnresolvedMavenProperty -->
-                    <releaseVersion>${releaseVersion}</releaseVersion>
-                    <!--suppress MavenModelInspection, MybatisXMapperXmlInspection, UnresolvedMavenProperty -->
-                    <developmentVersion>${developmentVersion}</developmentVersion>
-                    <!-- 自动生成 Tag 名称（默认格式：项目名-版本号） -->
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy</goals>
-                    <!-- 在准备阶段先执行版本替换 -->
+                    <!-- 强制更新所有依赖版本 -->
                     <preparationGoals>
-<!--                        clean versions:use-releases verify-->
-                        clean versions:update-properties verify
+                        clean versions:force-snapshot versions:update-properties verify
                     </preparationGoals>
+                    <!-- 版本号自动递增策略 -->
+                    <!--suppress MybatisXMapperXmlInspection, MavenModelInspection, MybatisPlusMapperXmlInspection -->
+                    <arguments>-DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}</arguments>
                 </configuration>
             </plugin>
 
-            <!-- 配置 versions-maven-plugin 仅更新快照属性 -->
+            <!-- 版本号管理增强插件 -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.16.2</version>
                 <configuration>
-                    <allowSnapshots>false</allowSnapshots>
                     <generateBackupPoms>false</generateBackupPoms>
                     <processProperties>true</processProperties>
                     <processDependencyManagement>true</processDependencyManagement>
                     <processDependencies>true</processDependencies>
+                    <processParent>true</processParent>
                     <processAllModules>true</processAllModules>
+                    <allowSnapshots>true</allowSnapshots> <!-- 允许处理SNAPSHOT -->
                 </configuration>
                 <executions>
+                    <!-- 准备阶段：强制将所有依赖转换为SNAPSHOT以便版本更新 -->
                     <execution>
+                        <id>pre-release-update</id>
                         <goals>
-<!--                            <goal>use-releases</goal>-->
-                            <goal>update-properties</goal>
+                            <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
+                            <goal>force-snapshot</goal>
                         </goals>
-                        <configuration>
-                            <allowSnapshots>false</allowSnapshots>
-                            <generateBackupPoms>false</generateBackupPoms>
-                            <processDependencyManagement>true</processDependencyManagement>
-                            <processDependencies>true</processDependencies>
-                        </configuration>
+                    </execution>
+                    <!-- 发布后：恢复依赖为下一个SNAPSHOT版本 -->
+                    <execution>
+                        <id>post-release-update</id>
+                        <!--suppress MybatisXMapperXmlInspection, MybatisPlusMapperXmlInspection, MavenModelInspection -->
+                        <phase>post-release</phase>
+                        <goals>
+                            <goal>update-parent</goal>
+                            <goal>update-child-modules</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
-
 
             <!-- 用于执行单元测试的核心插件 -->
             <plugin>
