@@ -212,11 +212,10 @@
                         </goals>
                         <configuration>
                             <includesList>
-                                com.asialjim.microapplet:*
-                                com.asialjim:*
+                                com.asialjim*
                             </includesList>
                             <includeProperties>
-                                com.asialjim.microapplet:*
+                                com.asialjim.microapplet
                             </includeProperties>
                         </configuration>
                     </execution>
