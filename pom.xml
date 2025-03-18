@@ -211,12 +211,10 @@
                             <goal>update-properties</goal>
                         </goals>
                         <configuration>
-                            <includesList>
-                                com.asialjim*
-                            </includesList>
-                            <includeProperties>
-                                com.asialjim.microapplet
-                            </includeProperties>
+                            <allowSnapshots>false</allowSnapshots>
+                            <generateBackupPoms>false</generateBackupPoms>
+                            <processDependencyManagement>true</processDependencyManagement>
+                            <processDependencies>true</processDependencies>
                         </configuration>
                     </execution>
                 </executions>
