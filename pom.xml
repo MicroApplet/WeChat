@@ -206,6 +206,7 @@
                         versions:use-releases
                         versions:update-properties
                         versions:update-parent
+                        install
                         verify
                     </preparationGoals>
                 </configuration>
@@ -356,6 +357,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
