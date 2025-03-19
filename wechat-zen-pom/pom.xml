@@ -20,7 +20,7 @@
     <parent>
         <groupId>com.asialjim.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -32,103 +32,103 @@
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-applet-module</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-applet-remoting</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-applet-repository</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-applet-service</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-applet-starter</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-common-module</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-common-remoting</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-common-repository</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-common-service</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-official-module</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-official-remoting</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-official-repository</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-official-service</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-official-starter</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-pay-module</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-pay-remoting</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-pay-repository</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-pay-service</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>wechat-pay-starter</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
