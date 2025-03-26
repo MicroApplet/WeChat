@@ -1,4 +1,5 @@
 /*
+package com.asialjim.microapplet.wechat.official.session;
  *  Copyright 2014-2025 <a href="mailto:asialjim@qq.com">Asial Jim</a>
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  *  See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+package com.asialjim.microapplet.wechat.official.session;
 
 import com.asialjim.microapplet.wechat.user.WeChatUserSession;
 import com.fasterxml.jackson.annotation.JsonProperty;

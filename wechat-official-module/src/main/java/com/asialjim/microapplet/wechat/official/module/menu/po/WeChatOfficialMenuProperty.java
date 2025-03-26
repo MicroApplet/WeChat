@@ -51,8 +51,6 @@ public class WeChatOfficialMenuProperty implements Comparable<WeChatOfficialMenu
     private String url;
     private String applet;
     private String path;
-    @Column(ignore = true)
-    private LocalDateTime createTime;
 
     public String getRuleId() {
         if (StringUtils.isBlank(ruleId))

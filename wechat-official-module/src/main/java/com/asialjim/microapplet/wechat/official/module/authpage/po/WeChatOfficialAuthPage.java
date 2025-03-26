@@ -59,6 +59,7 @@ public class WeChatOfficialAuthPage implements Serializable {
     /**
      * 是否显式授权
      */
+    @Column("scope")
     private Boolean manual;
     /**
      * 跳转目标链接，数据库存储的应该是添加了参数后的链接
