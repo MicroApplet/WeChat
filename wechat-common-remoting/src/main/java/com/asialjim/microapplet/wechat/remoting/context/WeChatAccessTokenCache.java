@@ -19,6 +19,7 @@ import java.util.concurrent.locks.Lock;
 
 @SuppressWarnings("unused")
 public interface WeChatAccessTokenCache {
+
     /**
      * 添加缓存：
      * <br/> 注意要求： 最大缓存时间不能超过两个小时
