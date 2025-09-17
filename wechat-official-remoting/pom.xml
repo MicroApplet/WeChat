@@ -20,7 +20,7 @@
     <parent>
         <groupId>com.asialjim.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.3.0-SNAPSHOT</version>
+        <version>1.3.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
-            <version>1.3.0-SNAPSHOT</version>
+            <version>1.3.0</version>
         </dependency>
         <!--suppress VulnerableLibrariesLocal -->
         <dependency>
