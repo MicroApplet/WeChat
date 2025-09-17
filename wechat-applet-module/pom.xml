@@ -20,11 +20,12 @@
     <parent>
         <groupId>com.asialjim.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>wechat-applet-module</artifactId>
+    <name>WeChat Applet Module</name>
 
     <dependencies>
         <dependency>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-common-module</artifactId>
-            <version>1.2.1-SNAPSHOT</version>
+            <version>1.2.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

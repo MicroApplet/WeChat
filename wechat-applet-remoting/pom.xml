@@ -20,10 +20,11 @@
     <parent>
         <groupId>com.asialjim.microapplet</groupId>
         <artifactId>wechat</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>wechat-applet-remoting</artifactId>
+    <name>WeChat Applet Remoting</name>
 
 
     <dependencies>
@@ -31,7 +32,7 @@
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-common-remoting</artifactId>
-            <version>1.2.1-SNAPSHOT</version>
+            <version>1.2.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
