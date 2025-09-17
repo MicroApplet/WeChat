@@ -109,10 +109,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-               <!--
                 <com.asialjim.microapplet>${project.version}</com.asialjim.microapplet>
-                -->
-                <com.asialjim.microapplet>1.2.0-SNAPSHOT</com.asialjim.microapplet>
             </properties>
         </profile>
         <profile>
