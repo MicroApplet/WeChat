@@ -15,13 +15,14 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
 
     <groupId>com.asialjim.microapplet</groupId>
     <artifactId>wechat</artifactId>
-    <version>1.3.2-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WeChat</name>
     <url>https://github.com/MicroApplet/WeChat</url>
@@ -96,10 +97,15 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.7.18</spring-boot.version>
-        <mybatis-flex.version>1.9.4</mybatis-flex.version>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <spring-boot.version>3.2.9</spring-boot.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2025.0.0.0-preview</spring-cloud-alibaba.version>
+        <spring-alibaba-ai.version>1.0.0.2</spring-alibaba-ai.version>
+        <spring-ai.version>1.0.1</spring-ai.version>
+        <hutool.version>5.8.39</hutool.version>
     </properties>
 
     <profiles>
@@ -140,13 +146,6 @@
                 <groupId>com.asialjim.microapplet</groupId>
                 <artifactId>remote-zen-pom</artifactId>
                 <version>${com.asialjim.microapplet}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.mybatis-flex</groupId>
-                <artifactId>mybatis-flex-dependencies</artifactId>
-                <version>${mybatis-flex.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -329,7 +328,7 @@
                 </executions>
             </plugin>
 
-                    <!-- 编译工具 -->
+            <!-- 编译工具 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -18,12 +18,12 @@ package com.asialjim.microapplet.wechat.official.module.message;
 import com.asialjim.microapplet.wechat.application.WeChatApplication;
 import com.asialjim.microapplet.wechat.application.WeChatApplicationRepository;
 import com.asialjim.microapplet.wechat.encryt.official.WeChatOfficialMsgCryptService;
+import jakarta.annotation.Resource;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
