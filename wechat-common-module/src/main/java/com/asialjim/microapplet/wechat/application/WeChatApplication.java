@@ -20,12 +20,20 @@ import com.mybatisflex.annotation.Id;
 import com.mybatisflex.annotation.Table;
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * 聊天应用
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @date 2025/09/23
+ */
 @Data
 @Table("wechat_app")
 public class WeChatApplication implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = 4412693788847340328L;
 
 

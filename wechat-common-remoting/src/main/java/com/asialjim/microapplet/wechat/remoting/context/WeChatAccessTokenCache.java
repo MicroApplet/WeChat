@@ -17,6 +17,12 @@ package com.asialjim.microapplet.wechat.remoting.context;
 
 import java.util.concurrent.locks.Lock;
 
+/**
+ * 我们聊天访问令牌缓存
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @date 2025/09/23
+ */
 @SuppressWarnings("unused")
 public interface WeChatAccessTokenCache {
 
@@ -29,7 +35,7 @@ public interface WeChatAccessTokenCache {
      * @param accessToken {@link String accessToken}
      * @since 2023/2/2
      */
-    void set(String appid, String accessToken);
+    String set(String appid, String accessToken);
 
     /**
      * 查询 WeChat Access Token 缓存

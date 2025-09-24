@@ -37,6 +37,13 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.locks.Lock;
 import java.util.stream.Stream;
 
+/**
+ * 微信API令牌仓库
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @version 1.0
+ * @since 2025/9/23, &nbsp;&nbsp; <em>version:1.0</em>
+ */
 @Slf4j
 @Component
 public class WeChatAccessTokenRepositoryImpl implements WeChatAccessTokenRepository {
@@ -49,11 +56,24 @@ public class WeChatAccessTokenRepositoryImpl implements WeChatAccessTokenReposit
     @Resource
     private List<Executor> executors;
 
+    /**
+     * 访问令牌
+     *
+     * @param weChatIndex 我们聊天索引
+     * @return {@link String}
+     */
     @Override
     public String accessToken(String weChatIndex) {
         return accessToken(weChatIndex, null);
     }
 
+    /**
+     * 访问令牌
+     *
+     * @param appid  appid
+     * @param secret 秘密
+     * @return {@link String}
+     */
     @Override
     public String accessToken(String appid, String secret) {
         WeChatApplication weChatApplication = aggregator.appByIndex(appid);
@@ -95,11 +115,22 @@ public class WeChatAccessTokenRepositoryImpl implements WeChatAccessTokenReposit
         return accessToken;
     }
 
+    /**
+     * 刷新访问令牌
+     *
+     * @param weChatIndex 我们聊天索引
+     */
     @Override
     public void refreshAccessToken(String weChatIndex) {
         refreshAccessToken(weChatIndex, null);
     }
 
+    /**
+     * 刷新访问令牌
+     *
+     * @param appid  appid
+     * @param secret 秘密
+     */
     @Override
     public void refreshAccessToken(String appid, String secret) {
         final String targetAppid, targetSecret;

@@ -17,8 +17,10 @@
 package com.asialjim.microapplet.wechat;
 
 import com.asialjim.microapplet.remote.spring.RemoteScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan
 @RemoteScan("com.asialjim.microapplet.wechat")
 public class WeChatRemotingBean { }
