@@ -24,6 +24,7 @@ import lombok.experimental.Accessors;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -44,6 +45,7 @@ import java.util.concurrent.TimeUnit;
 @Table("wechat_official_auth_page")
 public class WeChatOfficialAuthPage implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 363677825168545694L;
     public static final String SNS_API_BASE = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_base&state=%s#wechat_redirect";
     public static final String SNS_API_USERINFO = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s#wechat_redirect";

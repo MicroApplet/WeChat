@@ -15,7 +15,7 @@
  */
 package com.asialjim.microapplet.wechat.official.service.controller;
 
-import com.asialjim.microapplet.wechat.official.module.message.WeChatOfficialCallBackVerifyService;
+import com.asialjim.microapplet.wechat.official.module.message.crypt.WeChatOfficialCallBackVerifyService;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

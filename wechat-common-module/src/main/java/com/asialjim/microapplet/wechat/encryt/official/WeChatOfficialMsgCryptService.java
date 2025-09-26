@@ -19,6 +19,7 @@ package com.asialjim.microapplet.wechat.encryt.official;
 import com.asialjim.microapplet.wechat.application.WeChatApplication;
 import com.asialjim.microapplet.wechat.encryt.official.aes.AesException;
 import com.asialjim.microapplet.wechat.encryt.official.aes.WeChatOfficialMsgCrypt;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
@@ -51,6 +52,7 @@ public class WeChatOfficialMsgCryptService {
             CRYPT_MAP.put(appid, crypt);
             return crypt;
         } catch (AesException e) {
+            System.out.println("WeChatOfficialMsgCryptService Exception: " + e.getMessage());
             throw new IllegalStateException(e);
         }
     }
@@ -67,6 +69,7 @@ public class WeChatOfficialMsgCryptService {
             crypt.verifyUrl(signature, timestamp, nonce, echostr);
             return true;
         } catch (AesException e) {
+            e.printStackTrace();
             return false;
         }
     }

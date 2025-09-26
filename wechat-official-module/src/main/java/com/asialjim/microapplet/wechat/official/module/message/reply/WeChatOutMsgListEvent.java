@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2025 <a href="mailto:asialjim@qq.com">Asial Jim</a>
+ * Copyright 2014-2024 <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-package com.asialjim.microapplet.wechat.official.module.authpage.mapper;
+package com.asialjim.microapplet.wechat.official.module.message.reply;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
-import com.asialjim.microapplet.wechat.official.module.authpage.po.WeChatOfficialAuthPage;
-import com.mybatisflex.core.BaseMapper;
+import java.util.List;
 
 /**
- * 微信公众号授权网页链接持久化服务
+ * 多个被动回复事件
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
- * @version 1.0.0
- * @since 2024 07 25, &nbsp;&nbsp; <em>version:1.0.0</em>
+ * @version 1.0
+ * @since 2025/9/25, &nbsp;&nbsp; <em>version:1.0</em>
  */
-@Mapper
-public interface WeChatOfficialAuthPageBaseMapper extends BaseMapper<WeChatOfficialAuthPage> {
-}
+public record WeChatOutMsgListEvent(List<WxMpXmlOutMessage> source) { }
