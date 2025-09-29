@@ -21,11 +21,13 @@ import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.HttpQuery;
 import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
 import com.asialjim.microapplet.remote.net.annotation.Server;
+import com.asialjim.microapplet.wechat.annotation.access_token.AccessTokenProxy;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.asialjim.microapplet.wechat.remoting.meta.WeChatAccessTokenRes;
 import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @SuppressWarnings("unused")
@@ -46,6 +48,7 @@ public interface WeChatAccessTokenRemoting {
      * @return {@link WeChatAccessTokenRes}
      * @since 2023/12/14
      */
+    @AccessTokenProxy
     @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/token", queries = @HttpQuery(name = "grant_type", value = "client_credential"))
     WeChatAccessTokenRes accessToken(@HttpQuery(name = "appid") String appid, @HttpQuery(name = "secret") String secret);
 
@@ -55,6 +58,7 @@ public interface WeChatAccessTokenRemoting {
      * @return {@link WeChatAccessTokenRes}
      * @since 2023/12/16
      */
+    @AccessTokenProxy
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/stable_token", queries = @HttpQuery(name = "grant_type", value = "client_credential"))
     WeChatAccessTokenRes stableToken(@JsonBody StableTokenReq req);
 
@@ -66,6 +70,7 @@ public interface WeChatAccessTokenRemoting {
      * @return {@link ComponentAccessTokenRes }
      * @since 2023/12/26
      */
+    @AccessTokenProxy
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/component/api_component_token")
     ComponentAccessTokenRes componentAccessToken(@JsonBody ComponentAccessTokenReq req);
 
@@ -83,6 +88,7 @@ public interface WeChatAccessTokenRemoting {
      * @return {@link AuthorizerAccessTokenRes }
      * @since 2023/12/26
      */
+    @AccessTokenProxy
     @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/component/api_authorizer_token")
     AuthorizerAccessTokenRes authorizerAccessToken(@HttpQuery(name = "component_access_token") String token, @JsonBody AuthorizerAccessTokenReq req);
 
@@ -92,6 +98,7 @@ public interface WeChatAccessTokenRemoting {
     @AllArgsConstructor
     class AuthorizerAccessTokenReq implements Serializable {
         
+        @Serial
         private static final long serialVersionUID = -7639034745138301631L;
 
         private String component_appid;
@@ -103,7 +110,8 @@ public interface WeChatAccessTokenRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class AuthorizerAccessTokenRes extends BaseWeChatApiRes {
-        
+
+        @Serial
         private static final long serialVersionUID = -5469586211975433410L;
 
         private String authorizer_access_token;
@@ -116,7 +124,8 @@ public interface WeChatAccessTokenRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class ComponentAccessTokenReq implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = -7682607854977975316L;
         private String component_appid;
         private String component_appsecret;
@@ -128,7 +137,8 @@ public interface WeChatAccessTokenRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class ComponentAccessTokenRes extends BaseWeChatApiRes {
-        
+
+        @Serial
         private static final long serialVersionUID = -303390441876000714L;
 
         private String component_access_token;

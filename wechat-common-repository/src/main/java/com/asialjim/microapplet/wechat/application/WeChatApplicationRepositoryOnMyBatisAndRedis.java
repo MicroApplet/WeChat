@@ -18,38 +18,19 @@ package com.asialjim.microapplet.wechat.application;
 
 import com.asialjim.microapplet.wechat.application.db.WeChatApplicationMapperService;
 import com.asialjim.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
-import org.apache.commons.collections4.CollectionUtils;
 import org.mybatis.spring.annotation.MapperScan;
-import org.redisson.api.RBucket;
-import org.redisson.api.RedissonClient;
-import org.redisson.codec.JsonJacksonCodec;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import jakarta.annotation.Resource;
-import java.time.Duration;
-import java.util.List;
-import java.util.Objects;
 
 @Configuration
 @MapperScan(basePackageClasses = WeChatApplicationBaseMapper.class)
 public class WeChatApplicationRepositoryOnMyBatisAndRedis {
-    @Resource
-    private RedissonClient redissonClient;
     @Resource private WeChatApplicationMapperService weChatApplicationMapperService;
 
     @Bean
     public WeChatApplicationRepository weChatApplicationRepositoryOnMyBatisAndRedis() {
-        return () -> {
-            String key = WeChatApplicationRepository.PREFIX;
-            RBucket<List<WeChatApplication>> bucket = redissonClient.getBucket(key, JsonJacksonCodec.INSTANCE);
-            List<WeChatApplication> weChatApplications = bucket.get();
-            if (Objects.nonNull(weChatApplications))
-                return weChatApplications;
-            weChatApplications = weChatApplicationMapperService.list();
-            if (CollectionUtils.isNotEmpty(weChatApplications))
-                bucket.set(weChatApplications, Duration.ofDays(30));
-            return weChatApplications;
-        };
+        return () -> weChatApplicationMapperService.all();
     }
 }

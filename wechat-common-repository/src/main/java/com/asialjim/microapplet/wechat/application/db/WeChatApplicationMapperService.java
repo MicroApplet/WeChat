@@ -17,15 +17,26 @@
 package com.asialjim.microapplet.wechat.application.db;
 
 import com.asialjim.microapplet.wechat.application.WeChatApplication;
+import com.asialjim.microapplet.wechat.application.WxAppCache;
 import com.asialjim.microapplet.wechat.application.mapper.WeChatApplicationBaseMapper;
 import com.mybatisflex.core.service.IService;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 public interface WeChatApplicationMapperService extends IService<WeChatApplication> {
 
-    @Component
-    class  WeChatApplicationMapperServiceImpl extends ServiceImpl<WeChatApplicationBaseMapper,WeChatApplication> implements WeChatApplicationMapperService{
+    List<WeChatApplication> all();
 
+    @Component
+    class WeChatApplicationMapperServiceImpl extends ServiceImpl<WeChatApplicationBaseMapper, WeChatApplication> implements WeChatApplicationMapperService {
+
+        @Override
+        //@Cacheable(WxAppCache.Name.wxAppAll)
+        public List<WeChatApplication> all() {
+            return list();
+        }
     }
 }

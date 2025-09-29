@@ -30,6 +30,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -86,7 +87,7 @@ public class WXBizMsgCryptTest {
 			String fromXML = String.format(xmlFormat, encrypt);
 
 			// 第三方收到公众号平台发送的消息
-			String afterDecrpt = pc.decryptMsg(msgSignature, timestamp, nonce, fromXML);
+			String afterDecrpt = pc.decryptMsg(msgSignature, timestamp, nonce, fromXML, new AtomicBoolean());
 			assertEquals(replyMsg, afterDecrpt);
 		} catch (AesException e) {
 			fail("正常流程，怎么就抛出异常了？？？？？？");
@@ -144,7 +145,7 @@ public class WXBizMsgCryptTest {
 
 			String encrypt = nodelist1.item(0).getTextContent();
 			String fromXML = String.format(xmlFormat, encrypt);
-			pc.decryptMsg("12345", timestamp, nonce, fromXML); // 这里签名错误
+			pc.decryptMsg("12345", timestamp, nonce, fromXML, new AtomicBoolean()); // 这里签名错误
 		} catch (AesException e) {
 			assertEquals(AesException.ValidateSignatureError, e.getCode());
 			return;
