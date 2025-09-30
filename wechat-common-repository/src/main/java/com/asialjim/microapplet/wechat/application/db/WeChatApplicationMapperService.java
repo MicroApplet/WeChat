@@ -34,7 +34,7 @@ public interface WeChatApplicationMapperService extends IService<WeChatApplicati
     class WeChatApplicationMapperServiceImpl extends ServiceImpl<WeChatApplicationBaseMapper, WeChatApplication> implements WeChatApplicationMapperService {
 
         @Override
-        //@Cacheable(WxAppCache.Name.wxAppAll)
+        @Cacheable(WxAppCache.Name.wxAppAll)
         public List<WeChatApplication> all() {
             return list();
         }
