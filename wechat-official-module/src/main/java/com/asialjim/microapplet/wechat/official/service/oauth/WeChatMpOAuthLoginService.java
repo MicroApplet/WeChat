@@ -36,7 +36,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class WeChatMpOAuthLoginService {
-
     private final WeChatPublicAccountUserRemoting weChatPublicAccountUserRemoting;
     private final WeChatApplicationRepository.Aggregator aggregator;
     private final OAuthPageLogin oAuthPageLogin;
