@@ -20,6 +20,7 @@ import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.HttpQuery;
 import com.asialjim.microapplet.remote.net.annotation.Server;
+import com.asialjim.microapplet.remote.net.response.JsonResult;
 import com.asialjim.microapplet.wechat.applet.user.meta.WeChatAppletUserLoginRes;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
 
@@ -30,6 +31,7 @@ import com.asialjim.microapplet.wechat.constant.WeChatCons;
  * @version 1.0
  * @since 2025/2/25, &nbsp;&nbsp; <em>version:1.0</em>
  */
+@JsonResult
 @Server(
         supplier = WeChatCons.Supplier.WECHAT,
         namespace = WeChatCons.Namespace.COMMON,
