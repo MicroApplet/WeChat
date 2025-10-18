@@ -19,10 +19,14 @@ package com.asialjim.microapplet.wechat.applet.user;
 import com.asialjim.microapplet.remote.http.annotation.HttpMapping;
 import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.HttpQuery;
+import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
 import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.remote.net.response.JsonResult;
+import com.asialjim.microapplet.wechat.applet.meta.UserAuthorizationCode;
+import com.asialjim.microapplet.wechat.applet.user.meta.GetUserPhoneNumberRes;
 import com.asialjim.microapplet.wechat.applet.user.meta.WeChatAppletUserLoginRes;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
+import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 
 /**
  * 微信小程序用户相关服务API客户端
@@ -49,4 +53,7 @@ public interface WeChatAppletUserRemoting {
      */
     @HttpMapping(method = HttpMethod.GET,uri = "/sns/jscode2session", queries = @HttpQuery(name = "grant_type", value = "client_credential"))
     WeChatAppletUserLoginRes login(@HttpQuery(name = "appid") String appid, @HttpQuery(name = "secret") String secret, @HttpQuery(name = "js_code")String code);
+
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxa/business/getuserphonenumber")
+    GetUserPhoneNumberRes userPhoneNumber(@WeChatAccessTokenParam String weChatIndex, @JsonBody UserAuthorizationCode code);
 }
