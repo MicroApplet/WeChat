@@ -17,6 +17,7 @@ package com.asialjim.microapplet.wechat.user;
 
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -29,6 +30,7 @@ import java.time.LocalDateTime;
  */
 @Data
 public abstract class WeChatUserSession implements Serializable {
+    @Serial
     private static final long serialVersionUID = 2453087247221403464L;
 
     protected String openid;

@@ -34,11 +34,15 @@
             <artifactId>wechat-common-remoting</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-common-module</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>com.mybatis-flex</groupId>
             <artifactId>mybatis-flex-core</artifactId>

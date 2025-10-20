@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.asialjim.microapplet.wechat.application;
+package com.asialjim.microapplet.wechat.common.infrastructure.repository.user;
 
 import com.asialjim.microapplet.common.cache.CacheNameAndTTL;
 import com.asialjim.microapplet.common.cache.CacheNameAndTTLConfig;
@@ -26,21 +26,22 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 微信公众号渠道缓存配置
+ * 微信用户缓存配置
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
  * @version 1.0
- * @since 2025/9/11, &nbsp;&nbsp; <em>version:1.0</em>
+ * @since 2025/10/20, &nbsp;&nbsp; <em>version:1.0</em>
  */
 @Configuration
-public class WxAppCache extends CacheNameAndTTLConfig {
+public class WeChatUserCache extends CacheNameAndTTLConfig {
+
     public interface Name {
-        String wxAppAll = "tmp:wx:app:all";
+        String wechatUser = "tmp:wechat:user";
     }
 
     @Getter
     enum Cache implements CacheNameAndTTL {
-        wxAppAll(Name.wxAppAll);
+        wechatUser(Name.wechatUser, Duration.ofMinutes(110L));
 
         Cache(String name) {
             this(name, Duration.ofHours(1));
@@ -61,6 +62,11 @@ public class WxAppCache extends CacheNameAndTTLConfig {
         private final Duration nullTTL;
     }
 
+    /**
+     * 列表
+     *
+     * @return {@link List<CacheNameAndTTL>}
+     */
     @Override
     protected List<CacheNameAndTTL> list() {
         return Arrays.asList(Cache.values());

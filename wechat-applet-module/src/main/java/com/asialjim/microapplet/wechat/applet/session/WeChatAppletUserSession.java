@@ -22,6 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -35,6 +36,7 @@ import java.io.Serializable;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatAppletUserSession extends WeChatUserSession implements Serializable {
+    @Serial
     private static final long serialVersionUID = -794999508127707801L;
 
     @JsonProperty("session_key")

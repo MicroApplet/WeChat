@@ -16,8 +16,6 @@
 
 package com.asialjim.microapplet.wechat.application;
 
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.Table;
 import lombok.Data;
 
 import java.io.Serial;
@@ -27,10 +25,9 @@ import java.io.Serializable;
  * 聊天应用
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
- * @date 2025/09/23
+ * @since 2025/09/23
  */
 @Data
-@Table("wechat_app")
 public class WeChatApplication implements Serializable {
     
     @Serial
@@ -40,7 +37,6 @@ public class WeChatApplication implements Serializable {
     /**
      * 微信公众平台应用微信号,除应用类型为企业微信，一般情况下，与 {@link #getSubjectId()} 相同
      */
-    @Id
     private String id;
 
     /**
