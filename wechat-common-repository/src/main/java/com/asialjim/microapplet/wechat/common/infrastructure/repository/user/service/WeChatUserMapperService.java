@@ -30,4 +30,6 @@ public interface WeChatUserMapperService extends IService<WeChatUserPo> {
     WeChatUserPo queryByOpenidOfAppid(String openid, String appid);
 
     WeChatUserPo queryByOpenid(String openid);
+
+    void clearCache(WeChatUserPo po);
 }

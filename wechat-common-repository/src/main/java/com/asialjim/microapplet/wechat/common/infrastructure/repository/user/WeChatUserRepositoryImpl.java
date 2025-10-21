@@ -22,6 +22,7 @@ import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.map
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.po.WeChatUserPo;
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.service.WeChatUserMapperService;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Component;
 
@@ -34,6 +35,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 2025/10/20, &nbsp;&nbsp; <em>version:1.0</em>
  */
+@Slf4j
 @Component
 public class WeChatUserRepositoryImpl implements WeChatUserRepository {
     @Resource
@@ -47,16 +49,41 @@ public class WeChatUserRepositoryImpl implements WeChatUserRepository {
     }
 
     @Override
-    public void save(WeChatUserVo weChatUser) {
+    public boolean save(WeChatUserVo weChatUser) {
         WeChatUserPo po = WeChatUserPo.fromVo(weChatUser);
+        log.info("保存微信用户持久化对象：{}",po);
         if (Objects.isNull(po))
-            return;
-        this.weChatUserMapperService.save(po);
+            return false;
+        return this.weChatUserMapperService.save(po);
     }
 
     @Override
     public WeChatUserVo queryByOpenid(String openid) {
         WeChatUserPo po = this.weChatUserMapperService.queryByOpenid(openid);
+        return WeChatUserPo.toVo(po);
+    }
+
+    @Override
+    public WeChatUserVo updateAvatarByOpenid(String id, String avatar) {
+        WeChatUserPo po = this.weChatUserMapperService.queryByOpenid(id);
+        if (Objects.isNull(po))
+            return null;
+        po.setAvatar(avatar);
+        boolean b = this.weChatUserMapperService.updateById(po);
+        log.info("用户：{} 头像：{} 更新结果：{}", id, avatar, b);
+        this.weChatUserMapperService.clearCache(po);
+        return WeChatUserPo.toVo(po);
+    }
+
+    @Override
+    public WeChatUserVo updateNicknameByOpenid(String id, String nickname) {
+        WeChatUserPo po = this.weChatUserMapperService.queryByOpenid(id);
+        if (Objects.isNull(po))
+            return null;
+        po.setNickname(nickname);
+        boolean b = this.weChatUserMapperService.updateById(po);
+        log.info("用户：{} 昵称：{} 更新结果：{}", id, nickname, b);
+        this.weChatUserMapperService.clearCache(po);
         return WeChatUserPo.toVo(po);
     }
 }

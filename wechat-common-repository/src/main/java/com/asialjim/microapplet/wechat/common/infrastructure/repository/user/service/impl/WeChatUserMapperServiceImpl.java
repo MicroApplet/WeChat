@@ -21,7 +21,9 @@ import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.map
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.po.WeChatUserPo;
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.service.WeChatUserMapperService;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -33,6 +35,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class WeChatUserMapperServiceImpl extends ServiceImpl<WeChatUserBaseMapper, WeChatUserPo> implements WeChatUserMapperService {
+
     @Override
     @Cacheable(value = WeChatUserCache.Name.wechatUser, key = "#appid + ':' + #openid")
     public WeChatUserPo queryByOpenidOfAppid(String openid, String appid) {
@@ -48,5 +51,13 @@ public class WeChatUserMapperServiceImpl extends ServiceImpl<WeChatUserBaseMappe
         return queryChain()
                 .where(WeChatUserPo::getOpenid).eq(openid)
                 .one();
+    }
+
+    @Override
+    @Caching(evict = {
+            @CacheEvict(value = WeChatUserCache.Name.wechatUser, key = "#po.appid + ':' + #po.openid"),
+            @CacheEvict(value = WeChatUserCache.Name.wechatUser, key = "#po.openid")
+    })
+    public void clearCache(WeChatUserPo po) {
     }
 }

@@ -45,7 +45,7 @@ public class WeChatUserPo implements Serializable {
     @Serial
     private static final long serialVersionUID = 317666968069802076L;
 
-    @Id(keyType = KeyType.None,value = KeyGenerators.snowFlakeId)
+    @Id(keyType = KeyType.Generator,value = KeyGenerators.snowFlakeId)
     private String id;
     private String openid;
     private String unionId;

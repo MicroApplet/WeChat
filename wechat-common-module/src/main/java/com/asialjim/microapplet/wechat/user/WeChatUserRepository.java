@@ -40,7 +40,7 @@ public interface WeChatUserRepository {
      * @param weChatUser {@link WeChatUserVo weChatUser}
      * @since 2025/10/20
      */
-    void save(WeChatUserVo weChatUser);
+    boolean save(WeChatUserVo weChatUser);
 
     /**
      * 根据 openid 查询指定微信应用用户信息
@@ -50,4 +50,8 @@ public interface WeChatUserRepository {
      * @since 2025/10/20
      */
     WeChatUserVo queryByOpenid(String openid);
+
+    WeChatUserVo updateAvatarByOpenid(String id, String avatar);
+
+    WeChatUserVo updateNicknameByOpenid(String id, String nickname);
 }

@@ -21,8 +21,10 @@ import com.asialjim.microapplet.wechat.user.WeChatUserLoginEvent;
 import com.asialjim.microapplet.wechat.user.WeChatUserRepository;
 import com.asialjim.microapplet.wechat.user.WeChatUserVo;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
@@ -32,6 +34,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 2025/10/20, &nbsp;&nbsp; <em>version:1.0</em>
  */
+@Slf4j
 @Component
 public class WeChatUserLoginListener extends BaseAsyncListener<WeChatUserLoginEvent> {
     @Resource
@@ -47,8 +50,10 @@ public class WeChatUserLoginListener extends BaseAsyncListener<WeChatUserLoginEv
         String openid = weChatUser.getOpenid();
         String appid = weChatUser.getAppid();
         WeChatUserVo exist = this.weChatUserRepository.queryByOpenidOfAppid(openid, appid);
-        if (Objects.isNull(exist))
+        log.info("微信公众平台应用：{} 用户：{} 信息：{}",appid,openid,exist);
+        if (Objects.nonNull(exist))
             return;
+        weChatUser.setSubscribeTime(LocalDateTime.now());
         this.weChatUserRepository.save(weChatUser);
     }
 }
