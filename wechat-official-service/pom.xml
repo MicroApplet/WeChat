@@ -63,15 +63,6 @@
 
 
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.ly.smart-doc</groupId>
-                <artifactId>smart-doc-maven-plugin</artifactId>
-            </plugin>
-
-        </plugins>
-    </build>
 
 
 
