@@ -26,7 +26,7 @@ import org.redisson.codec.JsonJacksonCodec;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;

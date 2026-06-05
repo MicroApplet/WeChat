@@ -16,7 +16,7 @@
 package com.asialjim.microapplet.wechat.remoting.context;
 
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 @SuppressWarnings("unused")
 public interface WeChatAccessTokenRepository {
