@@ -17,12 +17,12 @@
 package com.asialjim.microapplet.wechat.official.service.msg.reply;
 
 import com.asialjim.microapplet.remote.net.jackson.AbstractJacksonUtil;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.*;
 import lombok.experimental.Accessors;
+import tools.jackson.dataformat.xml.annotation.JacksonXmlCData;
+import tools.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import tools.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -38,7 +38,7 @@ import java.util.List;
  */
 @Data
 @Accessors(chain = true)
-@JacksonXmlRootElement(localName = "xml")
+@JsonRootName(value = "xml")
 public class WxMpXmlOutMessage implements Serializable {
     @Serial
     private static final long serialVersionUID = 6920442425097742418L;
@@ -77,7 +77,7 @@ public class WxMpXmlOutMessage implements Serializable {
     protected Music music = new Music();
 
 
-    @JacksonXmlRootElement(localName = "Music")
+    @JsonRootName(value = "Music")
     @Data
     public static class Music implements Serializable {
         @Serial
@@ -118,7 +118,7 @@ public class WxMpXmlOutMessage implements Serializable {
     @JacksonXmlProperty(localName = "ArticleCount")
     protected int articleCount;
 
-    @JacksonXmlRootElement(localName = "item")
+    @JsonRootName(value = "item")
     @Data
     public static class Item implements Serializable {
         @Serial
@@ -163,7 +163,7 @@ public class WxMpXmlOutMessage implements Serializable {
     protected TransInfo transInfo;
 
     @Data
-    @JacksonXmlRootElement(localName = "Image")
+    @JsonRootName(value = "Image")
     public static class Image {
 
         @JacksonXmlProperty(localName = "MediaId")
@@ -171,7 +171,7 @@ public class WxMpXmlOutMessage implements Serializable {
     }
 
     @Data
-    @JacksonXmlRootElement(localName = "TransInfo")
+    @JsonRootName(value = "TransInfo")
     public static class TransInfo implements Serializable {
         @Serial
         private static final long serialVersionUID = -6317885617135706056L;
@@ -183,7 +183,7 @@ public class WxMpXmlOutMessage implements Serializable {
     }
 
     @Data
-    @JacksonXmlRootElement(localName = "Video")
+    @JsonRootName(value = "Video")
     public static class Video implements Serializable {
         @Serial
         private static final long serialVersionUID = -6445448977569651183L;

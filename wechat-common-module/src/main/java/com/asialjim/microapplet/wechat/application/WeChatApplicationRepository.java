@@ -32,11 +32,11 @@ import java.util.Objects;
 public interface WeChatApplicationRepository {
     Log log = LogFactory.getLog(WeChatApplicationRepository.class);
 
-    String PREFIX = "wx:app:all";
-    String CACHE = "wx:app:%s";
+    String WX_APP_CACHE = "wx:app";
 
     /**
      * 获取所有微信应用信息
+     *
      * @return {@link List<WeChatApplication>}
      * @since 2023/12/16
      */
@@ -44,7 +44,8 @@ public interface WeChatApplicationRepository {
 
     /**
      * 根据索引查询所有微信应用信息,如果找不到则抛出异常
-	 * @param weChatIndex {@link String weChatIndex}
+     *
+     * @param weChatIndex {@link String weChatIndex}
      * @return {@link WeChatApplication}
      * @since 2023/12/16
      */
@@ -56,22 +57,22 @@ public interface WeChatApplicationRepository {
         WeChatApplication targetByName = null;
         for (WeChatApplication app : apps) {
             String id = app.getId();
-            if (StringUtils.equalsAnyIgnoreCase(weChatIndex,id)){
+            if (StringUtils.equalsAnyIgnoreCase(weChatIndex, id)) {
                 targetById = app;
                 break;
             }
             String appid = app.getAppid();
-            if (StringUtils.equalsAnyIgnoreCase(weChatIndex,appid)){
+            if (StringUtils.equalsAnyIgnoreCase(weChatIndex, appid)) {
                 targetByAppId = app;
                 break;
             }
             String subjectId = app.getSubjectId();
-            if (StringUtils.equalsAnyIgnoreCase(weChatIndex,subjectId)){
+            if (StringUtils.equalsAnyIgnoreCase(weChatIndex, subjectId)) {
                 targetBySubjectId = app;
                 break;
             }
             String name = app.getName();
-            if (StringUtils.equalsAnyIgnoreCase(weChatIndex,name)){
+            if (StringUtils.equalsAnyIgnoreCase(weChatIndex, name)) {
                 targetByName = app;
                 break;
             }
@@ -91,14 +92,14 @@ public interface WeChatApplicationRepository {
     /**
      * 根据索引查询所有微信应用信息,如果找不到则抛出异常
      *
-	 * @param weChatIndex {@link String weChatIndex}
+     * @param weChatIndex {@link String weChatIndex}
      * @return {@link WeChatApplication}
      * @since 2023/12/16
      */
-    default WeChatApplication appByIndex(String weChatIndex){
+    default WeChatApplication appByIndex(String weChatIndex) {
         try {
             return appByIndexThrowable(weChatIndex);
-        } catch (Throwable t){
+        } catch (Throwable t) {
             return null;
         }
     }
@@ -112,15 +113,16 @@ public interface WeChatApplicationRepository {
      */
     @Component
     @AllArgsConstructor
-    class Aggregator{
+    class Aggregator {
         private final List<WeChatApplicationRepository> repositories;
 
         /**
          * 获取所有微信应用信息
+         *
          * @return {@link List<WeChatApplication>}
          * @since 2023/12/16
          */
-        public List<WeChatApplication> allApps(){
+        public List<WeChatApplication> allApps() {
             if (CollectionUtils.isEmpty(repositories))
                 return Collections.emptyList();
 
@@ -135,11 +137,12 @@ public interface WeChatApplicationRepository {
 
         /**
          * 根据索引查询所有微信应用信息,如果找不到则抛出异常
+         *
          * @param weChatIndex {@link String weChatIndex}
          * @return {@link WeChatApplication}
          * @since 2023/12/16
          */
-        public WeChatApplication appByIndexThrowable(String weChatIndex){
+        public WeChatApplication appByIndexThrowable(String weChatIndex) {
             if (CollectionUtils.isEmpty(repositories))
                 throw new IllegalStateException("找不到索引为" + weChatIndex + "的微信应用");
 
@@ -148,7 +151,7 @@ public interface WeChatApplicationRepository {
                     WeChatApplication weChatApplication = repository.appByIndexThrowable(weChatIndex);
                     if (Objects.nonNull(weChatApplication))
                         return weChatApplication;
-                } catch (Throwable e){
+                } catch (Throwable e) {
                     e.printStackTrace();
                 }
             }
@@ -162,10 +165,10 @@ public interface WeChatApplicationRepository {
          * @return {@link WeChatApplication}
          * @since 2023/12/16
          */
-        public WeChatApplication appByIndex(String weChatIndex){
+        public WeChatApplication appByIndex(String weChatIndex) {
             try {
                 return appByIndexThrowable(weChatIndex);
-            } catch (Throwable t){
+            } catch (Throwable t) {
                 return null;
             }
         }

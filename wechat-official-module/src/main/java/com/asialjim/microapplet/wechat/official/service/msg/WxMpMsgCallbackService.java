@@ -24,7 +24,6 @@ import com.asialjim.microapplet.wechat.encryt.official.WeChatOfficialMsgCryptSer
 import com.asialjim.microapplet.wechat.encryt.official.aes.WeChatOfficialMsgCrypt;
 import com.asialjim.microapplet.wechat.official.service.msg.reply.WeChatOutMsgListEvent;
 import com.asialjim.microapplet.wechat.official.service.msg.reply.WxMpXmlOutMessage;
-import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -34,6 +33,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import tools.jackson.databind.JsonNode;
 
 import java.util.List;
 import java.util.Objects;
