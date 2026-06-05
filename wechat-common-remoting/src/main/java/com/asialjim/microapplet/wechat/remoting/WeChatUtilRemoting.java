@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.io.Serializable;
+import java.io.Serial;
 import java.util.List;
 
 @SuppressWarnings("unused")
@@ -106,7 +107,7 @@ public interface WeChatUtilRemoting {
      * @return {@link QueryQuotaRes }
      * @since 2023/12/26
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/openapi/auota/get")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/openapi/quota/get")
     QueryQuotaRes queryQuota(@WeChatAccessTokenParam String weChatIndex, @JsonBody QueryQuotaReq body);
 
     /**
@@ -144,8 +145,26 @@ public interface WeChatUtilRemoting {
      * @return {@link BaseWeChatApiRes }
      * @since 2023/12/26
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/openapi/rid/get")
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/clear_quota/v2")
     BaseWeChatApiRes clearQuotaV2(@HttpQuery(name = "appid") String appid, @HttpQuery(name = "appsecret") String secret);
+
+    /**
+     * <pre>
+     * 清除接口调用次数
+     * 本接口用于清除指定账号的指定接口的每日调用次数。
+     * 注意事项
+     * 1、每个账号每月共10次清零操作机会，清零生效一次即用掉一次机会
+     * 2、由于指标计算方法或统计时间差异，实时调用量数据可能会出现误差，一般在1%以内
+     * 3、该接口仅支持POST调用
+     * </pre>
+     *
+     * @param weChatIndex {@link String weChatIndex}
+     * @param body {@link ClearAPIQuotaReq body}
+     * @return {@link BaseWeChatApiRes}
+     * @since 2025/10/30
+     */
+    @HttpMapping(method = HttpMethod.POST, uri = "/cgi-bin/openapi/quota/clear")
+    BaseWeChatApiRes clearAPIQuota(@WeChatAccessTokenParam String weChatIndex, @JsonBody ClearAPIQuotaReq body);
 
     @Data
     @Builder
@@ -252,5 +271,19 @@ public interface WeChatUtilRemoting {
         @JsonProperty("package_loss")
         private String packageLoss;
         private String time;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class ClearAPIQuotaReq implements Serializable {
+        @Serial
+        private static final long serialVersionUID = -287456321789054321L;
+        
+        /**
+         * 接口名，格式如：/cgi-bin/message/custom/send
+         */
+        private String cgi_path;
     }
 }

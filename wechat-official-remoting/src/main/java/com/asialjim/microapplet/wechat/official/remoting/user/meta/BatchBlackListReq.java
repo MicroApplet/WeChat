@@ -21,6 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ import java.util.Objects;
 public class BatchBlackListReq implements Serializable {
 
     
+    @Serial
     private static final long serialVersionUID = -6613235577302607337L;
 
     private List<String> openid_list;

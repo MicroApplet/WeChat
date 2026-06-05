@@ -20,6 +20,7 @@ import com.asialjim.microapplet.wechat.official.remoting.menu.meta.create.WeChat
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class WeChatPublicAccountMenuButton implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = -6574684521349956445L;
 
 

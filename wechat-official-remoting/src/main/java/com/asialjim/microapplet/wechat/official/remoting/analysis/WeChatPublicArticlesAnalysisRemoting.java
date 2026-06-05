@@ -69,7 +69,7 @@ public interface WeChatPublicArticlesAnalysisRemoting {
     /**
      * 获取图文群发总数据
      *
-     * @param weChatIndexOrAccessToken {@link java.lang.String weChatIndexOrAccessToken}
+     * @param weChatIndexOrAccessToken {@link String weChatIndexOrAccessToken}
      * @param body                     {@link ArticlesAnalysisReq body}
      * @return {@link GetArticleTotalRes }
      * @since 2024/3/1

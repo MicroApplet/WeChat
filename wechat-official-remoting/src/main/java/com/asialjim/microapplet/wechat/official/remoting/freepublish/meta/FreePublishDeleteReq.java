@@ -21,6 +21,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -34,6 +35,7 @@ import java.io.Serializable;
 public class FreePublishDeleteReq implements Serializable {
 
     
+    @Serial
     private static final long serialVersionUID = -1315404904451922677L;
 
     private String article_id;

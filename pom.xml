@@ -213,7 +213,7 @@
                     <preparationGoals>
                         clean
                         versions:use-releases
-                        versions:update-parent
+
                         verify
                     </preparationGoals>
                 </configuration>

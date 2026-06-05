@@ -15,6 +15,7 @@
   ~ limitations under the License.
   -->
 
+<!--suppress VulnerableLibrariesLocal -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -26,5 +27,22 @@
 
     <artifactId>wechat-official-repository</artifactId>
     <name>WeChat Official Repository</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.asialjim.microapplet</groupId>
+            <artifactId>wechat-official-module</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

@@ -69,9 +69,8 @@ public @interface WeChatAccessTokenParam {
 
         @Override
         public boolean retryWhen(Object data, RemoteMethodConfig methodConfig, RemoteReqContext req, RemoteResContext res, Object[] args) {
-            if (Objects.isNull(data) || !(data instanceof WeChatApiRes ))
+            if (Objects.isNull(data) || !(data instanceof WeChatApiRes apiRes))
                 return false;
-            WeChatApiRes apiRes = (WeChatApiRes) data;
             RemoteMethodParameter parameter = methodConfig.config(ACCESS_TOKEN_CONFIG_KEY);
             String weChatIndex = (String) args[parameter.getIndex()];
             String accessToken = doQueryAccessToken(weChatIndex);
@@ -80,21 +79,16 @@ public @interface WeChatAccessTokenParam {
                 return false;
 
             // access token 错误：过期，或者错误等
-            switch (apiRes.apiResultEnumeration()) {
-                case CODE_40001:
-                case CODE_40014:
-                case CODE_42001:
-                    return true;
-                default:
-                    return false;
-            }
+            return switch (apiRes.apiResultEnumeration()) {
+                case CODE_40001, CODE_40014, CODE_42001 -> true;
+                default -> false;
+            };
         }
 
         @Override
         public boolean success(Object data, RemoteMethodConfig methodConfig, RemoteReqContext req, RemoteResContext res, Object[] args) {
-            if (Objects.isNull(data) || !(data instanceof WeChatApiRes))
+            if (Objects.isNull(data) || !(data instanceof WeChatApiRes weChatApiRes))
                 return false;
-            WeChatApiRes weChatApiRes = (WeChatApiRes) data;
             return weChatApiRes.success();
         }
 

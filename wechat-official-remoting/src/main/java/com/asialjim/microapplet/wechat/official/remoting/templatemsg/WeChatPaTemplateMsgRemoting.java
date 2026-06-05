@@ -25,6 +25,7 @@ import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -123,6 +124,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @EqualsAndHashCode(callSuper = true)
     class QueryBlockTmplMsgRes extends BaseWeChatApiRes {
         
+        @Serial
         private static final long serialVersionUID = -4365130884733356262L;
         private MsgInfo msginfo;
     }
@@ -143,6 +145,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @AllArgsConstructor
     class QueryBlockTmplMsgReq implements Serializable {
         
+        @Serial
         private static final long serialVersionUID = 3356137541602951179L;
 
         private String tmpl_msg_id;
@@ -153,6 +156,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @Data
     class DeletePrivateTemplateReq implements Serializable {
         
+        @Serial
         private static final long serialVersionUID = -6198480181995475058L;
 
         private String template_id;
@@ -161,6 +165,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @Data
     class QueryTemplateIdReq implements Serializable {
         
+        @Serial
         private static final long serialVersionUID = -8064682507716097724L;
 
         private String template_id_short;
@@ -172,6 +177,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @EqualsAndHashCode(callSuper = true)
     class QueryTemplateIdRes extends BaseWeChatApiRes {
         
+        @Serial
         private static final long serialVersionUID = -2734036136662532502L;
         private String template_id;
     }
@@ -181,6 +187,7 @@ public interface WeChatPaTemplateMsgRemoting {
     @EqualsAndHashCode(callSuper = true)
     class GetTemplateIndustryRes extends BaseWeChatApiRes {
         
+        @Serial
         private static final long serialVersionUID = 5318027318348661664L;
 
         private IndustryItem primary_industry;

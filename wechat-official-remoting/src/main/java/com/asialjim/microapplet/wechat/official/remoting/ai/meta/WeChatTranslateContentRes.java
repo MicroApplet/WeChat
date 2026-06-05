@@ -22,6 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 
 
 @Data
@@ -29,6 +30,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class WeChatTranslateContentRes extends BaseWeChatApiRes {
     
+    @Serial
     private static final long serialVersionUID = -6189190921313806326L;
 
     @JsonProperty("from_content")

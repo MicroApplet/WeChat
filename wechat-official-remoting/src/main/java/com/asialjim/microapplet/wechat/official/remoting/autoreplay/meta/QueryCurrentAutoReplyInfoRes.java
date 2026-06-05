@@ -23,6 +23,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Data
@@ -30,6 +31,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class QueryCurrentAutoReplyInfoRes extends BaseWeChatApiRes implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = 769016887617555883L;
 
     @JsonProperty("add_friend_autoreply_info")

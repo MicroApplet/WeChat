@@ -24,6 +24,7 @@ import lombok.ToString;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serial;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -39,6 +40,7 @@ import java.time.format.DateTimeFormatter;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class IdCardCVOcrRes extends BaseWeChatApiRes {
+    @Serial
     private static final long serialVersionUID = 2870332758528087756L;
 
     /**

@@ -18,6 +18,7 @@ package com.asialjim.microapplet.wechat.official.remoting.freepublish.meta;
 
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -27,6 +28,7 @@ import java.io.Serializable;
 @Data
 public class FreePublishArticle implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 8298738078598972101L;
 
     private String title;

@@ -22,6 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 
 
 /**
@@ -37,6 +38,7 @@ import lombok.ToString;
 public class ShortenKeyRes extends BaseWeChatApiRes {
 
     
+    @Serial
     private static final long serialVersionUID = -3329752081628106067L;
 
     @JsonProperty("short_key")

@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,7 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class WeChatPublicAccountCreateMenuReq implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = 8832818737768763475L;
 
     /**

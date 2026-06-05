@@ -19,6 +19,8 @@ package com.asialjim.microapplet.wechat.application;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ import java.util.Objects;
 
 @SuppressWarnings("unused")
 public interface WeChatApplicationRepository {
+    Log log = LogFactory.getLog(WeChatApplicationRepository.class);
 
     String PREFIX = "wx:app:all";
     String CACHE = "wx:app:%s";
@@ -118,7 +121,7 @@ public interface WeChatApplicationRepository {
          * @since 2023/12/16
          */
         public List<WeChatApplication> allApps(){
-            if (CollectionUtils.isNotEmpty(repositories))
+            if (CollectionUtils.isEmpty(repositories))
                 return Collections.emptyList();
 
             List<WeChatApplication> all = new ArrayList<>();
@@ -137,7 +140,7 @@ public interface WeChatApplicationRepository {
          * @since 2023/12/16
          */
         public WeChatApplication appByIndexThrowable(String weChatIndex){
-            if (CollectionUtils.isNotEmpty(repositories))
+            if (CollectionUtils.isEmpty(repositories))
                 throw new IllegalStateException("找不到索引为" + weChatIndex + "的微信应用");
 
             for (WeChatApplicationRepository repository : repositories) {
@@ -145,8 +148,8 @@ public interface WeChatApplicationRepository {
                     WeChatApplication weChatApplication = repository.appByIndexThrowable(weChatIndex);
                     if (Objects.nonNull(weChatApplication))
                         return weChatApplication;
-                } catch (Throwable ignored){
-
+                } catch (Throwable e){
+                    e.printStackTrace();
                 }
             }
             throw new IllegalStateException("找不到索引为" + weChatIndex + "的微信应用");

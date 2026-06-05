@@ -22,6 +22,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -39,6 +40,7 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class QrCodeProperty implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = -6689573068419329004L;
 
     @JsonProperty("expire_seconds")

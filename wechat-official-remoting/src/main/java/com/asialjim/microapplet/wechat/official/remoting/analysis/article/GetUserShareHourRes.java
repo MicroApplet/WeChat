@@ -22,6 +22,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,6 +37,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class GetUserShareHourRes extends BaseWeChatApiRes {
     
+    @Serial
     private static final long serialVersionUID = -7242969103221394382L;
     private List<GetUserShareHourData> list;
 

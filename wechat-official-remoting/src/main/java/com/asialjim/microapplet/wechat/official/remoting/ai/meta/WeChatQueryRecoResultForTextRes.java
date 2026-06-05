@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 
 
 @Data
@@ -28,6 +29,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class WeChatQueryRecoResultForTextRes extends BaseWeChatApiRes {
     
+    @Serial
     private static final long serialVersionUID = -7193110105855734673L;
 
     private String result;

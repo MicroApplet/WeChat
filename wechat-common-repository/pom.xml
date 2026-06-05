@@ -34,11 +34,13 @@
             <artifactId>wechat-common-remoting</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>com.asialjim.microapplet</groupId>
             <artifactId>wechat-common-module</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.mybatis-flex</groupId>
             <artifactId>mybatis-flex-core</artifactId>
@@ -51,11 +53,18 @@
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
-        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
+            <groupId>com.asialjim.microapplet</groupId>
+            <artifactId>commons-common</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.asialjim.microapplet</groupId>
+            <artifactId>commons-cache-caffeine-redis</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

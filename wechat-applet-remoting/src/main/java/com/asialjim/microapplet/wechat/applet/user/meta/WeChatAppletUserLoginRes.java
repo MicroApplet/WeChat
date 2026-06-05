@@ -22,6 +22,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
+
 /**
  * 小程序用户登录结果
  *
@@ -33,6 +35,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class WeChatAppletUserLoginRes extends BaseWeChatApiRes {
+    @Serial
     private static final long serialVersionUID = -4773402003171652510L;
 
     private String openid;

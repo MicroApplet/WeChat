@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.util.List;
 
 /**
@@ -33,6 +34,7 @@ import java.util.List;
 public class FreePublishBatchGetRes extends BaseWeChatApiRes {
 
     
+    @Serial
     private static final long serialVersionUID = 3528241390648962886L;
 
     private Long total_count;

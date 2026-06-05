@@ -22,6 +22,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -38,6 +39,7 @@ import java.io.Serializable;
 public class FetchShortenReq implements Serializable {
 
     
+    @Serial
     private static final long serialVersionUID = -1956746712637989762L;
 
     @JsonProperty("short_key")

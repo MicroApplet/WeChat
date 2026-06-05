@@ -15,13 +15,13 @@
  */
 package com.asialjim.microapplet.wechat.official.remoting.user.meta;
 
-import com.asialjim.microapplet.wechat.official.remoting.user.meta.WeChatPublicAccountUserInfo;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -30,6 +30,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class WeChatPublicAccountBatchGetUserRes extends BaseWeChatApiRes implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = 7196039588758933911L;
 
     @JsonProperty("user_info_list")

@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -36,6 +37,7 @@ import java.nio.charset.StandardCharsets;
 @AllArgsConstructor
 public class QrCode implements Serializable {
     
+    @Serial
     private static final long serialVersionUID = -8619383854167411715L;
 
     /**
