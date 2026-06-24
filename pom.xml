@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.asialjim.microapplet</groupId>
+    <groupId>com.asialjim.microapplet.wechat</groupId>
     <artifactId>wechat</artifactId>
     <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -33,10 +33,10 @@
             <name>Asial Jim</name>
             <email>asialjim@hotmail.com</email>
             <url>https://github.com/asialjim</url>
-            <roles>
-                <role>Owner</role>
-                <role>developer</role>
-            </roles>
+            <roleCheckers>
+                <roleChecker>Owner</roleChecker>
+                <roleChecker>developer</roleChecker>
+            </roleCheckers>
         </developer>
     </developers>
 
@@ -73,26 +73,7 @@
     </scm>
 
     <modules>
-        <module>wechat-official-remoting</module>
-        <module>wechat-common-remoting</module>
-        <module>wechat-applet-remoting</module>
-        <module>wechat-applet-module</module>
-        <module>wechat-common-module</module>
-        <module>wechat-official-module</module>
-        <module>wechat-official-service</module>
-        <module>wechat-official-starter</module>
-        <module>wechat-applet-service</module>
-        <module>wechat-applet-starter</module>
-        <module>wechat-common-service</module>
-        <module>wechat-pay-remoting</module>
-        <module>wechat-pay-module</module>
-        <module>wechat-pay-service</module>
-        <module>wechat-pay-starter</module>
-        <module>wechat-pay-repository</module>
-        <module>wechat-official-repository</module>
-        <module>wechat-common-repository</module>
-        <module>wechat-applet-repository</module>
-        <module>wechat-zen-pom</module>
+
     </modules>
 
     <properties>
