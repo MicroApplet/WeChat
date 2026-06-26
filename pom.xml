@@ -21,7 +21,7 @@
 
     <groupId>com.asialjim.microapplet.wechat</groupId>
     <artifactId>wechat</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WeChat</name>
     <url>https://github.com/MicroApplet/WeChat</url>
